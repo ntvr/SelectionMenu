@@ -1,9 +1,9 @@
 {
   "name": "SelectionMenu",
   "version": "0.1.0",
-  "summary": "A short description of SelectionMenu.",
-  "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/stemberamichal/SelectionMenu",
+  "summary": "Overlay menu supporting both buttons and option selection",
+  "description": "Overlay menu with customizable appearance and variation of content sections.\nIt allows to present single-selection, multi-selection or button-like rows.",
+  "homepage": "https://github.com/ntvr/SelectionMenu",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -16,7 +16,14 @@
     "tag": "0.1.0"
   },
   "platforms": {
-    "ios": "8.0"
+    "ios": "10.0"
   },
-  "source_files": "SelectionMenu/Classes/**/*"
+  "swift_version": "4.0",
+  "source_files": "SelectionMenu/Source/**/*",
+  "frameworks": "UIKit",
+  "dependencies": {
+    "SnapKit": [
+      "~> 4"
+    ]
+  }
 }

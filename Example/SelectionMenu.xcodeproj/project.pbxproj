@@ -42,10 +42,10 @@
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		6D7350EB850FC2BDB3669E59 /* Pods-SelectionMenu_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SelectionMenu_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-SelectionMenu_Example/Pods-SelectionMenu_Example.release.xcconfig"; sourceTree = "<group>"; };
 		71193C62E28A81CECA467D7A /* Pods-SelectionMenu_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SelectionMenu_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SelectionMenu_Tests/Pods-SelectionMenu_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		8FA2DF7C03EBC92F685E4469 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		8FA2DF7C03EBC92F685E4469 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		953B9620F9387151FBA7E362 /* Pods-SelectionMenu_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SelectionMenu_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SelectionMenu_Tests/Pods-SelectionMenu_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		C7807164885D2A9CB4CC5361 /* SelectionMenu.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = SelectionMenu.podspec; path = ../SelectionMenu.podspec; sourceTree = "<group>"; };
-		CFAC52D1B72A02CBE075D5F6 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		C7807164885D2A9CB4CC5361 /* SelectionMenu.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = SelectionMenu.podspec; path = ../SelectionMenu.podspec; sourceTree = "<group>"; };
+		CFAC52D1B72A02CBE075D5F6 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		E884F71EF163DD6794FB5C4B /* Pods_SelectionMenu_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SelectionMenu_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -288,10 +288,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-SelectionMenu_Example/Pods-SelectionMenu_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/SelectionMenu/SelectionMenu.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SelectionMenu.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -495,6 +497,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SelectionMenu/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
@@ -510,6 +513,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SelectionMenu/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";

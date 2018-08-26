@@ -11,7 +11,9 @@ PODS:
     - FBSnapshotTestCase (~> 2.0)
     - Nimble (~> 7.0)
   - Quick (1.2.0)
-  - SelectionMenu (0.1.0)
+  - SelectionMenu (0.1.0):
+    - SnapKit (~> 4)
+  - SnapKit (4.0.0)
 
 DEPENDENCIES:
   - FBSnapshotTestCase (~> 2.1.4)
@@ -19,6 +21,7 @@ DEPENDENCIES:
   - Nimble-Snapshots (~> 6.3.0)
   - Quick (~> 1.2.0)
   - SelectionMenu (from `../`)
+  - SnapKit
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -26,6 +29,7 @@ SPEC REPOS:
     - Nimble
     - Nimble-Snapshots
     - Quick
+    - SnapKit
 
 EXTERNAL SOURCES:
   SelectionMenu:
@@ -36,8 +40,9 @@ SPEC CHECKSUMS:
   Nimble: 7f5a9c447a33002645a071bddafbfb24ea70e0ac
   Nimble-Snapshots: f5459b5b091678dc942d03ec4741cacb58ba4a52
   Quick: 58d203b1c5e27fff7229c4c1ae445ad7069a7a08
-  SelectionMenu: 5f1be9c35ca7ef57de524f9260525e088e99a482
+  SelectionMenu: 9f4496d8368971485d46ee7d4c3c0f3b139f0c75
+  SnapKit: a42d492c16e80209130a3379f73596c3454b7694
 
-PODFILE CHECKSUM: 19294b220fa6c3d8ae1d5846e661893152feb1c0
+PODFILE CHECKSUM: dc8b7356059dfdf29610ff412cbfa6cc493668c8
 
 COCOAPODS: 1.5.3
