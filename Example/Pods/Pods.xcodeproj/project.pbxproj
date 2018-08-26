@@ -93,7 +93,32 @@
 		8170866E2ACE0ACFBC6D90081354EC65 /* Stringers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44486D4DB989823442DC4F41407A9336 /* Stringers.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		883246E6149B04A53E388D7CFAFFBCC7 /* QCKDSL.h in Headers */ = {isa = PBXBuildFile; fileRef = BFB91EE2B34BCD507A8EAF07F231C380 /* QCKDSL.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8B55BD430033027AD5FF22D630DD9F62 /* DSL.m in Sources */ = {isa = PBXBuildFile; fileRef = EA23EE0A80D318077C28121C5AD51D0D /* DSL.m */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
-		90504086213336A0007C99D2 /* ReplaceMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90504085213336A0007C99D2 /* ReplaceMe.swift */; };
+		905040A92133390A007C99D2 /* UniversalStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 905040882133390A007C99D2 /* UniversalStyle.swift */; };
+		905040AA2133390A007C99D2 /* CompositeStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 905040892133390A007C99D2 /* CompositeStyle.swift */; };
+		905040AB2133390A007C99D2 /* NoStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9050408A2133390A007C99D2 /* NoStyle.swift */; };
+		905040AC2133390A007C99D2 /* ShadowStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9050408B2133390A007C99D2 /* ShadowStyle.swift */; };
+		905040AD2133390A007C99D2 /* SelectionElementStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9050408C2133390A007C99D2 /* SelectionElementStyle.swift */; };
+		905040AE2133390A007C99D2 /* SelectionCollectionStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9050408D2133390A007C99D2 /* SelectionCollectionStyle.swift */; };
+		905040AF2133390A007C99D2 /* UIButton+MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9050408F2133390A007C99D2 /* UIButton+MenuButton.swift */; };
+		905040B02133390A007C99D2 /* LabelMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 905040902133390A007C99D2 /* LabelMenuButton.swift */; };
+		905040B12133390A007C99D2 /* SelectionMenuProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 905040912133390A007C99D2 /* SelectionMenuProtocols.swift */; };
+		905040B22133390A007C99D2 /* StaticMenuDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 905040932133390A007C99D2 /* StaticMenuDataSource.swift */; };
+		905040B42133390A007C99D2 /* EmptyMenuDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 905040952133390A007C99D2 /* EmptyMenuDataSource.swift */; };
+		905040B52133390A007C99D2 /* SelectionMenuLayouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 905040972133390A007C99D2 /* SelectionMenuLayouting.swift */; };
+		905040B62133390A007C99D2 /* AutomaticMenuLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 905040982133390A007C99D2 /* AutomaticMenuLayout.swift */; };
+		905040B72133390A007C99D2 /* StaticMenuLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 905040992133390A007C99D2 /* StaticMenuLayout.swift */; };
+		905040B82133390A007C99D2 /* SelectionMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9050409A2133390A007C99D2 /* SelectionMenu.swift */; };
+		905040B92133390A007C99D2 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9050409C2133390A007C99D2 /* UIView+Extensions.swift */; };
+		905040BA2133390A007C99D2 /* UIEdgeInsets+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9050409D2133390A007C99D2 /* UIEdgeInsets+Extensions.swift */; };
+		905040BB2133390A007C99D2 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9050409E2133390A007C99D2 /* UIColor+Extensions.swift */; };
+		905040BC2133390A007C99D2 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9050409F2133390A007C99D2 /* UIImage+Extensions.swift */; };
+		905040BD2133390A007C99D2 /* Range+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 905040A02133390A007C99D2 /* Range+Extensions.swift */; };
+		905040BE2133390A007C99D2 /* ButtonSelectionCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 905040A22133390A007C99D2 /* ButtonSelectionCollection.swift */; };
+		905040BF2133390A007C99D2 /* MultiSelectionCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 905040A32133390A007C99D2 /* MultiSelectionCollection.swift */; };
+		905040C02133390A007C99D2 /* SingleSelectionCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 905040A42133390A007C99D2 /* SingleSelectionCollection.swift */; };
+		905040C12133390A007C99D2 /* UIButton+SelectionElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 905040A62133390A007C99D2 /* UIButton+SelectionElement.swift */; };
+		905040C22133390A007C99D2 /* LabelSelectionElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 905040A72133390A007C99D2 /* LabelSelectionElement.swift */; };
+		905040C32133390A007C99D2 /* UIImageView+SelectionElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 905040A82133390A007C99D2 /* UIImageView+SelectionElement.swift */; };
 		91D400CC851F516E785B032662E4FDD8 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70D8AC5990C544716D52E500CC8B75F0 /* Nimble.framework */; };
 		96132E7432F8DD315A88A07C6B4F9C72 /* NMBStringify.h in Headers */ = {isa = PBXBuildFile; fileRef = E43274BDDF946146643879824D00EC31 /* NMBStringify.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9673CF780F48C8E4EC2A331717B1F67C /* FBSnapshotTestCase.h in Headers */ = {isa = PBXBuildFile; fileRef = C3D41F703F26B177ACAAD1FFB6C0AAE1 /* FBSnapshotTestCase.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -346,7 +371,32 @@
 		8E12EC59B1967A097C51218AEE9AAAF8 /* SatisfyAnyOf.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SatisfyAnyOf.swift; path = Sources/Nimble/Matchers/SatisfyAnyOf.swift; sourceTree = "<group>"; };
 		8FAE5A250D97A24ED0CE16D1C0D52B2C /* FBSnapshotTestCase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FBSnapshotTestCase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9030B9DA15090504D63071F9E24A5367 /* Nimble-Snapshots-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Nimble-Snapshots-prefix.pch"; sourceTree = "<group>"; };
-		90504085213336A0007C99D2 /* ReplaceMe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReplaceMe.swift; path = SelectionMenu/Source/ReplaceMe.swift; sourceTree = "<group>"; };
+		905040882133390A007C99D2 /* UniversalStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversalStyle.swift; sourceTree = "<group>"; };
+		905040892133390A007C99D2 /* CompositeStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompositeStyle.swift; sourceTree = "<group>"; };
+		9050408A2133390A007C99D2 /* NoStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoStyle.swift; sourceTree = "<group>"; };
+		9050408B2133390A007C99D2 /* ShadowStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowStyle.swift; sourceTree = "<group>"; };
+		9050408C2133390A007C99D2 /* SelectionElementStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionElementStyle.swift; sourceTree = "<group>"; };
+		9050408D2133390A007C99D2 /* SelectionCollectionStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionCollectionStyle.swift; sourceTree = "<group>"; };
+		9050408F2133390A007C99D2 /* UIButton+MenuButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+MenuButton.swift"; sourceTree = "<group>"; };
+		905040902133390A007C99D2 /* LabelMenuButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelMenuButton.swift; sourceTree = "<group>"; };
+		905040912133390A007C99D2 /* SelectionMenuProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SelectionMenuProtocols.swift; path = SelectionMenu/Source/SelectionMenuProtocols.swift; sourceTree = "<group>"; };
+		905040932133390A007C99D2 /* StaticMenuDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaticMenuDataSource.swift; sourceTree = "<group>"; };
+		905040952133390A007C99D2 /* EmptyMenuDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyMenuDataSource.swift; sourceTree = "<group>"; };
+		905040972133390A007C99D2 /* SelectionMenuLayouting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionMenuLayouting.swift; sourceTree = "<group>"; };
+		905040982133390A007C99D2 /* AutomaticMenuLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutomaticMenuLayout.swift; sourceTree = "<group>"; };
+		905040992133390A007C99D2 /* StaticMenuLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaticMenuLayout.swift; sourceTree = "<group>"; };
+		9050409A2133390A007C99D2 /* SelectionMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SelectionMenu.swift; path = SelectionMenu/Source/SelectionMenu.swift; sourceTree = "<group>"; };
+		9050409C2133390A007C99D2 /* UIView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		9050409D2133390A007C99D2 /* UIEdgeInsets+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIEdgeInsets+Extensions.swift"; sourceTree = "<group>"; };
+		9050409E2133390A007C99D2 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		9050409F2133390A007C99D2 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
+		905040A02133390A007C99D2 /* Range+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Range+Extensions.swift"; sourceTree = "<group>"; };
+		905040A22133390A007C99D2 /* ButtonSelectionCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonSelectionCollection.swift; sourceTree = "<group>"; };
+		905040A32133390A007C99D2 /* MultiSelectionCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiSelectionCollection.swift; sourceTree = "<group>"; };
+		905040A42133390A007C99D2 /* SingleSelectionCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleSelectionCollection.swift; sourceTree = "<group>"; };
+		905040A62133390A007C99D2 /* UIButton+SelectionElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+SelectionElement.swift"; sourceTree = "<group>"; };
+		905040A72133390A007C99D2 /* LabelSelectionElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelSelectionElement.swift; sourceTree = "<group>"; };
+		905040A82133390A007C99D2 /* UIImageView+SelectionElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+SelectionElement.swift"; sourceTree = "<group>"; };
 		911BAA281ED929043C3DE08BDF136325 /* CwlCatchBadInstruction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CwlCatchBadInstruction.swift; path = Carthage/Checkouts/CwlPreconditionTesting/Sources/CwlPreconditionTesting/CwlCatchBadInstruction.swift; sourceTree = "<group>"; };
 		918657EA4E3C6E897CB251D29FC692A0 /* UIImage+Compare.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Compare.m"; path = "FBSnapshotTestCase/Categories/UIImage+Compare.m"; sourceTree = "<group>"; };
 		91E539E79899DCE544FC25AC4FE75F54 /* Pods-SelectionMenu_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SelectionMenu_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
@@ -751,6 +801,86 @@
 			path = "Target Support Files/Pods-SelectionMenu_Example";
 			sourceTree = "<group>";
 		};
+		905040872133390A007C99D2 /* Styling */ = {
+			isa = PBXGroup;
+			children = (
+				9050408A2133390A007C99D2 /* NoStyle.swift */,
+				905040882133390A007C99D2 /* UniversalStyle.swift */,
+				905040892133390A007C99D2 /* CompositeStyle.swift */,
+				9050408B2133390A007C99D2 /* ShadowStyle.swift */,
+				9050408C2133390A007C99D2 /* SelectionElementStyle.swift */,
+				9050408D2133390A007C99D2 /* SelectionCollectionStyle.swift */,
+			);
+			name = Styling;
+			path = SelectionMenu/Source/Styling;
+			sourceTree = "<group>";
+		};
+		9050408E2133390A007C99D2 /* MenuButton */ = {
+			isa = PBXGroup;
+			children = (
+				9050408F2133390A007C99D2 /* UIButton+MenuButton.swift */,
+				905040902133390A007C99D2 /* LabelMenuButton.swift */,
+			);
+			name = MenuButton;
+			path = SelectionMenu/Source/MenuButton;
+			sourceTree = "<group>";
+		};
+		905040922133390A007C99D2 /* DataSources */ = {
+			isa = PBXGroup;
+			children = (
+				905040952133390A007C99D2 /* EmptyMenuDataSource.swift */,
+				905040932133390A007C99D2 /* StaticMenuDataSource.swift */,
+			);
+			name = DataSources;
+			path = SelectionMenu/Source/DataSources;
+			sourceTree = "<group>";
+		};
+		905040962133390A007C99D2 /* Layouting */ = {
+			isa = PBXGroup;
+			children = (
+				905040972133390A007C99D2 /* SelectionMenuLayouting.swift */,
+				905040992133390A007C99D2 /* StaticMenuLayout.swift */,
+				905040982133390A007C99D2 /* AutomaticMenuLayout.swift */,
+			);
+			name = Layouting;
+			path = SelectionMenu/Source/Layouting;
+			sourceTree = "<group>";
+		};
+		9050409B2133390A007C99D2 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9050409C2133390A007C99D2 /* UIView+Extensions.swift */,
+				9050409D2133390A007C99D2 /* UIEdgeInsets+Extensions.swift */,
+				9050409E2133390A007C99D2 /* UIColor+Extensions.swift */,
+				9050409F2133390A007C99D2 /* UIImage+Extensions.swift */,
+				905040A02133390A007C99D2 /* Range+Extensions.swift */,
+			);
+			name = Extensions;
+			path = SelectionMenu/Source/Extensions;
+			sourceTree = "<group>";
+		};
+		905040A12133390A007C99D2 /* SelectionCollection */ = {
+			isa = PBXGroup;
+			children = (
+				905040A42133390A007C99D2 /* SingleSelectionCollection.swift */,
+				905040A32133390A007C99D2 /* MultiSelectionCollection.swift */,
+				905040A22133390A007C99D2 /* ButtonSelectionCollection.swift */,
+			);
+			name = SelectionCollection;
+			path = SelectionMenu/Source/SelectionCollection;
+			sourceTree = "<group>";
+		};
+		905040A52133390A007C99D2 /* SelectionElement */ = {
+			isa = PBXGroup;
+			children = (
+				905040A72133390A007C99D2 /* LabelSelectionElement.swift */,
+				905040A82133390A007C99D2 /* UIImageView+SelectionElement.swift */,
+				905040A62133390A007C99D2 /* UIButton+SelectionElement.swift */,
+			);
+			name = SelectionElement;
+			path = SelectionMenu/Source/SelectionElement;
+			sourceTree = "<group>";
+		};
 		9DDA603F6AC37E189561F3CAA68BFCC7 /* Pods-SelectionMenu_Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -811,7 +941,15 @@
 		EFE76B2B7575D31F598892661A6A3E0F /* SelectionMenu */ = {
 			isa = PBXGroup;
 			children = (
-				90504085213336A0007C99D2 /* ReplaceMe.swift */,
+				905040912133390A007C99D2 /* SelectionMenuProtocols.swift */,
+				9050409A2133390A007C99D2 /* SelectionMenu.swift */,
+				905040922133390A007C99D2 /* DataSources */,
+				9050409B2133390A007C99D2 /* Extensions */,
+				905040962133390A007C99D2 /* Layouting */,
+				9050408E2133390A007C99D2 /* MenuButton */,
+				905040A12133390A007C99D2 /* SelectionCollection */,
+				905040A52133390A007C99D2 /* SelectionElement */,
+				905040872133390A007C99D2 /* Styling */,
 				64AFD68EC0F25CFCECABA0AAF81E743B /* Pod */,
 				D48D192841EE9228402C56125CF45485 /* Support Files */,
 			);
@@ -1267,14 +1405,39 @@
 			files = (
 				506D761F91EC3583789A837C559972FE /* FBSnapshotTestCase-dummy.m in Sources */,
 				BE14F2198CDB0DAD98A567981D21C7A1 /* FBSnapshotTestCase.m in Sources */,
+				905040AB2133390A007C99D2 /* NoStyle.swift in Sources */,
+				905040B42133390A007C99D2 /* EmptyMenuDataSource.swift in Sources */,
+				905040C32133390A007C99D2 /* UIImageView+SelectionElement.swift in Sources */,
+				905040B62133390A007C99D2 /* AutomaticMenuLayout.swift in Sources */,
 				DB7A106243AC974FC7EBEB00B506C786 /* FBSnapshotTestCasePlatform.m in Sources */,
 				A4F69F3477A935285620AC3031C5C848 /* FBSnapshotTestController.m in Sources */,
-				90504086213336A0007C99D2 /* ReplaceMe.swift in Sources */,
+				905040AC2133390A007C99D2 /* ShadowStyle.swift in Sources */,
 				1AB7934C16CE49DE196FFC7BE7278287 /* SwiftSupport.swift in Sources */,
+				905040AD2133390A007C99D2 /* SelectionElementStyle.swift in Sources */,
+				905040C22133390A007C99D2 /* LabelSelectionElement.swift in Sources */,
 				094973D2D2F1E3B2E772F93C8147C6B9 /* UIApplication+StrictKeyWindow.m in Sources */,
+				905040BB2133390A007C99D2 /* UIColor+Extensions.swift in Sources */,
 				69DA8B003216466C60F029CBD79897F1 /* UIImage+Compare.m in Sources */,
+				905040C02133390A007C99D2 /* SingleSelectionCollection.swift in Sources */,
+				905040B72133390A007C99D2 /* StaticMenuLayout.swift in Sources */,
+				905040B22133390A007C99D2 /* StaticMenuDataSource.swift in Sources */,
+				905040B12133390A007C99D2 /* SelectionMenuProtocols.swift in Sources */,
+				905040BD2133390A007C99D2 /* Range+Extensions.swift in Sources */,
+				905040AF2133390A007C99D2 /* UIButton+MenuButton.swift in Sources */,
+				905040BE2133390A007C99D2 /* ButtonSelectionCollection.swift in Sources */,
+				905040AE2133390A007C99D2 /* SelectionCollectionStyle.swift in Sources */,
+				905040BA2133390A007C99D2 /* UIEdgeInsets+Extensions.swift in Sources */,
+				905040BF2133390A007C99D2 /* MultiSelectionCollection.swift in Sources */,
+				905040B92133390A007C99D2 /* UIView+Extensions.swift in Sources */,
+				905040B82133390A007C99D2 /* SelectionMenu.swift in Sources */,
+				905040B02133390A007C99D2 /* LabelMenuButton.swift in Sources */,
 				35DD05FD595A6FE7F5A0692D12E319DC /* UIImage+Diff.m in Sources */,
+				905040B52133390A007C99D2 /* SelectionMenuLayouting.swift in Sources */,
+				905040C12133390A007C99D2 /* UIButton+SelectionElement.swift in Sources */,
 				756564ABAF2892FE7140C92A1CDDCF65 /* UIImage+Snapshot.m in Sources */,
+				905040AA2133390A007C99D2 /* CompositeStyle.swift in Sources */,
+				905040A92133390A007C99D2 /* UniversalStyle.swift in Sources */,
+				905040BC2133390A007C99D2 /* UIImage+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
