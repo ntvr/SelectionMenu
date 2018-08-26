@@ -38,7 +38,6 @@ It allows to present single-selection, multi-selection or button-like rows.
   #   'SelectionMenu' => ['SelectionMenu/Assets/*.png']
   # }
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.frameworks = 'UIKit'
+   s.dependency 'SnapKit', '~> 4'
 end
