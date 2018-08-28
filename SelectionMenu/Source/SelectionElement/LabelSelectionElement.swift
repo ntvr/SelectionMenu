@@ -9,20 +9,10 @@
 import Foundation
 import UIKit
 
-class LabelSelectionElement: UIView {
-    var fgColor: UIColor? {
-        get { return label.textColor }
-        set { label.textColor = newValue }
-    }
+open class LabelSelectionElement: UIView {
+    public weak var label: UILabel!
 
-    var bgColor: UIColor? {
-        get { return backgroundColor }
-        set { backgroundColor = newValue }
-    }
-
-    weak var label: UILabel!
-
-    init(text: String?) {
+    public init(text: String?) {
         super.init(frame: .zero)
 
         let label = UILabel()
@@ -34,27 +24,27 @@ class LabelSelectionElement: UIView {
         label.text = text
     }
 
-    required init?(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-}
-
-// MARK: - Setup
-extension LabelSelectionElement {
-    func setupConstraints() {
-        label.snp.remakeConstraints { make in
-            make.center.equalToSuperview()
-        }
     }
 }
 
 // MARK: - SelectionElement
 extension LabelSelectionElement: SelectionElement {
-    func expand() {
+    public func expand() {
         transform = .identity
     }
 
-    func collapse() {
+    public func collapse() {
         transform = CGAffineTransform(scaleX: 0.001, y: 0.001)
+    }
+}
+
+// MARK: - Setup
+private extension LabelSelectionElement {
+    func setupConstraints() {
+        label.snp.remakeConstraints { make in
+            make.center.equalToSuperview()
+        }
     }
 }

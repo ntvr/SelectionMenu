@@ -9,16 +9,16 @@
 import Foundation
 import UIKit
 
-struct ShadowStyle {
-    let shadowColor: CGColor?
-    let shadowOpacity: Float
-    let shadowOffset: CGSize
-    let shadowRadius: CGFloat
+public struct ShadowStyle {
+    public let shadowColor: CGColor?
+    public let shadowOpacity: Float
+    public let shadowOffset: CGSize
+    public let shadowRadius: CGFloat
 }
 
 // MARK: - SelectionElementStyling
 extension ShadowStyle: SelectionElementStyling {
-    func apply(to element: SelectionElementView, selected: Bool) {
+    public func apply(to element: SelectionElementView, selected: Bool) {
         element.layer.shadowColor = shadowColor
         element.layer.shadowOpacity = shadowOpacity
         element.layer.shadowOffset = shadowOffset
@@ -28,7 +28,7 @@ extension ShadowStyle: SelectionElementStyling {
 
 // MARK: - SelectionCollectionStyling
 extension ShadowStyle: SelectionCollectionStyling {
-    func apply(to collection: SelectionCollectionView) {
+    public func apply(to collection: SelectionCollectionView) {
         collection.layer.shadowColor = shadowColor
         collection.layer.shadowOpacity = shadowOpacity
         collection.layer.shadowOffset = shadowOffset
@@ -36,7 +36,7 @@ extension ShadowStyle: SelectionCollectionStyling {
     }
 }
 
-extension ShadowStyle {
+public extension ShadowStyle {
     static var light = ShadowStyle(
         shadowColor: UIColor.lightGray.cgColor,
         shadowOpacity: 0.5,

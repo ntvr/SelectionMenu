@@ -11,27 +11,28 @@ import UIKit
 import SnapKit
 
 // MARK: - SingleChoiceView
-class SingleSelectionCollection: UIControl, SelectionCollection {
-    var elements: [SelectionElementView]
-    var selectedIndex: Int = 0
-
-    var collectionStyle: SelectionCollectionStyling = UniversalStyle.blackWhite {
+public class SingleSelectionCollection: UIControl, SelectionCollection {
+    // Public properties
+    public weak var delegate: SelectionCollectionDelegate?
+    public private(set) var selectedIndex: Int = 0
+    public var highlightColor: UIColor?
+    public var collectionStyle: SelectionCollectionStyling = UniversalStyle.blackWhite {
         didSet { updateTheme() }
     }
-    var elementStyle: SelectionElementStyling = UniversalStyle.blackWhite {
+    public var elementStyle: SelectionElementStyling = UniversalStyle.blackWhite {
         didSet { updateTheme() }
     }
 
-    var highlightColor: UIColor?
+    // Subviews
+    public private(set) weak var backgroundView: UIView!
+    public private(set) weak var markView: UIView!
+    public private(set) var elements: [SelectionElementView]
 
-    weak var delegate: SelectionCollectionDelegate?
+    // Private properties
+    private weak var markViewOriginalConstraint: Constraint?
+    private weak var markViewMovingConstraint: Constraint?
 
-    weak var backgroundView: UIView!
-    weak var markView: UIView!
-    weak var markViewOriginalConstraint: Constraint?
-    weak var markViewMovingConstraint: Constraint?
-
-    required init(elements: [SelectionElementView]) {
+    public required init(elements: [SelectionElementView]) {
         self.elements = elements
         super.init(frame: .zero)
 
@@ -41,12 +42,33 @@ class SingleSelectionCollection: UIControl, SelectionCollection {
         moveMark(to: selectedIndex)
     }
 
-    required init?(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }
 
+// MARK: - Expandable
 extension SingleSelectionCollection {
+    public func expand() {
+        elements.forEach { $0.expand() }
+    }
+
+    public func collapse() {
+        elements.forEach { $0.collapse() }
+    }
+}
+
+// MARK: - External API
+extension SingleSelectionCollection {
+    public func setSelected(index: Int) {
+        let allowedIndex = max(min(elements.count - 1, index), 0)
+        selectedIndex = allowedIndex
+        moveMark(to: allowedIndex)
+    }
+}
+
+// MARK: - Setup + Update
+private extension SingleSelectionCollection {
     func initSubviews(with elements: [SelectionElementView]) {
         let backgroundView = UIView()
         addSubview(backgroundView)
@@ -98,26 +120,6 @@ extension SingleSelectionCollection {
     }
 }
 
-// MARK: - Expandable
-extension SingleSelectionCollection {
-    func expand() {
-        elements.forEach { $0.expand() }
-    }
-
-    func collapse() {
-        elements.forEach { $0.collapse() }
-    }
-}
-
-// MARK: - External API
-extension SingleSelectionCollection {
-    func setSelected(index: Int) {
-        let allowedIndex = max(min(elements.count - 1, index), 0)
-        selectedIndex = allowedIndex
-        moveMark(to: allowedIndex)
-    }
-}
-
 // MARK: - Postitioning mark view
 private extension SingleSelectionCollection {
     func moveMark(to selectedIndex: Int) {
@@ -159,7 +161,7 @@ private extension SingleSelectionCollection {
 
 // MARK: - Tracking touches
 extension SingleSelectionCollection {
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    public override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard let touch = touches.first else {
             return
         }
@@ -167,7 +169,7 @@ extension SingleSelectionCollection {
         moveMark(with: touch)
     }
 
-    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+    public override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard let touch = touches.first else {
             return
         }
@@ -175,7 +177,7 @@ extension SingleSelectionCollection {
         moveMark(with: touch)
     }
 
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+    public override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard let touch = touches.first else {
             return
         }
@@ -199,7 +201,7 @@ extension SingleSelectionCollection {
                                             at: selectedIndex)
     }
 
-    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+    public override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
         returnMarkToOriginal()
     }
 }

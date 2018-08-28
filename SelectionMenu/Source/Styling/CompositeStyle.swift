@@ -9,11 +9,11 @@
 import Foundation
 import UIKit
 
-struct CompositeStyle {
-    var elementStyles: [SelectionElementStyling]
-    var collectionStyles: [SelectionCollectionStyling]
+public struct CompositeStyle {
+    public let elementStyles: [SelectionElementStyling]
+    public let collectionStyles: [SelectionCollectionStyling]
 
-    init(elementStyles: [SelectionElementStyling] = [], collectionStyles: [SelectionCollectionStyling] = []) {
+    public init(elementStyles: [SelectionElementStyling] = [], collectionStyles: [SelectionCollectionStyling] = []) {
         self.elementStyles = elementStyles
         self.collectionStyles = collectionStyles
     }
@@ -21,7 +21,7 @@ struct CompositeStyle {
 
 // MARK: - SelectionElementStyling
 extension CompositeStyle: SelectionElementStyling {
-    func apply(to element: SelectionElementView, selected: Bool) {
+    public func apply(to element: SelectionElementView, selected: Bool) {
         elementStyles.forEach { style in
             style.apply(to: element, selected: selected)
         }
@@ -30,7 +30,7 @@ extension CompositeStyle: SelectionElementStyling {
 
 // MARK: - SelectionCollectionStyling
 extension CompositeStyle: SelectionCollectionStyling {
-    func apply(to collection: SelectionCollectionView) {
+    public func apply(to collection: SelectionCollectionView) {
         collectionStyles.forEach { style in
             style.apply(to: collection)
         }

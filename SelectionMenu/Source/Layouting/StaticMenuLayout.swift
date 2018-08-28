@@ -10,14 +10,14 @@ import Foundation
 import UIKit
 import SnapKit
 
-struct StaticMenuLayout: SelectionMenuLayouting {
-    var verticalSpacing: CGFloat = 10
-    var menuButtonHeightRatio: CGFloat = 1.2
+public struct StaticMenuLayout: SelectionMenuLayouting {
+    public var verticalSpacing: CGFloat = 10
+    public var menuButtonHeightRatio: CGFloat = 1.2
 
-    var horizontalAlignment: HorizontalAlignment = .rightToRight
-    var verticalAlignment: VerticalAlignment = .topToBottom(direction: .up)
+    public var horizontalAlignment: HorizontalAlignment = .rightToRight
+    public var verticalAlignment: VerticalAlignment = .topToBottom(direction: .up)
 
-    func layoutCollections(menu: SelectionMenu, platform: UIView, collections: [SelectionCollectionView]) {
+    public func layoutCollections(menu: SelectionMenu, platform: UIView, collections: [SelectionCollectionView]) {
         var previousCollection: SelectionCollectionView!
         if let collection = collections.first {
             collection.snp.remakeConstraints { make in

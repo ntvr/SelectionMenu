@@ -9,22 +9,22 @@
 import Foundation
 import UIKit
 
-struct UniversalStyle {
+public struct UniversalStyle {
     // Shared
-    let circular: Bool
+    public let circular: Bool
     // SelectionCollectionStyling
-    let collectionBgColor: UIColor?
-    let collectionHighightColor: UIColor?
+    public let collectionBgColor: UIColor?
+    public let collectionHighightColor: UIColor?
     // SelectionElementStyling
-    let selectedFgColor: UIColor?
-    let selectedBgColor: UIColor?
-    let deselectedFgColor: UIColor?
-    let deselectedBgColor: UIColor?
+    public let selectedFgColor: UIColor?
+    public let selectedBgColor: UIColor?
+    public let deselectedFgColor: UIColor?
+    public let deselectedBgColor: UIColor?
 }
 
 // MARK: - SelectionCollectionStyling
 extension UniversalStyle: SelectionCollectionStyling {
-    func apply(to collection: SelectionCollectionView) {
+    public func apply(to collection: SelectionCollectionView) {
 
         switch collection {
         case let single as SingleSelectionCollection:
@@ -52,7 +52,7 @@ extension UniversalStyle: SelectionCollectionStyling {
 
 // MARK: - SelectionElementStyling
 extension UniversalStyle: SelectionElementStyling {
-    func apply(to element: SelectionElementView, selected: Bool) {
+    public func apply(to element: SelectionElementView, selected: Bool) {
 
         element.circular = circular
         if circular {
@@ -61,12 +61,12 @@ extension UniversalStyle: SelectionElementStyling {
 
         switch element {
         case let label as LabelSelectionElement:
-            label.fgColor = selected ? selectedFgColor : deselectedFgColor
-            label.bgColor = selected ? selectedBgColor : deselectedBgColor
+            label.label.textColor = selected ? selectedFgColor : deselectedFgColor
+            label.label.backgroundColor = selected ? selectedBgColor : deselectedBgColor
 
         case let imageView as UIImageView:
-            imageView.fgColor = selected ? selectedFgColor : deselectedFgColor
-            imageView.bgColor = selected ? selectedBgColor : deselectedBgColor
+            imageView.tintColor = selected ? selectedFgColor : deselectedFgColor
+            imageView.backgroundColor = selected ? selectedBgColor : deselectedBgColor
 
         case let button as UIButton:
             button.setTitleColor(deselectedFgColor, for: .normal)
@@ -84,7 +84,7 @@ extension UniversalStyle: SelectionElementStyling {
 }
 
 // MARK: - ColorSpace
-extension UniversalStyle {
+public extension UniversalStyle {
     static var blackWhite = UniversalStyle(
         circular: true,
         collectionBgColor: .white,

@@ -9,19 +9,19 @@
 import Foundation
 import UIKit
 
-struct SelectionCollectionStyle {
-    var circular: Bool
+public struct SelectionCollectionStyle {
+    public let circular: Bool
     /// Only used for SingleSelectionCollection's markView circular property
-    var circularMark: Bool
+    public let circularMark: Bool
 
     /// Only used for SingleSelectionCollection's markView background color
-    var markBackgroundColor: UIColor?
-    var backgroundColor: UIColor?
+    public let markBackgroundColor: UIColor?
+    public let backgroundColor: UIColor?
 }
 
 // MARK: - SelectionCollectionStyling
 extension SelectionCollectionStyle: SelectionCollectionStyling {
-    func apply(to collection: SelectionCollectionView) {
+    public func apply(to collection: SelectionCollectionView) {
         switch collection {
         case let single as SingleSelectionCollection:
             single.backgroundView.circular = circular

@@ -10,16 +10,6 @@ import Foundation
 import UIKit
 
 extension UIImageView: SelectionElement {
-    var fgColor: UIColor? {
-        get { return tintColor }
-        set { tintColor = newValue }
-    }
-
-    var bgColor: UIColor? {
-        get { return backgroundColor }
-        set { backgroundColor = newValue }
-    }
-
-    func expand() { }
-    func collapse() { }
+    public func expand() { }
+    public func collapse() { }
 }

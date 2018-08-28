@@ -10,9 +10,9 @@ import Foundation
 import UIKit
 import SnapKit
 
-struct AutomaticMenuLayout: SelectionMenuLayouting {
-    var verticalSpacing: CGFloat = 5
-    var menuButtonHeightRatio: CGFloat = 1.3
+public struct AutomaticMenuLayout: SelectionMenuLayouting {
+    public var verticalSpacing: CGFloat = 5
+    public var menuButtonHeightRatio: CGFloat = 1.3
 
     func prepare(menu: SelectionMenu, platform: UIView) -> SelectionMenuLayouting {
         let top = menu.frame.minY
@@ -39,7 +39,7 @@ struct AutomaticMenuLayout: SelectionMenuLayouting {
                                 verticalAlignment: vertical)
     }
 
-    func layoutCollections(menu: SelectionMenu, platform: UIView, collections: [SelectionCollectionView]) {
+    public func layoutCollections(menu: SelectionMenu, platform: UIView, collections: [SelectionCollectionView]) {
         let preparedLayout = prepare(menu: menu, platform: platform)
         preparedLayout.layoutCollections(menu: menu, platform: platform, collections: collections)
     }

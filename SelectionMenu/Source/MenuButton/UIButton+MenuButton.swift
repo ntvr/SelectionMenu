@@ -11,16 +11,16 @@ import UIKit
 
 // MARK: - UIButton
 extension UIButton: MenuButton {
-    var tapEnabled: Bool {
+    public var tapEnabled: Bool {
         get { return isEnabled }
         set { isEnabled = newValue }
     }
 
-    func addTargetForTapGesture(target: Any?, action: Selector) {
+    public func addTargetForTapGesture(target: Any?, action: Selector) {
         addTarget(target, action: action, for: .touchUpInside)
     }
 
-    func expand() { }
+    public func expand() { }
 
-    func collapse() { }
+    public func collapse() { }
 }

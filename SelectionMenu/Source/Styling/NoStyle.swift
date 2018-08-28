@@ -9,13 +9,13 @@
 import Foundation
 
 /// Use this style if you do not want to apply any styles through Styling protocols.
-struct NoStyle {
+public struct NoStyle {
 }
 
 extension NoStyle: SelectionElementStyling {
-    func apply(to element: SelectionElementView, selected: Bool) { }
+    public func apply(to element: SelectionElementView, selected: Bool) { }
 }
 
 extension NoStyle: SelectionCollectionStyling {
-    func apply(to collection: SelectionCollectionView) { }
+    public func apply(to collection: SelectionCollectionView) { }
 }

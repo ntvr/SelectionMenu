@@ -10,32 +10,33 @@ import Foundation
 import UIKit
 
 struct SelectionElementStyle {
-    var circular = true
+    public var circular = true
 
     // LabelSelectionElement styling
-    let normalLabelFgColor: UIColor
-    let normalLabelBgColor: UIColor
-    let selectedLabelFgColor: UIColor
-    let selectedLabelBgColor: UIColor
-    let labelShadowStyle: SelectionElementStyling
+    public let normalLabelBgColor: UIColor
+    public let normalLabelFgColor: UIColor
+    public let selectedLabelFgColor: UIColor
+    public let selectedLabelBgColor: UIColor
+    public let labelShadowStyle: SelectionElementStyling
 
     // UIImageView styling
-    let normalImageViewFgColor: UIColor
-    let normalImageViewBgColor: UIColor
-    let selectedImageViewFgColor: UIColor
-    let selectedImageViewBgColor: UIColor
-    let imageViewShadowStyle: SelectionElementStyling
+    public let normalImageViewFgColor: UIColor
+    public let normalImageViewBgColor: UIColor
+    public let selectedImageViewFgColor: UIColor
+    public let selectedImageViewBgColor: UIColor
+    public let imageViewShadowStyle: SelectionElementStyling
 
     // UIButton styling
-    let normalButtonFgColor: UIColor
-    let normalButtonBgColor: UIColor
-    let highlightedButtonFgColor: UIColor
-    let highlightedButtonBgColor: UIColor
-    let buttonShadowStyle: SelectionElementStyling
+    public let normalButtonFgColor: UIColor
+    public let normalButtonBgColor: UIColor
+    public let highlightedButtonFgColor: UIColor
+    public let highlightedButtonBgColor: UIColor
+    public let buttonShadowStyle: SelectionElementStyling
 }
 
+// MARK: - SelectionElementStyling
 extension SelectionElementStyle: SelectionElementStyling {
-    func apply(to element: SelectionElementView, selected: Bool) {
+    public func apply(to element: SelectionElementView, selected: Bool) {
         element.circular = circular
         if circular {
             element.clipsToBounds = true

@@ -9,23 +9,24 @@
 import Foundation
 import UIKit
 
-typealias SelectionElementView = UIView & SelectionElement
-typealias SelectionCollectionView = UIView & SelectionCollection
-typealias MenuButtonView = UIView & MenuButton
+public typealias SelectionElementView = UIView & SelectionElement
+public typealias SelectionCollectionView = UIView & SelectionCollection
+public typealias MenuButtonView = UIView & MenuButton
 
-protocol SelectionElement: Expandable { }
-protocol SelectionCollection: Expandable {
+public protocol SelectionElement: Expandable { }
+public protocol SelectionCollection: Expandable {
     var delegate: SelectionCollectionDelegate? { get set }
 
     var collectionStyle: SelectionCollectionStyling { get set }
     var elementStyle: SelectionElementStyling { get set }
+    var elements: [SelectionElementView] { get }
 
     init(elements: [SelectionElementView])
 }
-protocol MenuButton: Expandable, TapActionRegisterable { }
+public protocol MenuButton: Expandable, TapActionRegisterable { }
 
 // MARK: - SelectionCollectionDelegate
-protocol SelectionCollectionDelegate: class {
+public protocol SelectionCollectionDelegate: class {
     func singleSelectionCollection(_ collection: SingleSelectionCollection,
                                    didSelect element: SelectionElementView,
                                    at index: Int)
@@ -37,23 +38,23 @@ protocol SelectionCollectionDelegate: class {
 }
 
 // MARK: - Expandable
-@objc protocol Expandable {
+@objc public protocol Expandable {
     @objc func expand()
     @objc func collapse()
 }
 
 // MARK: - SelectionElementStyling
-protocol SelectionElementStyling {
+public protocol SelectionElementStyling {
     func apply(to element: SelectionElementView, selected: Bool)
 }
 
 // MARK: - SelectionCollectionStyling
-protocol SelectionCollectionStyling {
+public protocol SelectionCollectionStyling {
     func apply(to collection: SelectionCollectionView)
 }
 
 // MARK: - ActionRegistrable
-@objc protocol TapActionRegisterable {
+@objc public protocol TapActionRegisterable {
     var tapEnabled: Bool { get set }
     func addTargetForTapGesture(target: Any?, action: Selector)
 }

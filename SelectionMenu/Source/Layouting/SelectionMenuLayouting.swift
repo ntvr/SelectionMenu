@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import SnapKit
 
-enum HorizontalAlignment {
+public enum HorizontalAlignment {
     /// Fixed to left of the platform
     case left(inset: CGFloat)
     /// Fixed to right of the platform
@@ -39,7 +39,7 @@ enum HorizontalAlignment {
     }
 }
 
-enum VerticalDirection {
+public enum VerticalDirection {
     /// Next collection is placed above previous
     case up
     /// Next collection is placed below previous
@@ -53,7 +53,7 @@ enum VerticalDirection {
     }
 }
 
-enum VerticalAlignment {
+public enum VerticalAlignment {
     /// Fixed to top of the platform, always direction *down*
     case top(inset: CGFloat)
     /// Fixed to the bottom of the platform, always direction *up*
@@ -67,7 +67,7 @@ enum VerticalAlignment {
     /// Bottom of menu button to top of menu
     case bottomToTop(direction: VerticalDirection)
 
-    var direction: VerticalDirection {
+    public var direction: VerticalDirection {
         switch self {
         case .top: return .down
         case .bottom: return .up
@@ -94,7 +94,7 @@ enum VerticalAlignment {
 }
 
 /// MARK: - SelectionMenuLayouting
-protocol SelectionMenuLayouting {
+public protocol SelectionMenuLayouting {
     // Layouout collection views
     func layoutCollections(menu: SelectionMenu, platform: UIView, collections: [SelectionCollectionView])
 }

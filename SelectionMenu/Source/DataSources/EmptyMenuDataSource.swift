@@ -9,22 +9,22 @@
 import Foundation
 import UIKit
 
-class EmptyDataSource: SelectionMenuDataSource {
-    var visualEffect: UIVisualEffect? = UIBlurEffect(style: .light)
+public class EmptyDataSource: SelectionMenuDataSource {
+    public var visualEffect: UIVisualEffect? = UIBlurEffect(style: .light)
 
-    func selectionMenuNumberOfSections() -> Int {
+    public func selectionMenuNumberOfSections() -> Int {
         return 0
     }
 
-    func selectionMenu(typeOf section: Int) -> SelectionMenu.SectionType {
+    public func selectionMenu(typeOf section: Int) -> SelectionMenu.SectionType {
         return .singleSelection(selected: 0)
     }
 
-    func selectionMenu(numberOfElementsIn section: Int) -> Int {
+    public func selectionMenu(numberOfElementsIn section: Int) -> Int {
         return 0
     }
 
-    func selectionMenu(viewFor index: Int, in section: Int) -> SelectionElementView {
+    public func selectionMenu(viewFor index: Int, in section: Int) -> SelectionElementView {
         fatalError("Should not get called as there are no sections/buttons")
     }
 }

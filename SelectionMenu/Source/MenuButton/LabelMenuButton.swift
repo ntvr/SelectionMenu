@@ -10,8 +10,8 @@ import Foundation
 import UIKit
 import SnapKit
 
-class LabelMenuButton: UIView {
-    struct AssociatedKeys {
+public class LabelMenuButton: UIView {
+    private struct AssociatedKeys {
         static var TapGesture = "LabelMenuButtonTapGesture"
     }
 
@@ -20,9 +20,9 @@ class LabelMenuButton: UIView {
         set { objc_setAssociatedObject(self, &AssociatedKeys.TapGesture, newValue, .OBJC_ASSOCIATION_ASSIGN) }
     }
 
-    weak var label: UILabel!
+    public weak var label: UILabel!
 
-    required init(text: String? = nil) {
+    public required init(text: String? = nil) {
         super.init(frame: .zero)
 
         let label = UILabel(frame: .zero)
@@ -34,13 +34,35 @@ class LabelMenuButton: UIView {
         label.text = text
     }
 
-    required init?(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }
 
-// MARK: Setup
-extension LabelMenuButton {
+// MARK: - MENUButton
+extension LabelMenuButton: MenuButton {
+    public var tapEnabled: Bool {
+        get { return self.labelMenuButtonGestureRecognizer?.isEnabled ?? false }
+        set { labelMenuButtonGestureRecognizer?.isEnabled = newValue }
+    }
+
+    public func addTargetForTapGesture(target: Any?, action: Selector) {
+        let tapGestureRecognizer = UITapGestureRecognizer(target: target, action: action)
+        addGestureRecognizer(tapGestureRecognizer)
+        isUserInteractionEnabled = true
+    }
+
+    public func expand() {
+        label.transform = .identity
+    }
+
+    public func collapse() {
+        label.transform = CGAffineTransform(scaleX: 0.001, y: 0.001)
+    }
+}
+
+// MARK: - Setup
+private extension LabelMenuButton {
     func setupConstrains() {
         label.snp.remakeConstraints { make in
             make.center.equalToSuperview()
@@ -50,24 +72,4 @@ extension LabelMenuButton {
     }
 }
 
-// MARK: - MenuButton
-extension LabelMenuButton: MenuButton {
-    var tapEnabled: Bool {
-        get { return self.labelMenuButtonGestureRecognizer?.isEnabled ?? false }
-        set { labelMenuButtonGestureRecognizer?.isEnabled = newValue }
-    }
 
-    func addTargetForTapGesture(target: Any?, action: Selector) {
-        let tapGestureRecognizer = UITapGestureRecognizer(target: target, action: action)
-        addGestureRecognizer(tapGestureRecognizer)
-        isUserInteractionEnabled = true
-    }
-
-    func expand() {
-        label.transform = .identity
-    }
-
-    func collapse() {
-        label.transform = CGAffineTransform(scaleX: 0.001, y: 0.001)
-    }
-}

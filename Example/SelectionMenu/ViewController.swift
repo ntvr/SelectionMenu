@@ -21,18 +21,17 @@ class ViewController: UIViewController {
         let labelButton = LabelMenuButton(text: "Menu")
         labelButton.backgroundColor = .red
         labelButton.label.textColor = .white
-        labelButton.circular = true
 
         let expandableMenu = SelectionMenu(menuButton: labelButton)
         view.addSubview(expandableMenu)
         self.menu = expandableMenu
 
-        menuDataSource = StaticMenuDataSource(sections: [
+        menuDataSource = StaticMenuDataSource(sections:
             (type: .singleSelection(selected: 0), [.text("A"), .text("B"), .text("C"), .text("D")]),
-            (type: .singleSelection(selected: 1), [.text("1", "2")])
-        ])
+            (type: .singleSelection(selected: 1), [.text("1"), .text("2")])
+        )
 
-        menu.dataSource = menuDataSource
+        menu.dataSource = menuDataSource   
         menu.delegate = self
     }
 
