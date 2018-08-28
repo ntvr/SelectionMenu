@@ -28,11 +28,22 @@ class ViewController: UIViewController {
 
         menuDataSource = StaticMenuDataSource(sections:
             (type: .singleSelection(selected: 0), [.text("A"), .text("B"), .text("C"), .text("D")]),
-            (type: .singleSelection(selected: 1), [.text("1"), .text("2")])
+            (type: .singleSelection(selected: 1), [.text("1"), .text("2")]),
+            (type: .multiSelection(selected: [1, 3]), [.text("I"), .text("II"), .text("III")]),
+            (type: .buttonSelection, [.text("😀"), .text("🙂"), .text("😐"), .text("🙁"), .text("😞")])
         )
 
         menu.dataSource = menuDataSource   
         menu.delegate = self
+
+        setupConstraints()
+    }
+
+    func setupConstraints() {
+        menu.snp.remakeConstraints { make in
+            make.right.bottom.equalToSuperview().inset(20)
+            make.size.equalTo(66)
+        }
     }
 
     override func viewDidLoad() {
