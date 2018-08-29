@@ -11,11 +11,22 @@ import UIKit
 import SnapKit
 
 public struct ManualMenuLayout: SelectionMenuLayouting {
-    public var verticalSpacing: CGFloat = 10
-    public var menuButtonHeightRatio: CGFloat = 1.2
+    public var verticalSpacing: CGFloat
+    public var menuButtonHeightRatio: CGFloat
 
-    public var horizontalAlignment: HorizontalAlignment = .rightToRight
-    public var verticalAlignment: VerticalAlignment = .topToBottom(direction: .up)
+    public var horizontalAlignment: HorizontalAlignment
+    public var verticalAlignment: VerticalAlignment
+
+    public init(verticalSpacing: CGFloat = 10,
+         menuButtonHeightRatio: CGFloat = 1.2,
+         horizontalAlignment: HorizontalAlignment = .rightToRight,
+         verticalAlignment: VerticalAlignment = .topToBottom(direction: .up)
+    ) {
+        self.verticalSpacing = verticalSpacing
+        self.menuButtonHeightRatio = menuButtonHeightRatio
+        self.horizontalAlignment = horizontalAlignment
+        self.verticalAlignment = verticalAlignment
+    }
 
     public func layoutCollections(menu: SelectionMenu, platform: UIView, collections: [SelectionCollectionView]) {
         var previousCollection: SelectionCollectionView!
