@@ -14,7 +14,7 @@ public struct AutomaticMenuLayout: SelectionMenuLayouting {
     public var verticalSpacing: CGFloat
     public var menuButtonHeightRatio: CGFloat
 
-    public init AutomaticMenuLayout(
+    public init(
         verticalSpacing: CGFloat = 5,
         menuButtonHeightRatio: CGFloat = 1.3
     ) {
