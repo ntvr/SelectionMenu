@@ -12,6 +12,8 @@ import UIKit
 public class EmptyDataSource: SelectionMenuDataSource {
     public var visualEffect: UIVisualEffect? = UIBlurEffect(style: .light)
 
+    public init() { }
+
     public func selectionMenuNumberOfSections() -> Int {
         return 0
     }

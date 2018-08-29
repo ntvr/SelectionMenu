@@ -11,8 +11,16 @@ import UIKit
 import SnapKit
 
 public struct AutomaticMenuLayout: SelectionMenuLayouting {
-    public var verticalSpacing: CGFloat = 5
-    public var menuButtonHeightRatio: CGFloat = 1.3
+    public var verticalSpacing: CGFloat
+    public var menuButtonHeightRatio: CGFloat
+
+    public init AutomaticMenuLayout(
+        verticalSpacing: CGFloat = 5,
+        menuButtonHeightRatio: CGFloat = 1.3
+    ) {
+        self.verticalSpacing = verticalSpacing
+        self.menuButtonHeightRatio = menuButtonHeightRatio
+    }
 
     func prepare(menu: SelectionMenu, platform: UIView) -> SelectionMenuLayouting {
         let top = menu.frame.minY

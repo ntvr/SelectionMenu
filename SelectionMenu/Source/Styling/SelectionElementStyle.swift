@@ -32,6 +32,40 @@ struct SelectionElementStyle {
     public let highlightedButtonFgColor: UIColor
     public let highlightedButtonBgColor: UIColor
     public let buttonShadowStyle: SelectionElementStyling
+
+    public init(
+        normalLabelBgColor: UIColor,
+        normalLabelFgColor: UIColor,
+        selectedLabelFgColor: UIColor,
+        selectedLabelBgColor: UIColor,
+        labelShadowStyle: SelectionElementStyling,
+        normalImageViewFgColor: UIColor,
+        normalImageViewBgColor: UIColor,
+        selectedImageViewFgColor: UIColor,
+        selectedImageViewBgColor: UIColor,
+        imageViewShadowStyle: SelectionElementStyling,
+        normalButtonFgColor: UIColor,
+        normalButtonBgColor: UIColor,
+        highlightedButtonFgColor: UIColor,
+        highlightedButtonBgColor: UIColor,
+        buttonShadowStyle: SelectionElementStyling
+    ) {
+        self.normalLabelBgColor = normalLabelBgColor
+        self.normalLabelFgColor = normalLabelFgColor
+        self.selectedLabelFgColor = selectedLabelFgColor
+        self.selectedLabelBgColor = selectedLabelBgColor
+        self.labelShadowStyle = labelShadowStyle
+        self.normalImageViewFgColor = normalImageViewFgColor
+        self.normalImageViewBgColor = normalImageViewBgColor
+        self.selectedImageViewFgColor = selectedImageViewFgColor
+        self.selectedImageViewBgColor = selectedImageViewBgColor
+        self.imageViewShadowStyle = imageViewShadowStyle
+        self.normalButtonFgColor = normalButtonFgColor
+        self.normalButtonBgColor = normalButtonBgColor
+        self.highlightedButtonFgColor = highlightedButtonFgColor
+        self.highlightedButtonBgColor = highlightedButtonBgColor
+        self.buttonShadowStyle = buttonShadowStyle
+    }
 }
 
 // MARK: - SelectionElementStyling

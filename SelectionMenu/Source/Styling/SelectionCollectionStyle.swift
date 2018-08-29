@@ -17,6 +17,18 @@ public struct SelectionCollectionStyle {
     /// Only used for SingleSelectionCollection's markView background color
     public let markBackgroundColor: UIColor?
     public let backgroundColor: UIColor?
+
+    public init(
+        circular: Bool,
+        circularMark: Bool,
+        markBackgroundColor: UIColor?,
+        backgroundColor: UIColor?
+    ) {
+        self.circular = circular
+        self.circularMark = circularMark
+        self.markBackgroundColor = markBackgroundColor
+        self.backgroundColor = backgroundColor
+    }
 }
 
 // MARK: - SelectionCollectionStyling

@@ -13,7 +13,10 @@ public struct CompositeStyle {
     public let elementStyles: [SelectionElementStyling]
     public let collectionStyles: [SelectionCollectionStyling]
 
-    public init(elementStyles: [SelectionElementStyling] = [], collectionStyles: [SelectionCollectionStyling] = []) {
+    public init(
+        elementStyles: [SelectionElementStyling] = [],
+        collectionStyles: [SelectionCollectionStyling] = []
+    ) {
         self.elementStyles = elementStyles
         self.collectionStyles = collectionStyles
     }

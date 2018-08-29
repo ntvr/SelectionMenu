@@ -20,6 +20,24 @@ public struct UniversalStyle {
     public let selectedBgColor: UIColor?
     public let deselectedFgColor: UIColor?
     public let deselectedBgColor: UIColor?
+
+    public init(
+        circular: Bool,
+        collectionBgColor: UIColor?,
+        collectionHighightColor: UIColor?,
+        selectedFgColor: UIColor?,
+        selectedBgColor: UIColor?,
+        deselectedFgColor: UIColor?,
+        deselectedBgColor: UIColor?
+    ) {
+        self.circular = circular
+        self.collectionBgColor = collectionBgColor
+        self.collectionHighightColor = collectionHighightColor
+        self.selectedFgColor = selectedFgColor
+        self.selectedBgColor = selectedBgColor
+        self.deselectedFgColor = deselectedFgColor
+        self.deselectedBgColor = deselectedBgColor
+    }
 }
 
 // MARK: - SelectionCollectionStyling
