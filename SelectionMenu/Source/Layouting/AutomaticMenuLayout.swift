@@ -33,7 +33,7 @@ public struct AutomaticMenuLayout: SelectionMenuLayouting {
         default: vertical = .bottomToTop(direction: .down)
         }
 
-        return StaticMenuLayout(verticalSpacing: verticalSpacing,
+        return ManualMenuLayout(verticalSpacing: verticalSpacing,
                                 menuButtonHeightRatio: menuButtonHeightRatio,
                                 horizontalAlignment: horizontal,
                                 verticalAlignment: vertical)

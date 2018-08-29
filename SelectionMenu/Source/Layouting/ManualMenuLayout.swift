@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import SnapKit
 
-public struct StaticMenuLayout: SelectionMenuLayouting {
+public struct ManualMenuLayout: SelectionMenuLayouting {
     public var verticalSpacing: CGFloat = 10
     public var menuButtonHeightRatio: CGFloat = 1.2
 
