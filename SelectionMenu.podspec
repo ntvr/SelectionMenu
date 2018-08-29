@@ -26,7 +26,7 @@ It allows to present single-selection, multi-selection or button-like rows.
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'stemberamichal' => 'stembera.michal@gmail.com' }
-  s.source           = { :git => 'https://github.com/stemberamichal/SelectionMenu.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/ntvr/SelectionMenu.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '10.0'
