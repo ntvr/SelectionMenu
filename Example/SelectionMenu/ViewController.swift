@@ -33,7 +33,9 @@ class ViewController: UIViewController {
             (type: .buttonSelection, [.text("😀"), .text("🙂"), .text("😐"), .text("🙁"), .text("😞")])
         )
 
-        menu.dataSource = menuDataSource   
+        menu.dataSource = menuDataSource
+        menu.elementStyle = CompositeStyle(elementStyles: [UniversalStyle.bluish, ShadowStyle.light])
+        menu.collectionStyle = CompositeStyle(collectionStyles: [UniversalStyle.bluish, ShadowStyle.dark])
         menu.delegate = self
 
         setupConstraints()
