@@ -110,17 +110,33 @@ public protocol SelectionCollectionDelegate: class {
 }
 
 // MARK: - SelectionElementStyling
+/// Defines api for object resposible for styling SelectionElements.
 public protocol SelectionElementStyling {
+    /// Applies necessary styling to the given element.
+    ///
+    /// - Parameter element: SelectionElement styles should be applied to.
+    /// - Parameter selected: Whether the given element is selected:
+    ///     - For singleSelection the element is selected if it is the currently last selected one.
+    ///     - For multiSeclection the element is selected if it is amongst selected selecetedIndexes.
+    ///     - For buttonSelection the element is selected if it is highlighted.
     func apply(to element: SelectionElementView, selected: Bool)
 }
 
 // MARK: - SelectionCollectionStyling
+/// Defines api for object resposible for styling SelectionCollections.
 public protocol SelectionCollectionStyling {
+    /// Applies necessary styling to the given collection.
     func apply(to collection: SelectionCollectionView)
 }
 
 // MARK: - ActionRegistrable
+/// Unifies the api for views to be registered for tap recognition.
 @objc public protocol TapActionRegisterable {
+    /// Controls whether the tap gesture is enabled for the view or not.
     var tapEnabled: Bool { get set }
+
+    /// Registers the tap gesture for the view. The implementation is up to the view.
+    ///
+    /// For example UIButton just calls `addTarget(_, action:, for:)` for .touchUpInside.
     func addTargetForTapGesture(target: Any?, action: Selector)
 }
