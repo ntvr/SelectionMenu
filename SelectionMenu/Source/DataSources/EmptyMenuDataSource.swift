@@ -9,6 +9,10 @@
 import Foundation
 import UIKit
 
+/// Empty Menu data source.
+///
+/// Returns 0 from `selectionMenuNumberOfSections()` and `selectionMenu(numberOfElementsIn:)`
+/// Throws `fatalError` in `selectionMenu(typeOf:)` and `selectionMenu(viewFor:, in:)`
 public class EmptyDataSource: SelectionMenuDataSource {
     public var visualEffect: UIVisualEffect? = UIBlurEffect(style: .light)
 
@@ -19,7 +23,7 @@ public class EmptyDataSource: SelectionMenuDataSource {
     }
 
     public func selectionMenu(typeOf section: Int) -> SelectionMenu.SectionType {
-        return .singleSelection(selected: 0)
+        fatalError("Should not get called as there are no sections/buttons")
     }
 
     public func selectionMenu(numberOfElementsIn section: Int) -> Int {
