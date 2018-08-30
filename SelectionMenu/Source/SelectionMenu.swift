@@ -14,33 +14,53 @@ import SnapKit
 public protocol SelectionMenuDelegate: class {
     /// Called whenever `SelectionMenu`'s `show(animated:)` is intitiated.
     func selectionMenu(_ menu: SelectionMenu, willShow animated: Bool)
+
     /// Called whenever `SelectionMenu`'s `hide(animated:)` is intitiated.
     func selectionMenu(_ menu: SelectionMenu, willHide animated: Bool)
 
     /// Called whenever contained collection of type `.singleSelection` selects element.
     /// The same element can be selected multiple times in a row.
     func selectionMenu(_ menu: SelectionMenu, didSelectSingleIndex index: Int, in section: Int)
+
     /// Called whenever contained collection of type `.multiSelection` changes its selection.
     /// Set of the indexes is not ordered and does not have to change between calls.
     func selectionMenu(_ menu: SelectionMenu, didSelectMultipleIndexes indexes: [Int], in section: Int)
+
     /// Called whenever contained collection of type `.buttonSelection` presses (.touchUpInside)  button.
     func selectionMenu(_ menu: SelectionMenu, didSelectButtonAt index: Int, in section: Int)
 }
 
 // MARK: - SelectionMenuDataSource
 public protocol SelectionMenuDataSource: class {
+    /// Visual effect to be shown in the background when the SelectionMenu is presented.
     var visualEffect: UIVisualEffect? { get }
+
+    /// Number of `SelectionCollection`s in `SelectionMenu`.
     func selectionMenuNumberOfSections() -> Int
+
+    /// Type of the `SelectionCollection` determines which UI component will be used for the collection.
     func selectionMenu(typeOf section: Int) -> SelectionMenu.SectionType
+
+    /// Number of `SelectionElement`s within `SelectionColletion` in given section.
     func selectionMenu(numberOfElementsIn section: Int) -> Int
+
+    /// `SelectionElementView` which should be used for given index in given section.
+    /// All views from single section will be gathered at once before initialization of their containing collection.
     func selectionMenu(viewFor index: Int, in section: Int) -> SelectionElementView
 }
 
 // MARK: - SelectionMenuButton
 public class SelectionMenu: UIView {
+
+    /// Type of the section determines which kind of UI will be used for section.
     public enum SectionType: Hashable {
+        /// Single selection collection with default selected index.
         case singleSelection(selected: Int)
+
+        /// Multi selection collection with default selected indexes given in an array.
         case multiSelection(selected: [Int])
+
+        /// Button selection collection.
         case buttonSelection
 
         public var hashValue: Int {
@@ -52,19 +72,36 @@ public class SelectionMenu: UIView {
         }
     }
 
+    /// The object that acts as the delegate of the selection menu.
+    /// The delegate must adopt the SelectionMenuDelegate protocol. The delegate is not retained.
     public weak var delegate: SelectionMenuDelegate?
+
+    /// The object that acts as the data source of the selection menu.
+    /// The data sources must adopt the SelectionMenuDataSource protocol. The data source is not retained.
+    /// - Important:
+    /// Data source is only taken in consideration when the menu is being shown to construct the view structure.
+    /// It has no meaning afterwards until `show(animated:)` is called next time.
     public weak var dataSource: SelectionMenuDataSource?
 
-    // Functionality
+    /// Controls whether the menu content should be hidden when platform/visualEffect is tapped.
+    /// This property is checked each time platform is tapped. Defaults to true.
     public var hideViewOnTappingPlatform: Bool = true
+
+    /// Controls show/hide animation duration. Defaults to 0.5.
     public var animationDuration: TimeInterval = 0.5
-    // Layout
+
+    /// The object that acts as the layout of the selection menu's collections.
+    /// The layout must adopt the SelectionMenuLayouting protocol. The layout is retained.
+    /// Defaults to `AutomaticMenuLayout`
     public var collectionsLayout: SelectionMenuLayouting = AutomaticMenuLayout()
-    // Styles
+
+    /// Style to be applied to each contained collection.
     public var collectionStyle: SelectionCollectionStyling = UniversalStyle.redWhite { didSet { updateTheme() } }
+
+    /// Style to be applied to each contained element.
     public var elementStyle: SelectionElementStyling = UniversalStyle.redWhite { didSet { updateTheme() } }
 
-    // Private properties
+    // MARK: -  Private properties
     private static var defaultDataSource: SelectionMenuDataSource = EmptyDataSource()
 
     private weak var menuButton: MenuButtonView!
@@ -93,12 +130,24 @@ public class SelectionMenu: UIView {
 }
 
 // MARK: - Public API
-public extension SelectionMenu{
+public extension SelectionMenu {
+    /// Registers given class as a collection type for given section.
+    /// Given type must subclass `UIView` and adopt SelectionCollection protocol.
+    ///
+    /// Defaults to:
+    /// - `SingleSelectionCollection` for `SectionType.singleSelection`
+    /// - `MultiSelectionCollection` for `SectionType.multiSelection`
+    /// - `ButtonSelectionCollection` for `SectionType.buttonSelection`
     func register(collectionType: SelectionCollectionView.Type, for sectionType: SectionType) {
         collectionTypeMap[sectionType] = collectionType
     }
 
+    /// - Inserts the platform (UIView) beneath itself and populates it with content.
+    /// - Sets the layout to hidden and starts animation to shown layout.
+    ///
+    /// This method is triggered when associated menu button is tapped. Can be called manually.
     func show(animated: Bool) {
+        // TODO: Check if the menu is not already being presented
         delegate?.selectionMenu(self, willShow: animated)
 
         let dataSource = self.dataSource ?? SelectionMenu.defaultDataSource
@@ -129,7 +178,13 @@ public extension SelectionMenu{
         }
     }
 
+    /// - Animates all subviews to hidden layout.
+    /// - Removes the platform with all its contained views.
+    /// - Cleans up associated properties for example `elementViews`.
+    ///
+    /// This method is triggered when associated menu button is tapped. Can be called manually.
     func hide(animated: Bool) {
+        // TODO: - Check if the menu is not already being hidden
         delegate?.selectionMenu(self, willHide: animated)
 
         let hideClosure: () -> Void = {
@@ -299,7 +354,6 @@ private extension SelectionMenu {
             collectionsLayout.layoutCollections(menu: self, platform: platform, collections: collections)
         }
     }
-
 
     func setupHideConstraints() {
         platform?.snp.remakeConstraints { make in
