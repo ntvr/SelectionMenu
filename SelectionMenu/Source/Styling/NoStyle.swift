@@ -10,6 +10,7 @@ import Foundation
 
 /// Use this style if you do not want to apply any styles through Styling protocols.
 public struct NoStyle {
+    /// No values necessary, because NoStyle does not apply any styles.
     public init() { }
 }
 
