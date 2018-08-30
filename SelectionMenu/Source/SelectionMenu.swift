@@ -12,11 +12,18 @@ import SnapKit
 
 // MARK: SelectionMenuDelegate
 public protocol SelectionMenuDelegate: class {
+    /// Called whenever `SelectionMenu`'s `show(animated:)` is intitiated.
     func selectionMenu(_ menu: SelectionMenu, willShow animated: Bool)
+    /// Called whenever `SelectionMenu`'s `hide(animated:)` is intitiated.
     func selectionMenu(_ menu: SelectionMenu, willHide animated: Bool)
 
+    /// Called whenever contained collection of type `.singleSelection` selects element.
+    /// The same element can be selected multiple times in a row.
     func selectionMenu(_ menu: SelectionMenu, didSelectSingleIndex index: Int, in section: Int)
+    /// Called whenever contained collection of type `.multiSelection` changes its selection.
+    /// Set of the indexes is not ordered and does not have to change between calls.
     func selectionMenu(_ menu: SelectionMenu, didSelectMultipleIndexes indexes: [Int], in section: Int)
+    /// Called whenever contained collection of type `.buttonSelection` presses (.touchUpInside)  button.
     func selectionMenu(_ menu: SelectionMenu, didSelectButtonAt index: Int, in section: Int)
 }
 

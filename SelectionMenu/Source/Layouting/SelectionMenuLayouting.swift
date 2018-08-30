@@ -67,6 +67,9 @@ public enum VerticalAlignment {
     /// Bottom of menu button to top of menu
     case bottomToTop(direction: VerticalDirection)
 
+    /// Controls direction of laying out the `SelectionCollection`s.
+    /// - `up`: The first `SelectionCollection` will be at the bottom and the last at the top.
+    /// - `down`: The first `SelectionCollection` will be at the top and the last at the bottom.
     public var direction: VerticalDirection {
         switch self {
         case .top: return .down
