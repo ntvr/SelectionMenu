@@ -28,8 +28,8 @@ public struct UniversalStyle {
         selectedFgColor: UIColor?,
         selectedBgColor: UIColor?,
         deselectedFgColor: UIColor?,
-        deselectedBgColor: UIColor?
-    ) {
+        deselectedBgColor: UIColor?)
+    {
         self.circular = circular
         self.collectionBgColor = collectionBgColor
         self.collectionHighightColor = collectionHighightColor

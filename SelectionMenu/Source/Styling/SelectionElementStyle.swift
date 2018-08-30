@@ -48,8 +48,8 @@ struct SelectionElementStyle {
         normalButtonBgColor: UIColor,
         highlightedButtonFgColor: UIColor,
         highlightedButtonBgColor: UIColor,
-        buttonShadowStyle: SelectionElementStyling
-    ) {
+        buttonShadowStyle: SelectionElementStyling)
+    {
         self.normalLabelBgColor = normalLabelBgColor
         self.normalLabelFgColor = normalLabelFgColor
         self.selectedLabelFgColor = selectedLabelFgColor

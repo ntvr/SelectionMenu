@@ -19,8 +19,8 @@ public struct ShadowStyle {
         shadowColor: CGColor?,
         shadowOpacity: Float,
         shadowOffset: CGSize,
-        shadowRadius: CGFloat
-    ) {
+        shadowRadius: CGFloat)
+    {
         self.shadowColor = shadowColor
         self.shadowOpacity = shadowOpacity
         self.shadowOffset = shadowOffset

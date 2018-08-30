@@ -22,8 +22,8 @@ public struct SelectionCollectionStyle {
         circular: Bool,
         circularMark: Bool,
         markBackgroundColor: UIColor?,
-        backgroundColor: UIColor?
-    ) {
+        backgroundColor: UIColor?)
+    {
         self.circular = circular
         self.circularMark = circularMark
         self.markBackgroundColor = markBackgroundColor

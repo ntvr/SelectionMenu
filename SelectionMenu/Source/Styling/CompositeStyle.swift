@@ -15,8 +15,8 @@ public struct CompositeStyle {
 
     public init(
         elementStyles: [SelectionElementStyling] = [],
-        collectionStyles: [SelectionCollectionStyling] = []
-    ) {
+        collectionStyles: [SelectionCollectionStyling] = [])
+    {
         self.elementStyles = elementStyles
         self.collectionStyles = collectionStyles
     }

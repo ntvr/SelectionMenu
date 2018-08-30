@@ -20,8 +20,8 @@ public struct ManualMenuLayout: SelectionMenuLayouting {
     public init(verticalSpacing: CGFloat = 10,
          menuButtonHeightRatio: CGFloat = 1.2,
          horizontalAlignment: HorizontalAlignment = .rightToRight,
-         verticalAlignment: VerticalAlignment = .topToBottom(direction: .up)
-    ) {
+         verticalAlignment: VerticalAlignment = .topToBottom(direction: .up))
+    {
         self.verticalSpacing = verticalSpacing
         self.menuButtonHeightRatio = menuButtonHeightRatio
         self.horizontalAlignment = horizontalAlignment
