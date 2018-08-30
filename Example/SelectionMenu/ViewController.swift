@@ -33,6 +33,12 @@ class ViewController: UIViewController {
             (type: .buttonSelection, [.text("😀"), .text("🙂"), .text("😐"), .text("🙁"), .text("😞")])
         )
 
+        menuDataSource = StaticMenuDataSource(textSections:
+            (type: .singleSelection(selected: 0), values: ["A", "B", "C"]),
+            (type: .multiSelection(selected: [0, 1]), values: ["0", "1", "2"]),
+            (type: .buttonSelection, values: ["I", "II"])
+        )
+
         menu.dataSource = menuDataSource
         menu.elementStyle = CompositeStyle(elementStyles: [UniversalStyle.bluish, ShadowStyle.light])
         menu.collectionStyle = CompositeStyle(collectionStyles: [UniversalStyle.bluish, ShadowStyle.dark])
