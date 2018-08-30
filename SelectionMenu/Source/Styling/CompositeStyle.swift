@@ -9,10 +9,19 @@
 import Foundation
 import UIKit
 
+/// Universal style combining all passed styles and iterating over them when called.
 public struct CompositeStyle {
+
+    /// Combined SelectionElementStyling to apply when `apply(to:, selected:)` is called.
     public let elementStyles: [SelectionElementStyling]
+
+    /// Combined SelectionCollectionStyling to apply when `apply(to:)` is called.
     public let collectionStyles: [SelectionCollectionStyling]
 
+    /// Initializes CompositStyle.
+    ///
+    /// - Parameter elementStyles: Styles to apply when `apply(to:, selected:)` is called.
+    /// - Parameter collectionStyles: Styles to apply when `apply(to:)` is called.
     public init(
         elementStyles: [SelectionElementStyling] = [],
         collectionStyles: [SelectionCollectionStyling] = [])
