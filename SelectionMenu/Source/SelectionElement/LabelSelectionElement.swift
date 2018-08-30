@@ -9,9 +9,15 @@
 import Foundation
 import UIKit
 
+/// Text only view which can be used with SelectionMenu as SelectionCollection.
 open class LabelSelectionElement: UIView {
+
+    /// Label for text values centered within the view.
     public weak var label: UILabel!
 
+    /// Initializes LabelSelectionElement
+    ///
+    /// - Parameter text: Text for the contained label.
     public init(text: String?) {
         super.init(frame: .zero)
 
