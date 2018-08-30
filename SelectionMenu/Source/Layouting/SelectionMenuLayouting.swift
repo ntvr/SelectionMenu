@@ -98,6 +98,6 @@ public enum VerticalAlignment {
 
 /// MARK: - SelectionMenuLayouting
 public protocol SelectionMenuLayouting {
-    // Layouout collection views
+    // Layout collection views
     func layoutCollections(menu: SelectionMenu, platform: UIView, collections: [SelectionCollectionView])
 }
