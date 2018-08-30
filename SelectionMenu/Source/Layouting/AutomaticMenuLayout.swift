@@ -10,10 +10,20 @@ import Foundation
 import UIKit
 import SnapKit
 
+/// Automatic layout calculates the most remaining space and constructs according ManualMenuLayout.
+/// Then uses the calculated layout to position the views.
 public struct AutomaticMenuLayout: SelectionMenuLayouting {
+
+    /// Vertical spacing between collections.
     public var verticalSpacing: CGFloat
+
+    /// Ratio of MenuButton to SelectionCollections (MenuButton.height / SelectionCollection.height).
     public var menuButtonHeightRatio: CGFloat
 
+    /// Initializes AutomaticMenuLayout
+    ///
+    /// - Parameter verticalSpacing: Vertical spacing between collections.
+    /// - Parameter menuButtonHeightRatio: Ratio of MenuButton to SelectionCollection height (MenuButton.height / SelectionCollection.height).
     public init(
         verticalSpacing: CGFloat = 5,
         menuButtonHeightRatio: CGFloat = 1.3)
