@@ -96,8 +96,9 @@ public enum VerticalAlignment {
     }
 }
 
-/// MARK: - SelectionMenuLayouting
+// MARK: - SelectionMenuLayouting
+/// Protocol which can be used to inject different layouts for SelectionMenu.
 public protocol SelectionMenuLayouting {
-    // Layout collection views
+    /// Setups autolayout for all SelectionCollections within SelectionMenu.
     func layoutCollections(menu: SelectionMenu, platform: UIView, collections: [SelectionCollectionView])
 }
