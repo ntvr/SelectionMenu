@@ -9,15 +9,24 @@
 import Foundation
 import UIKit
 
+/// Style that can be applied only to SelectionCollections.
 public struct SelectionCollectionStyle {
+    /// - Rounded corners to form cirlce if squared.
+    /// - Corner radius is equal to half of shorter side.
     public let circular: Bool
-    /// Only used for SingleSelectionCollection's markView circular property
+
+    /// Controls SingleCollection's markView circularity.
     public let circularMark: Bool
 
-    /// Only used for SingleSelectionCollection's markView background color
+    /// Controls SingleCollection's markView's backgroundColor.
     public let markBackgroundColor: UIColor?
+
+    /// Controls SelectionCollection's background color.
     public let backgroundColor: UIColor?
 
+    /// Initalizes SelectionCollectionStyle simply setting the properties with values provided.
+    ///
+    /// To inspect the impact of the values see SelectionCollectionStyle's properties
     public init(
         circular: Bool,
         circularMark: Bool,
