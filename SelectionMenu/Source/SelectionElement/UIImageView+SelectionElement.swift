@@ -10,6 +10,8 @@ import Foundation
 import UIKit
 
 extension UIImageView: SelectionElement {
+
     public func expand() { }
+
     public func collapse() { }
 }
