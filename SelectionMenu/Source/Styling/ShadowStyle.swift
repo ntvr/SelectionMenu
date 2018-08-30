@@ -9,12 +9,26 @@
 import Foundation
 import UIKit
 
+/// Can be used to apply style of the shadow to either SelectionCollection or SelectionElement.
 public struct ShadowStyle {
+
+    /// Color of the shadow - mapped directly to layer.
     public let shadowColor: CGColor?
+    /// Oppacity of the shadow - mapped directly to layer.
     public let shadowOpacity: Float
+
+    /// Offset of the shadow - mapped directly to layer.
     public let shadowOffset: CGSize
+
+    /// Radius of the shadow - mapped directly to layer.
     public let shadowRadius: CGFloat
 
+    /// Initializes ShadowStyle with given values.
+    ///
+    /// - Parameter shadowColor: Color of the shadow - mapped directly to layer.
+    /// - Parameter shadowOpacity: Oppacity of the shadow - mapped directly to layer.
+    /// - Parameter shadowOffset: Offset of the shadow - mapped directly to layer.
+    /// - Parameter shadowRadius: Radius of the shadow - mapped directly to layer.
     public init(
         shadowColor: CGColor?,
         shadowOpacity: Float,
@@ -49,18 +63,35 @@ extension ShadowStyle: SelectionCollectionStyling {
 }
 
 public extension ShadowStyle {
+
+    /// Light shadow style with:
+    /// - shadowColor: UIColor.lightGray,
+    /// - shadowOpacity: 0.5,
+    /// - shadowOffset: CGSize(width: 0, height: 2),
+    /// - shadowRadius: 3
     static var light = ShadowStyle(
         shadowColor: UIColor.lightGray.cgColor,
         shadowOpacity: 0.5,
         shadowOffset: CGSize(width: 0, height: 2),
         shadowRadius: 3)
 
+    /// Medium shadow style with:
+    /// - shadowColor: UIColor.gray,
+    /// - shadowOpacity: 0.6,
+    /// - shadowOffset: CGSize(width: 0, height: 2),
+    /// - shadowRadius: 3)
     static var medium = ShadowStyle(
         shadowColor: UIColor.gray.cgColor,
         shadowOpacity: 0.6,
         shadowOffset: CGSize(width: 0, height: 2),
         shadowRadius: 3)
 
+
+    /// Dark shadow style with:
+    /// - shadowColor: UIColor.darkGray,
+    /// - shadowOpacity: 1.0,
+    /// - shadowOffset: CGSize(width: 0, height: 2),
+    /// - shadowRadius: 3)
     static var dark = ShadowStyle(
         shadowColor: UIColor.darkGray.cgColor,
         shadowOpacity: 1.0,
