@@ -11,16 +11,30 @@ import UIKit
 import SnapKit
 
 public struct ManualMenuLayout: SelectionMenuLayouting {
+    
+    /// Vertical spacing between collections.
     public var verticalSpacing: CGFloat
+
+    /// Ratio of MenuButton to SelectionCollections (MenuButton.height / SelectionCollection.height).
     public var menuButtonHeightRatio: CGFloat
 
+    /// Rule for horizontal alignment. For more information see HorizontalAlignment.
     public var horizontalAlignment: HorizontalAlignment
+
+    /// Rule for vertical alignment. For more information see VerticalAlignment.
     public var verticalAlignment: VerticalAlignment
 
-    public init(verticalSpacing: CGFloat = 10,
-         menuButtonHeightRatio: CGFloat = 1.2,
-         horizontalAlignment: HorizontalAlignment = .rightToRight,
-         verticalAlignment: VerticalAlignment = .topToBottom(direction: .up))
+    /// Intializes ManualMenuLayout
+    ///
+    /// - Parameter verticalSpacing: Vertical spacing between collections.
+    /// - Parameter menuButtonHeightRatio: Ratio of MenuButton to SelectionCollections (MenuButton.height / SelectionCollection.height).
+    /// - Parameter horizontalAlignment: Rule for horizontal alignment. For more information see HorizontalAlignment.
+    /// - Parameter verticalAlignment: Rule for vertical alignment. For more information see VerticalAlignment.
+    public init(
+        verticalSpacing: CGFloat = 10,
+        menuButtonHeightRatio: CGFloat = 1.2,
+        horizontalAlignment: HorizontalAlignment = .rightToRight,
+        verticalAlignment: VerticalAlignment = .topToBottom(direction: .up))
     {
         self.verticalSpacing = verticalSpacing
         self.menuButtonHeightRatio = menuButtonHeightRatio
