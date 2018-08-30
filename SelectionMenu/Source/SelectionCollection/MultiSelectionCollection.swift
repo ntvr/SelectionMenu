@@ -13,20 +13,24 @@ import UIKit
 public class MultiSelectionCollection: UIControl, SelectionCollection {
     // Public properties
     public weak var delegate: SelectionCollectionDelegate?
-    public var collectionStyle: SelectionCollectionStyling = UniversalStyle.blackWhite {
-        didSet { updateTheme() }
-    }
+
     public var elementStyle: SelectionElementStyling = UniversalStyle.blackWhite {
         didSet { updateTheme() }
     }
 
+    /// Currently selected indexes. Use `setSelected(indexes:)` to change them.
+    public private(set) var selectedIndexes: [Int] = []
+
     // Subviews
+    /// Background view which can be used for corner radius to not not mess up shadows.
     public private(set) var backgroundView: UIView!
+
+    /// Contained elements.
     public private(set) var elements: [SelectionElementView]
 
-    // Private properties
-    private var selectedIndexes: [Int] = []
-
+    /// Initializes SingleSelectionCollection
+    ///
+    /// - Parameter elements: Elements that should be contained in MultiSelectionCollection.
     public required init(elements: [SelectionElementView]) {
         self.elements = elements
         super.init(frame: .zero)
@@ -54,7 +58,9 @@ extension MultiSelectionCollection {
 
 // MARK: - External API
 public extension MultiSelectionCollection {
+    /// Sets set of selected indexes. Apply element styles with respective selected value for each contained.
     func setSelected(indexes: [Int]) {
+        // TODO: Filter indexes to be within range and remove duplicity
         elements.enumerated().forEach { offset, element in
             elementStyle.apply(to: element, selected: indexes.contains(offset))
         }
@@ -106,8 +112,6 @@ private extension MultiSelectionCollection {
     }
 
     func updateTheme() {
-        collectionStyle.apply(to: self)
-
         elements.enumerated().forEach { offset, element in
             elementStyle.apply(to: element, selected: selectedIndexes.contains(offset))
         }

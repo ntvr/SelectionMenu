@@ -49,7 +49,7 @@ extension UniversalStyle: SelectionCollectionStyling {
             single.backgroundView.circular = circular
             single.markView.circular = circular
             single.backgroundView.backgroundColor = collectionBgColor
-            single.highlightColor = collectionHighightColor
+            single.markView.backgroundColor = collectionHighightColor
 
         case let multi as MultiSelectionCollection:
             multi.circular = circular

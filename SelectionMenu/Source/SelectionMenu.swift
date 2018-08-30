@@ -96,10 +96,14 @@ public class SelectionMenu: UIView {
     public var collectionsLayout: SelectionMenuLayouting = AutomaticMenuLayout()
 
     /// Style to be applied to each contained collection.
-    public var collectionStyle: SelectionCollectionStyling = UniversalStyle.redWhite { didSet { updateTheme() } }
+    public var collectionStyle: SelectionCollectionStyling = UniversalStyle.redWhite {
+        didSet { updateTheme() }
+    }
 
     /// Style to be applied to each contained element.
-    public var elementStyle: SelectionElementStyling = UniversalStyle.redWhite { didSet { updateTheme() } }
+    public var elementStyle: SelectionElementStyling = UniversalStyle.redWhite {
+        didSet { updateTheme() }
+    }
 
     // MARK: -  Private properties
     private static var defaultDataSource: SelectionMenuDataSource = EmptyDataSource()
@@ -282,7 +286,7 @@ private extension SelectionMenu {
 
     func updateTheme() {
         collections?.forEach { collection  in
-            collection.collectionStyle = collectionStyle
+            collectionStyle.apply(to: collection)
             collection.elementStyle = elementStyle
         }
     }

@@ -11,22 +11,26 @@ import UIKit
 
 // MARK: - ButtonSelectionCollection
 public class ButtonSelectionCollection: UIControl, SelectionCollection {
-    // Public properties
+
     public weak var delegate: SelectionCollectionDelegate?
-    public var collectionStyle: SelectionCollectionStyling = UniversalStyle.blackWhite {
-        didSet { updateTheme() }
-    }
+
     public var elementStyle: SelectionElementStyling = UniversalStyle.blackWhite {
         didSet { updateTheme() }
     }
 
     // Subviews
+    /// Background view which can be used for corner radius to not not mess up shadows.
     public private(set) var backgroundView: UIView!
+
+    /// Contained elements.
     public private(set) var elements: [SelectionElementView]
 
     // Private properties
     private var initiallyTouchedElement: SelectionElementView?
 
+    /// Initializes SingleSelectionCollection
+    ///
+    /// - Parameter elements: Elements that should be contained in ButtonSelectionCollection.
     public required init(elements: [SelectionElementView]) {
         self.elements = elements
         super.init(frame: .zero)
@@ -56,7 +60,7 @@ extension ButtonSelectionCollection {
 extension ButtonSelectionCollection {
     public override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         let touched = touchedElement(for: touches, with: event)
-        updatedHighlighted(to: touched?.offset)
+        updateHighlighted(to: touched?.offset)
         initiallyTouchedElement = touched?.element
     }
 
@@ -65,9 +69,9 @@ extension ButtonSelectionCollection {
         if let touched = touched,
             let initiallyTouchedElement = initiallyTouchedElement,
             touched.element == initiallyTouchedElement {
-            updatedHighlighted(to: touched.offset)
+            updateHighlighted(to: touched.offset)
         } else {
-            updatedHighlighted(to: nil)
+            updateHighlighted(to: nil)
         }
     }
 
@@ -110,7 +114,7 @@ private extension ButtonSelectionCollection {
         }
     }
 
-    func updatedHighlighted(to index: Int?) {
+    func updateHighlighted(to index: Int?) {
         let index = index ?? -1
 
         elements.enumerated().forEach { offset, element in
@@ -119,9 +123,7 @@ private extension ButtonSelectionCollection {
     }
 
     func updateTheme() {
-        collectionStyle.apply(to: self)
-
-        updatedHighlighted(to: nil)
+        updateHighlighted(to: nil)
     }
 
     func setupConstrains() {

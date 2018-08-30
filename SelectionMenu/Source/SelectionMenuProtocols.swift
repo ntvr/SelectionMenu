@@ -39,9 +39,6 @@ public protocol SelectionCollection: Expandable {
     /// The delegate must adopt the `SelectionCollectionDelegate` protocol. The delegate is not retained.
     var delegate: SelectionCollectionDelegate? { get set }
 
-    /// Style to be applied to each contained collection.
-    var collectionStyle: SelectionCollectionStyling { get set }
-
     /// Style to be applied to each contained element.
     var elementStyle: SelectionElementStyling { get set }
 

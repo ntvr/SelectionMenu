@@ -12,26 +12,33 @@ import SnapKit
 
 // MARK: - SingleChoiceView
 public class SingleSelectionCollection: UIControl, SelectionCollection {
-    // Public properties
+
     public weak var delegate: SelectionCollectionDelegate?
+
+    /// Index of currently selected element. Use `setSelected(index:)` to change it.
     public private(set) var selectedIndex: Int = 0
-    public var highlightColor: UIColor?
-    public var collectionStyle: SelectionCollectionStyling = UniversalStyle.blackWhite {
-        didSet { updateTheme() }
-    }
+
     public var elementStyle: SelectionElementStyling = UniversalStyle.blackWhite {
         didSet { updateTheme() }
     }
 
     // Subviews
+    /// Background view which can be used for corner radius to not not mess up shadows.
     public private(set) weak var backgroundView: UIView!
+
+    /// View that is placed behind currently selected element.
     public private(set) weak var markView: UIView!
+
+    /// Contained elements.
     public private(set) var elements: [SelectionElementView]
 
     // Private properties
     private weak var markViewOriginalConstraint: Constraint?
     private weak var markViewMovingConstraint: Constraint?
 
+    /// Initializes SingleSelectionCollection
+    ///
+    /// - Parameter elements: Elements that should be contained in SingleSelectionCollection.
     public required init(elements: [SelectionElementView]) {
         self.elements = elements
         super.init(frame: .zero)
@@ -60,10 +67,61 @@ extension SingleSelectionCollection {
 
 // MARK: - External API
 extension SingleSelectionCollection {
+    /// Changes the currently selected index.
+    /// - If the index is not within allowed interval then does nothing.
     public func setSelected(index: Int) {
-        let allowedIndex = max(min(elements.count - 1, index), 0)
-        selectedIndex = allowedIndex
-        moveMark(to: allowedIndex)
+        guard 0..<elements.count ~= index else {
+            return
+        }
+        selectedIndex = index
+        moveMark(to: index)
+    }
+}
+
+// MARK: - Tracking touches
+extension SingleSelectionCollection {
+    public override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        guard let touch = touches.first else {
+            return
+        }
+
+        moveMark(with: touch)
+    }
+
+    public override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        guard let touch = touches.first else {
+            return
+        }
+
+        moveMark(with: touch)
+    }
+
+    public override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        guard let touch = touches.first else {
+            return
+        }
+
+        // Calculate closest
+        let touchLocation = touch.location(in: self)
+        let closestIndex = elements
+            .enumerated()
+            .map { index, view -> (CGFloat, Int) in
+                let center = view.center
+                let xDistance = abs(center.x - touchLocation.x)
+                return (xDistance, index)
+            }.sorted { $0.0 < $1.0 }
+            .first?.1 ?? 0
+
+        selectedIndex = closestIndex
+        moveMark(to: closestIndex)
+        updateTheme()
+        delegate?.singleSelectionCollection(self,
+                                            didSelect: elements[closestIndex],
+                                            at: selectedIndex)
+    }
+
+    public override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+        returnMarkToOriginal()
     }
 }
 
@@ -84,10 +142,6 @@ private extension SingleSelectionCollection {
     }
 
     func updateTheme() {
-        collectionStyle.apply(to: self)
-
-        markView.backgroundColor = highlightColor
-
         elements.enumerated().forEach { offset, element in
             elementStyle.apply(to: element, selected: offset == selectedIndex)
         }
@@ -156,52 +210,5 @@ private extension SingleSelectionCollection {
         markViewMovingConstraint = nil
 
         markViewOriginalConstraint?.activate()
-    }
-}
-
-// MARK: - Tracking touches
-extension SingleSelectionCollection {
-    public override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        guard let touch = touches.first else {
-            return
-        }
-
-        moveMark(with: touch)
-    }
-
-    public override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        guard let touch = touches.first else {
-            return
-        }
-
-        moveMark(with: touch)
-    }
-
-    public override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        guard let touch = touches.first else {
-            return
-        }
-
-        // Calculate closest
-        let touchLocation = touch.location(in: self)
-        let closestIndex = elements
-            .enumerated()
-            .map { index, view -> (CGFloat, Int) in
-                let center = view.center
-                let xDistance = abs(center.x - touchLocation.x)
-                return (xDistance, index)
-            }.sorted { $0.0 < $1.0 }
-            .first?.1 ?? 0
-
-        selectedIndex = closestIndex
-        moveMark(to: closestIndex)
-        updateTheme()
-        delegate?.singleSelectionCollection(self,
-                                            didSelect: elements[closestIndex],
-                                            at: selectedIndex)
-    }
-
-    public override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
-        returnMarkToOriginal()
     }
 }
