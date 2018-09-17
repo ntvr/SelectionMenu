@@ -8,12 +8,12 @@
 import Foundation
 
 /// Selection element view with UIImageView centered within it
-typealias ImageSelectionElement = ContainerSelectionElement<UIImageView>
+public typealias ImageSelectionElement = ContainerSelectionElement<UIImageView>
 
 /// Selection element view with UILabel centered within it
-typealias LabelSelectionElement = ContainerSelectionElement<UILabel>
+public typealias LabelSelectionElement = ContainerSelectionElement<UILabel>
 
-class ContainerSelectionElement<ContainedView>: UIView, SelectionElement where ContainedView: UIView {
+open class ContainerSelectionElement<ContainedView>: UIView, SelectionElement where ContainedView: UIView {
     /// View contained within background view nad centered within it.
     public weak var contentView: ContainedView!
     /// Background having same size as the superview.
