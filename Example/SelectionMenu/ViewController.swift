@@ -40,6 +40,10 @@ class ViewController: UIViewController {
         )
 
         menu.dataSource = menuDataSource
+        menu.collectionsLayout = ManualMenuLayout(verticalSpacing: 5,
+                                                  menuButtonHeightRatio: 1.2,
+                                                  horizontalAlignment: .right(inset: 5),
+                                                  verticalAlignment: .top(inset: 5))
         menu.elementStyle = CompositeStyle(elementStyles: [UniversalStyle.bluish, ShadowStyle.light])
         menu.collectionStyle = CompositeStyle(collectionStyles: [UniversalStyle.bluish, ShadowStyle.dark])
         menu.delegate = self
