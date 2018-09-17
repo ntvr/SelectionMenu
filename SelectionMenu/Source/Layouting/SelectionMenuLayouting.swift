@@ -86,8 +86,8 @@ public enum VerticalAlignment {
     func apply(to make: ConstraintMaker, with menu: SelectionMenu, and platform: UIView, spacing: CGFloat) {
         // TODO: Refactor spacing
         switch self {
-        case .top: make.top.equalTo(platform.snp.top).offset(spacing)
-        case .bottom: make.bottom.equalTo(platform.snp.bottom).offset(-spacing)
+        case let .top(inset): make.top.equalTo(platform.snp.top).inset(inset)
+        case let .bottom(inset): make.bottom.equalTo(platform.snp.bottom).inset(inset)
         case .topToTop: make.top.equalTo(menu.snp.top)
         case .bottomToBottom: make.bottom.equalTo(menu.snp.bottom)
         case .topToBottom: make.bottom.equalTo(menu.snp.top).offset(-spacing)
