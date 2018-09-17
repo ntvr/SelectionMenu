@@ -346,8 +346,14 @@ private extension SelectionMenu {
     }
 
     func setupShowConstraints() {
-        platform?.snp.remakeConstraints { make in
-            make.edges.equalToSuperview()
+        if let platform = platform, let superview = platform.superview, #available(iOS 11, *) {
+            platform.snp.remakeConstraints { make in
+                make.edges.equalTo(superview.safeAreaLayoutGuide)
+            }
+        } else {
+            platform?.snp.remakeConstraints { make in
+                make.edges.equalToSuperview()
+            }
         }
 
         backgroundBlurView?.snp.remakeConstraints { make in
