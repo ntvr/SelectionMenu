@@ -74,18 +74,22 @@ struct SelectionElementStyle {
 // MARK: - SelectionElementStyling
 extension SelectionElementStyle: SelectionElementStyling {
     public func apply(to element: SelectionElementView, selected: Bool) {
-        element.circular = circular
+
         if circular {
             element.clipsToBounds = true
         }
 
         switch element {
         case let labelElement as LabelSelectionElement:
+            labelElement.backgroundView.circular = circular
+            if circular { labelElement.backgroundView.clipsToBounds = true }
             labelElement.contentView.textColor = selected ? selectedLabelFgColor : normalLabelFgColor
             labelElement.backgroundColor = selected ? selectedLabelBgColor : normalLabelBgColor
             labelShadowStyle.apply(to: labelElement, selected: selected)
 
         case let imageElement as ImageSelectionElement:
+            imageElement.backgroundView.circular = circular
+            if circular { imageElement.backgroundView.clipsToBounds = true }
             imageElement.contentView.tintColor = selected ? selectedImageViewFgColor : normalImageViewFgColor
             imageElement.contentView.backgroundColor = selected ? selectedImageViewBgColor : normalImageViewBgColor
             imageViewShadowStyle.apply(to: imageElement, selected: selected)
