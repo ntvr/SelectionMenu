@@ -81,14 +81,14 @@ extension SelectionElementStyle: SelectionElementStyling {
 
         switch element {
         case let labelElement as LabelSelectionElement:
-            labelElement.label.textColor = selected ? selectedLabelFgColor : normalLabelFgColor
+            labelElement.contentView.textColor = selected ? selectedLabelFgColor : normalLabelFgColor
             labelElement.backgroundColor = selected ? selectedLabelBgColor : normalLabelBgColor
             labelShadowStyle.apply(to: labelElement, selected: selected)
 
-        case let imageView as UIImageView:
-            imageView.tintColor = selected ? selectedImageViewFgColor : normalImageViewFgColor
-            imageView.backgroundColor = selected ? selectedImageViewBgColor : normalImageViewBgColor
-            imageViewShadowStyle.apply(to: imageView, selected: selected)
+        case let imageElement as ImageSelectionElement:
+            imageElement.contentView.tintColor = selected ? selectedImageViewFgColor : normalImageViewFgColor
+            imageElement.contentView.backgroundColor = selected ? selectedImageViewBgColor : normalImageViewBgColor
+            imageViewShadowStyle.apply(to: imageElement, selected: selected)
 
         case let button as UIButton:
             button.setTitleColor(normalButtonFgColor, for: .normal)

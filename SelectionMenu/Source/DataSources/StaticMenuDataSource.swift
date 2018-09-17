@@ -119,11 +119,15 @@ extension StaticMenuDataSource: SelectionMenuDataSource {
     public func selectionMenu(viewFor index: Int, in section: Int) -> SelectionElementView {
         switch sections[section].values[index] {
         case let .text(title):
-            return LabelSelectionElement(text: title)
+            let labelElement = LabelSelectionElement()
+            labelElement.contentView.text = title
+            return labelElement
+
         case let .image(image):
-            let imageView = UIImageView(image: image.withRenderingMode(.alwaysTemplate))
-            imageView.contentMode = .scaleAspectFit
-            return imageView
+            let imageElement = ImageSelectionElement()
+            imageElement.contentView.image = image.withRenderingMode(.alwaysTemplate)
+            imageElement.contentView.contentMode = .scaleAspectFit
+            return imageElement
         }
     }
 }

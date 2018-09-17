@@ -72,21 +72,22 @@ extension UniversalStyle: SelectionCollectionStyling {
 extension UniversalStyle: SelectionElementStyling {
     public func apply(to element: SelectionElementView, selected: Bool) {
 
-        element.circular = circular
-        if circular {
-            element.clipsToBounds = true
-        }
-
         switch element {
-        case let label as LabelSelectionElement:
-            label.label.textColor = selected ? selectedFgColor : deselectedFgColor
-            label.label.backgroundColor = selected ? selectedBgColor : deselectedBgColor
+        case let labelElement as LabelSelectionElement:
+            labelElement.contentView.textColor = selected ? selectedFgColor : deselectedFgColor
+            labelElement.backgroundView.circular = circular
+            if circular { labelElement.backgroundView.clipsToBounds = true }
+            labelElement.backgroundView.backgroundColor = selected ? selectedBgColor : deselectedBgColor
 
-        case let imageView as UIImageView:
-            imageView.tintColor = selected ? selectedFgColor : deselectedFgColor
-            imageView.backgroundColor = selected ? selectedBgColor : deselectedBgColor
+        case let imageElement as ImageSelectionElement:
+            imageElement.contentView.tintColor = selected ? selectedFgColor : deselectedFgColor
+            imageElement.backgroundView.circular = circular
+            if circular { imageElement.backgroundView.clipsToBounds = true }
+            imageElement.backgroundView.backgroundColor = selected ? selectedBgColor : deselectedBgColor
 
         case let button as UIButton:
+            button.circular = circular
+            if circular { button.clipsToBounds = true }
             button.setTitleColor(deselectedFgColor, for: .normal)
             button.setTitleColor(selectedFgColor, for: .highlighted)
             let deselectedImage = UIImage(of: deselectedBgColor ?? .clear)
