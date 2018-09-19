@@ -171,6 +171,7 @@ public extension SelectionMenu {
             self.platform?.layoutIfNeeded()
             self.platform?.alpha = 1
             self.backgroundBlurView?.effect = dataSource.visualEffect
+            self.menuButton.expand()
             self.collections?.forEach { $0.expand() }
         }
 
@@ -199,6 +200,7 @@ public extension SelectionMenu {
             self.backgroundBlurView?.effect = nil
             self.menuButton.tapEnabled = false
             self.platformGetureRecongizer?.isEnabled = false
+            self.menuButton.collapse()
             self.collections?.forEach { $0.collapse() }
         }
 
