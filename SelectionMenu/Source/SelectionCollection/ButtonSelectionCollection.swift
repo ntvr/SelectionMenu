@@ -54,6 +54,8 @@ extension ButtonSelectionCollection {
     public func collapse() {
         elements.forEach { $0.collapse() }
     }
+
+    public func setSelected(indexes: [Int]) { }
 }
 
 // MARK: - Tracking touches

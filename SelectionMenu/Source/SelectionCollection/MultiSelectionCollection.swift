@@ -58,14 +58,15 @@ extension MultiSelectionCollection {
 
 // MARK: - External API
 public extension MultiSelectionCollection {
-    /// Sets set of selected indexes. Apply element styles with respective selected value for each contained.
     func setSelected(indexes: [Int]) {
-        // TODO: Filter indexes to be within range and remove duplicity
-        elements.enumerated().forEach { offset, element in
+        elements.enumerated()
+            .forEach { (offset, element) in
             elementStyle.apply(to: element, selected: indexes.contains(offset))
         }
 
-        self.selectedIndexes = indexes
+        let filtered = indexes
+            .filter { 0..<elements.count ~= $0 }
+        self.selectedIndexes = Array(Set(filtered))
     }
 }
 

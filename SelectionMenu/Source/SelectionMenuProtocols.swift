@@ -47,6 +47,12 @@ public protocol SelectionCollection: Expandable {
 
     /// `SelectionCollection` has to be initializable with its contained elements.
     init(elements: [SelectionElementView])
+
+    /// Enables setting initial selected indexes for single and multi selection.
+    /// - Single selection colections ignores all indexes after the first one
+    /// - Single and multi selectioon collections ignore indexes out of bounds of the elements array
+    /// - Button selection will ignore this method completely
+    func setSelected(indexes: [Int])
 }
 
 /// You have to adapt any view to `MenuButton` protocol if you want it used as menu button in `SelectionMenu`.

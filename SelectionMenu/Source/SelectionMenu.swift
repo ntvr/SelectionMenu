@@ -171,6 +171,7 @@ public extension SelectionMenu {
             self.platform?.layoutIfNeeded()
             self.platform?.alpha = 1
             self.backgroundBlurView?.effect = dataSource.visualEffect
+            self.menuButton.expand()
             self.collections?.forEach { $0.expand() }
         }
 
@@ -199,6 +200,7 @@ public extension SelectionMenu {
             self.backgroundBlurView?.effect = nil
             self.menuButton.tapEnabled = false
             self.platformGetureRecongizer?.isEnabled = false
+            self.menuButton.collapse()
             self.collections?.forEach { $0.collapse() }
         }
 
@@ -301,10 +303,18 @@ private extension SelectionMenu {
         case .buttonSelection: collectionType = ButtonSelectionCollection.self
         }
 
-        return (collectionType as SelectionCollection.Type)
+        let collection = (collectionType as SelectionCollection.Type)
             // TODO: How to solve that without force cast
             // swiftlint:disable:next force_cast
             .init(elements: elements) as! SelectionCollectionView
+
+        switch sectionType {
+        case let .singleSelection(selected): collection.setSelected(indexes: [selected])
+        case let .multiSelection(selected): collection.setSelected(indexes: selected)
+        case .buttonSelection: break
+        }
+
+        return collection
     }
 
     func loadViews(from dataSource: SelectionMenuDataSource) {
