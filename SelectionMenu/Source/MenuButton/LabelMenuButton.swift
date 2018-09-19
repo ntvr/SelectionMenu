@@ -52,11 +52,11 @@ extension LabelMenuButton: MenuButton {
         isUserInteractionEnabled = true
     }
 
-    public func expand() {
+    public func expand(animated: Bool) {
         label.transform = .identity
     }
 
-    public func collapse() {
+    public func collapse(animated: Bool) {
         label.transform = CGAffineTransform(scaleX: 0.001, y: 0.001)
     }
 }

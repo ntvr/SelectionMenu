@@ -47,12 +47,12 @@ public class ButtonSelectionCollection: UIControl, SelectionCollection {
 
 // MARK: - Expandable
 extension ButtonSelectionCollection {
-    public func expand() {
-        elements.forEach { $0.expand() }
+    public func expand(animated: Bool) {
+        elements.forEach { $0.expand(animated: animated) }
     }
 
-    public func collapse() {
-        elements.forEach { $0.collapse() }
+    public func collapse(animated: Bool) {
+        elements.forEach { $0.collapse(animated: animated) }
     }
 
     public func setSelected(indexes: [Int]) { }

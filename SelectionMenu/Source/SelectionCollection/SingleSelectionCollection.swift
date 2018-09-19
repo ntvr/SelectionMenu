@@ -56,12 +56,12 @@ public class SingleSelectionCollection: UIControl, SelectionCollection {
 
 // MARK: - Expandable
 extension SingleSelectionCollection {
-    public func expand() {
-        elements.forEach { $0.expand() }
+    public func expand(animated: Bool) {
+        elements.forEach { $0.expand(animated: animated) }
     }
 
-    public func collapse() {
-        elements.forEach { $0.collapse() }
+    public func collapse(animated: Bool) {
+        elements.forEach { $0.collapse(animated: animated) }
     }
 }
 

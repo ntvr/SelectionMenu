@@ -163,7 +163,7 @@ public extension SelectionMenu {
         platform?.layoutIfNeeded()
         platform?.alpha = 0
         backgroundBlurView?.effect = nil
-        collections?.forEach { $0.collapse() }
+        collections?.forEach { $0.collapse(animated: animated) }
 
         let showClosure: () -> Void = {
             self.setupShowConstraints()
@@ -171,8 +171,8 @@ public extension SelectionMenu {
             self.platform?.layoutIfNeeded()
             self.platform?.alpha = 1
             self.backgroundBlurView?.effect = dataSource.visualEffect
-            self.menuButton.expand()
-            self.collections?.forEach { $0.expand() }
+            self.menuButton.expand(animated: animated)
+            self.collections?.forEach { $0.expand(animated: animated) }
         }
 
         if animated {
@@ -200,8 +200,8 @@ public extension SelectionMenu {
             self.backgroundBlurView?.effect = nil
             self.menuButton.tapEnabled = false
             self.platformGetureRecongizer?.isEnabled = false
-            self.menuButton.collapse()
-            self.collections?.forEach { $0.collapse() }
+            self.menuButton.collapse(animated: animated)
+            self.collections?.forEach { $0.collapse(animated: animated) }
         }
 
         let completionClosure: (Bool) -> Void = { completed in

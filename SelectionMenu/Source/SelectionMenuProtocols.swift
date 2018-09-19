@@ -97,7 +97,10 @@ public protocol SelectionCollectionDelegate: class {
     ///     layoutIfNeeded()
     /// }
     /// ```
-    @objc func expand()
+    ///
+    /// - Parameter animated: Controls whether the expansion should be animated.
+    /// In case of constraints changes this will be handled externaly by SelectionMenu.
+    @objc func expand(animated: Bool)
 
     /// Sets up the collapsed layout of the object. This is expected to be done through manipulating its bounds.
     ///
@@ -109,7 +112,10 @@ public protocol SelectionCollectionDelegate: class {
     ///     layoutIfNeeded()
     /// }
     /// ```
-    @objc func collapse()
+    ///
+    /// - Parameter animated: Controls whether the expansion should be animated.
+    /// In case of constraints changes this will be handled externaly by SelectionMenu.
+    @objc func collapse(animated: Bool)
 }
 
 // MARK: - SelectionElementStyling
