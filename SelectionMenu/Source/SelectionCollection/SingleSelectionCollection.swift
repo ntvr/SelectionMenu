@@ -76,6 +76,11 @@ extension SingleSelectionCollection {
         selectedIndex = index
         moveMark(to: index)
     }
+
+    public func setSelected(indexes: [Int]) {
+        let index = indexes.first ?? selectedIndex
+        setSelected(index: index)
+    }
 }
 
 // MARK: - Tracking touches
