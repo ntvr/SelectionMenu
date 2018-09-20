@@ -44,21 +44,23 @@ public struct ShadowStyle {
 
 // MARK: - SelectionElementStyling
 extension ShadowStyle: SelectionElementStyling {
-    public func apply(to element: SelectionElementView, selected: Bool) {
-        element.layer.shadowColor = shadowColor
-        element.layer.shadowOpacity = shadowOpacity
-        element.layer.shadowOffset = shadowOffset
-        element.layer.shadowRadius = shadowRadius
+    public func apply(to element: SelectionElementView, in sectionType: SelectionMenu.SectionType, selected: Bool) {
+        let layer = element.shadowedLayerStylable
+        layer?.shadowColor = shadowColor
+        layer?.shadowOpacity = shadowOpacity
+        layer?.shadowOffset = shadowOffset
+        layer?.shadowRadius = shadowRadius
     }
 }
 
 // MARK: - SelectionCollectionStyling
 extension ShadowStyle: SelectionCollectionStyling {
     public func apply(to collection: SelectionCollectionView) {
-        collection.layer.shadowColor = shadowColor
-        collection.layer.shadowOpacity = shadowOpacity
-        collection.layer.shadowOffset = shadowOffset
-        collection.layer.shadowRadius = shadowRadius
+        let layer = collection.shadowedLayerStylable
+        layer?.shadowColor = shadowColor
+        layer?.shadowOpacity = shadowOpacity
+        layer?.shadowOffset = shadowOffset
+        layer?.shadowRadius = shadowRadius
     }
 }
 

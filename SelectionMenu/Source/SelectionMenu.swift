@@ -96,12 +96,12 @@ public class SelectionMenu: UIView {
     public var collectionsLayout: SelectionMenuLayouting = AutomaticMenuLayout()
 
     /// Style to be applied to each contained collection.
-    public var collectionStyle: SelectionCollectionStyling = UniversalStyle.redWhite {
+    public var collectionStyle: SelectionCollectionStyling = NoStyle() {
         didSet { updateTheme() }
     }
 
     /// Style to be applied to each contained element.
-    public var elementStyle: SelectionElementStyling = UniversalStyle.redWhite {
+    public var elementStyle: SelectionElementStyling = NoStyle() {
         didSet { updateTheme() }
     }
 
@@ -306,13 +306,7 @@ private extension SelectionMenu {
         let collection = (collectionType as SelectionCollection.Type)
             // TODO: How to solve that without force cast
             // swiftlint:disable:next force_cast
-            .init(elements: elements) as! SelectionCollectionView
-
-        switch sectionType {
-        case let .singleSelection(selected): collection.setSelected(indexes: [selected])
-        case let .multiSelection(selected): collection.setSelected(indexes: selected)
-        case .buttonSelection: break
-        }
+            .init(sectionType: sectionType, elements: elements) as! SelectionCollectionView
 
         return collection
     }

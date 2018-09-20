@@ -15,7 +15,7 @@ public struct NoStyle {
 }
 
 extension NoStyle: SelectionElementStyling {
-    public func apply(to element: SelectionElementView, selected: Bool) { }
+    public func apply(to element: SelectionElementView, in: SelectionMenu.SectionType, selected: Bool) { }
 }
 
 extension NoStyle: SelectionCollectionStyling {

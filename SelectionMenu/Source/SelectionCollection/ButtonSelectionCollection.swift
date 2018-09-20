@@ -14,7 +14,9 @@ public class ButtonSelectionCollection: UIControl, SelectionCollection {
 
     public weak var delegate: SelectionCollectionDelegate?
 
-    public var elementStyle: SelectionElementStyling = UniversalStyle.blackWhite {
+    public var sectionType: SelectionMenu.SectionType
+
+    public var elementStyle: SelectionElementStyling = NoStyle() {
         didSet { updateTheme() }
     }
 
@@ -31,7 +33,8 @@ public class ButtonSelectionCollection: UIControl, SelectionCollection {
     /// Initializes SingleSelectionCollection
     ///
     /// - Parameter elements: Elements that should be contained in ButtonSelectionCollection.
-    public required init(elements: [SelectionElementView]) {
+    public required init(sectionType: SelectionMenu.SectionType, elements: [SelectionElementView]) {
+        self.sectionType = sectionType
         self.elements = elements
         super.init(frame: .zero)
 
@@ -54,8 +57,28 @@ extension ButtonSelectionCollection {
     public func collapse(animated: Bool) {
         elements.forEach { $0.collapse(animated: animated) }
     }
+}
 
-    public func setSelected(indexes: [Int]) { }
+// MARK: - Stylable
+extension ButtonSelectionCollection {
+    public var foregroundColorStylable: UIColor? {
+        get { return nil }
+        set { return }
+    }
+
+    public var backgroundColorStylable: UIColor? {
+        get { return backgroundView.backgroundColor }
+        set { backgroundView.backgroundColor = newValue }
+    }
+
+    public var circularStylable: Bool {
+        get { return backgroundView.circular }
+        set { backgroundView.circular = newValue }
+    }
+
+    public var shadowedLayerStylable: CALayer? {
+        return layer
+    }
 }
 
 // MARK: - Tracking touches
@@ -84,7 +107,7 @@ extension ButtonSelectionCollection {
             delegate?.buttonSelectionCollection(self, didTapIndex: hitView.offset)
         }
 
-        elements.forEach { elementStyle.apply(to: $0, selected: false) }
+        elements.forEach { elementStyle.apply(to: $0, in: sectionType, selected: false) }
         initiallyTouchedElement = nil
     }
 
@@ -103,7 +126,6 @@ extension ButtonSelectionCollection {
     }
 }
 
-
 // MARK: - Setup + Theme
 private extension ButtonSelectionCollection {
     func initSubviews(with elements: [SelectionElementView]) {
@@ -120,7 +142,7 @@ private extension ButtonSelectionCollection {
         let index = index ?? -1
 
         elements.enumerated().forEach { offset, element in
-            elementStyle.apply(to: element, selected: offset == index)
+            elementStyle.apply(to: element, in: sectionType, selected: offset == index)
         }
     }
 

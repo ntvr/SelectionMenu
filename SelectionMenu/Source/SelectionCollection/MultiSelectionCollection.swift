@@ -14,12 +14,14 @@ public class MultiSelectionCollection: UIControl, SelectionCollection {
     // Public properties
     public weak var delegate: SelectionCollectionDelegate?
 
-    public var elementStyle: SelectionElementStyling = UniversalStyle.blackWhite {
+    public var sectionType: SelectionMenu.SectionType
+
+    public var elementStyle: SelectionElementStyling = NoStyle() {
         didSet { updateTheme() }
     }
 
     /// Currently selected indexes. Use `setSelected(indexes:)` to change them.
-    public private(set) var selectedIndexes: [Int] = []
+    public private(set) var selectedIndexes: [Int]
 
     // Subviews
     /// Background view which can be used for corner radius to not not mess up shadows.
@@ -31,13 +33,22 @@ public class MultiSelectionCollection: UIControl, SelectionCollection {
     /// Initializes SingleSelectionCollection
     ///
     /// - Parameter elements: Elements that should be contained in MultiSelectionCollection.
-    public required init(elements: [SelectionElementView]) {
+    public required init(sectionType: SelectionMenu.SectionType, elements: [SelectionElementView]) {
+        self.sectionType = sectionType
         self.elements = elements
+
+        if case let .multiSelection(selected) = sectionType {
+            selectedIndexes = selected
+        } else {
+            fatalError("\(#file): Unsupported section type")
+        }
+
         super.init(frame: .zero)
 
         initSubviews(with: elements)
         setupConstrains()
         updateTheme()
+        setSelected(indexes: selectedIndexes)
     }
 
     public required init?(coder aDecoder: NSCoder) {
@@ -56,12 +67,35 @@ extension MultiSelectionCollection {
     }
 }
 
+// MARK: - Stylable
+extension MultiSelectionCollection {
+    public var foregroundColorStylable: UIColor? {
+        get { return nil }
+        set { return }
+    }
+
+    public var backgroundColorStylable: UIColor? {
+        get { return backgroundView.backgroundColor }
+        set { backgroundView.backgroundColor = newValue }
+    }
+
+    public var circularStylable: Bool {
+        get { return backgroundView.circular }
+        set { backgroundView.circular = newValue }
+    }
+
+    public var shadowedLayerStylable: CALayer? {
+        return layer
+    }
+}
+
+
 // MARK: - External API
 public extension MultiSelectionCollection {
     func setSelected(indexes: [Int]) {
         elements.enumerated()
             .forEach { (offset, element) in
-            elementStyle.apply(to: element, selected: indexes.contains(offset))
+                elementStyle.apply(to: element, in: sectionType, selected: indexes.contains(offset))
         }
 
         let filtered = indexes
@@ -85,10 +119,10 @@ extension MultiSelectionCollection {
         }
 
         if let index = selectedIndexes.index(of: hitView.offset) {
-            elementStyle.apply(to: hitView.element, selected: false)
+            elementStyle.apply(to: hitView.element, in: sectionType, selected: false)
             selectedIndexes.remove(at: index)
         } else {
-            elementStyle.apply(to: hitView.element, selected: true)
+            elementStyle.apply(to: hitView.element, in: sectionType, selected: true)
             selectedIndexes.append(hitView.offset)
         }
 
@@ -114,7 +148,7 @@ private extension MultiSelectionCollection {
 
     func updateTheme() {
         elements.enumerated().forEach { offset, element in
-            elementStyle.apply(to: element, selected: selectedIndexes.contains(offset))
+            elementStyle.apply(to: element, in: sectionType, selected: selectedIndexes.contains(offset))
         }
     }
 

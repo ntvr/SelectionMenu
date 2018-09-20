@@ -15,10 +15,12 @@ public class SingleSelectionCollection: UIControl, SelectionCollection {
 
     public weak var delegate: SelectionCollectionDelegate?
 
-    /// Index of currently selected element. Use `setSelected(index:)` to change it.
-    public private(set) var selectedIndex: Int = 0
+    public var sectionType: SelectionMenu.SectionType
 
-    public var elementStyle: SelectionElementStyling = UniversalStyle.blackWhite {
+    /// Index of currently selected element. Use `setSelected(index:)` to change it.
+    public private(set) var selectedIndex: Int
+
+    public var elementStyle: SelectionElementStyling = NoStyle() {
         didSet { updateTheme() }
     }
 
@@ -39,8 +41,16 @@ public class SingleSelectionCollection: UIControl, SelectionCollection {
     /// Initializes SingleSelectionCollection
     ///
     /// - Parameter elements: Elements that should be contained in SingleSelectionCollection.
-    public required init(elements: [SelectionElementView]) {
+    public required init(sectionType: SelectionMenu.SectionType, elements: [SelectionElementView]) {
+        self.sectionType = sectionType
         self.elements = elements
+
+        if case let .singleSelection(selected) = sectionType {
+            selectedIndex = selected
+        } else {
+            fatalError("\(#file): Unsupported section type")
+        }
+
         super.init(frame: .zero)
 
         initSubviews(with: elements)
@@ -62,6 +72,28 @@ extension SingleSelectionCollection {
 
     public func collapse(animated: Bool) {
         elements.forEach { $0.collapse(animated: animated) }
+    }
+}
+
+// MARK: - Stylable
+extension SingleSelectionCollection {
+    public var foregroundColorStylable: UIColor? {
+        get { return markView.backgroundColor }
+        set { markView.backgroundColor = newValue }
+    }
+
+    public var backgroundColorStylable: UIColor? {
+        get { return backgroundView.backgroundColor }
+        set { backgroundView.backgroundColor = newValue }
+    }
+
+    public var circularStylable: Bool {
+        get { return backgroundView.circular }
+        set { backgroundView.circular = newValue; markView.circular = newValue }
+    }
+
+    public var shadowedLayerStylable: CALayer? {
+        return layer
     }
 }
 
@@ -148,7 +180,7 @@ private extension SingleSelectionCollection {
 
     func updateTheme() {
         elements.enumerated().forEach { offset, element in
-            elementStyle.apply(to: element, selected: offset == selectedIndex)
+            elementStyle.apply(to: element, in: sectionType, selected: offset == selectedIndex)
         }
     }
 

@@ -31,13 +31,17 @@ public typealias SelectionCollectionView = UIView & SelectionCollection
 public typealias MenuButtonView = UIView & MenuButton
 
 /// You have to adapt any view to `SelectionElement` protocol if you want them used as elements in SelectionMenu.
-public protocol SelectionElement: Expandable { }
+public protocol SelectionElement: Expandable, Stylable { }
 
 /// You have to adapt any view to `SelectionCollection` protocol if you want them used as collections in SelectionMenu.
-public protocol SelectionCollection: Expandable {
+public protocol SelectionCollection: Expandable, Stylable {
     /// The object that acts as the delegate of the SelectionCollection.
     /// The delegate must adopt the `SelectionCollectionDelegate` protocol. The delegate is not retained.
     var delegate: SelectionCollectionDelegate? { get set }
+
+    /// Stores the initial type of section the collection is contained within
+    /// Also sets the initially selected index/indexes
+    var sectionType: SelectionMenu.SectionType { get }
 
     /// Style to be applied to each contained element.
     var elementStyle: SelectionElementStyling { get set }
@@ -46,13 +50,7 @@ public protocol SelectionCollection: Expandable {
     var elements: [SelectionElementView] { get }
 
     /// `SelectionCollection` has to be initializable with its contained elements.
-    init(elements: [SelectionElementView])
-
-    /// Enables setting initial selected indexes for single and multi selection.
-    /// - Single selection colections ignores all indexes after the first one
-    /// - Single and multi selectioon collections ignore indexes out of bounds of the elements array
-    /// - Button selection will ignore this method completely
-    func setSelected(indexes: [Int])
+    init(sectionType: SelectionMenu.SectionType, elements: [SelectionElementView])
 }
 
 /// You have to adapt any view to `MenuButton` protocol if you want it used as menu button in `SelectionMenu`.
@@ -91,7 +89,7 @@ public protocol SelectionCollectionDelegate: class {
     ///
     /// In case of internal views following is used:
     /// ```
-    /// @objc func expand() {
+    /// @objc func expand(animated: Bool) {
     ///     setupExpandedConstraints()
     ///     setNeedsLayout()
     ///     layoutIfNeeded()
@@ -106,7 +104,7 @@ public protocol SelectionCollectionDelegate: class {
     ///
     /// In case of internal views following is used:
     /// ```
-    /// @objc func collapse() {
+    /// @objc func collapse(animated: Bool) {
     ///     setupCollapsedConstraints()
     ///     setNeedsLayout()
     ///     layoutIfNeeded()
@@ -116,26 +114,6 @@ public protocol SelectionCollectionDelegate: class {
     /// - Parameter animated: Controls whether the expansion should be animated.
     /// In case of constraints changes this will be handled externaly by SelectionMenu.
     @objc func collapse(animated: Bool)
-}
-
-// MARK: - SelectionElementStyling
-/// Defines api for object resposible for styling SelectionElements.
-public protocol SelectionElementStyling {
-    /// Applies necessary styling to the given element.
-    ///
-    /// - Parameter element: SelectionElement styles should be applied to.
-    /// - Parameter selected: Whether the given element is selected:
-    ///     - For singleSelection the element is selected if it is the currently last selected one.
-    ///     - For multiSeclection the element is selected if it is amongst selected selecetedIndexes.
-    ///     - For buttonSelection the element is selected if it is highlighted.
-    func apply(to element: SelectionElementView, selected: Bool)
-}
-
-// MARK: - SelectionCollectionStyling
-/// Defines api for object resposible for styling SelectionCollections.
-public protocol SelectionCollectionStyling {
-    /// Applies necessary styling to the given collection.
-    func apply(to collection: SelectionCollectionView)
 }
 
 // MARK: - ActionRegistrable
