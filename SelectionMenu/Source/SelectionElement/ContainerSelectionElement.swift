@@ -87,6 +87,5 @@ private extension ContainerSelectionElement {
             make.center.equalToSuperview()
             make.size.lessThanOrEqualToSuperview()
         }
-
     }
 }

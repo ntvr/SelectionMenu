@@ -23,6 +23,7 @@ extension UIView {
         get { return objc_getAssociatedObject(self, &AssociatedKeys.RoundedCornerObserverKey) == nil }
         set {
             if newValue {
+                layer.masksToBounds = true
                 layer.cornerRadius = UIView.circularCornerRadius(from: bounds)
                 let observer = self.observe(\.bounds, options: NSKeyValueObservingOptions.new) { view, value in
                     if let bounds = value.newValue {
