@@ -306,13 +306,7 @@ private extension SelectionMenu {
         let collection = (collectionType as SelectionCollection.Type)
             // TODO: How to solve that without force cast
             // swiftlint:disable:next force_cast
-            .init(elements: elements) as! SelectionCollectionView
-
-        switch sectionType {
-        case let .singleSelection(selected): collection.setSelected(indexes: [selected])
-        case let .multiSelection(selected): collection.setSelected(indexes: selected)
-        case .buttonSelection: break
-        }
+            .init(sectionType: sectionType, elements: elements) as! SelectionCollectionView
 
         return collection
     }

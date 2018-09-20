@@ -15,8 +15,10 @@ public class SingleSelectionCollection: UIControl, SelectionCollection {
 
     public weak var delegate: SelectionCollectionDelegate?
 
+    public var sectionType: SelectionMenu.SectionType
+
     /// Index of currently selected element. Use `setSelected(index:)` to change it.
-    public private(set) var selectedIndex: Int = 0
+    public private(set) var selectedIndex: Int
 
     public var elementStyle: SelectionElementStyling = UniversalStyle.blackWhite {
         didSet { updateTheme() }
@@ -39,8 +41,16 @@ public class SingleSelectionCollection: UIControl, SelectionCollection {
     /// Initializes SingleSelectionCollection
     ///
     /// - Parameter elements: Elements that should be contained in SingleSelectionCollection.
-    public required init(elements: [SelectionElementView]) {
+    public required init(sectionType: SelectionMenu.SectionType, elements: [SelectionElementView]) {
+        self.sectionType = sectionType
         self.elements = elements
+
+        if case let .singleSelection(selected) = sectionType {
+            selectedIndex = selected
+        } else {
+            fatalError("\(#file): Unsupported section type")
+        }
+
         super.init(frame: .zero)
 
         initSubviews(with: elements)

@@ -14,12 +14,14 @@ public class MultiSelectionCollection: UIControl, SelectionCollection {
     // Public properties
     public weak var delegate: SelectionCollectionDelegate?
 
+    public var sectionType: SelectionMenu.SectionType
+
     public var elementStyle: SelectionElementStyling = UniversalStyle.blackWhite {
         didSet { updateTheme() }
     }
 
     /// Currently selected indexes. Use `setSelected(indexes:)` to change them.
-    public private(set) var selectedIndexes: [Int] = []
+    public private(set) var selectedIndexes: [Int]
 
     // Subviews
     /// Background view which can be used for corner radius to not not mess up shadows.
@@ -31,13 +33,22 @@ public class MultiSelectionCollection: UIControl, SelectionCollection {
     /// Initializes SingleSelectionCollection
     ///
     /// - Parameter elements: Elements that should be contained in MultiSelectionCollection.
-    public required init(elements: [SelectionElementView]) {
+    public required init(sectionType: SelectionMenu.SectionType, elements: [SelectionElementView]) {
+        self.sectionType = sectionType
         self.elements = elements
+
+        if case let .multiSelection(selected) = sectionType {
+            selectedIndexes = selected
+        } else {
+            fatalError("\(#file): Unsupported section type")
+        }
+
         super.init(frame: .zero)
 
         initSubviews(with: elements)
         setupConstrains()
         updateTheme()
+        setSelected(indexes: selectedIndexes)
     }
 
     public required init?(coder aDecoder: NSCoder) {

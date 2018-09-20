@@ -14,6 +14,8 @@ public class ButtonSelectionCollection: UIControl, SelectionCollection {
 
     public weak var delegate: SelectionCollectionDelegate?
 
+    public var sectionType: SelectionMenu.SectionType
+
     public var elementStyle: SelectionElementStyling = UniversalStyle.blackWhite {
         didSet { updateTheme() }
     }
@@ -31,7 +33,8 @@ public class ButtonSelectionCollection: UIControl, SelectionCollection {
     /// Initializes SingleSelectionCollection
     ///
     /// - Parameter elements: Elements that should be contained in ButtonSelectionCollection.
-    public required init(elements: [SelectionElementView]) {
+    public required init(sectionType: SelectionMenu.SectionType, elements: [SelectionElementView]) {
+        self.sectionType = sectionType
         self.elements = elements
         super.init(frame: .zero)
 
@@ -54,8 +57,6 @@ extension ButtonSelectionCollection {
     public func collapse(animated: Bool) {
         elements.forEach { $0.collapse(animated: animated) }
     }
-
-    public func setSelected(indexes: [Int]) { }
 }
 
 // MARK: - Stylable

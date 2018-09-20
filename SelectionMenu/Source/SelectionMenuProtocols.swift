@@ -39,6 +39,10 @@ public protocol SelectionCollection: Expandable, Stylable {
     /// The delegate must adopt the `SelectionCollectionDelegate` protocol. The delegate is not retained.
     var delegate: SelectionCollectionDelegate? { get set }
 
+    /// Stores the initial type of section the collection is contained within
+    /// Also sets the initially selected index/indexes
+    var sectionType: SelectionMenu.SectionType { get }
+
     /// Style to be applied to each contained element.
     var elementStyle: SelectionElementStyling { get set }
 
@@ -46,13 +50,7 @@ public protocol SelectionCollection: Expandable, Stylable {
     var elements: [SelectionElementView] { get }
 
     /// `SelectionCollection` has to be initializable with its contained elements.
-    init(elements: [SelectionElementView])
-
-    /// Enables setting initial selected indexes for single and multi selection.
-    /// - Single selection colections ignores all indexes after the first one
-    /// - Single and multi selectioon collections ignore indexes out of bounds of the elements array
-    /// - Button selection will ignore this method completely
-    func setSelected(indexes: [Int])
+    init(sectionType: SelectionMenu.SectionType, elements: [SelectionElementView])
 }
 
 /// You have to adapt any view to `MenuButton` protocol if you want it used as menu button in `SelectionMenu`.
