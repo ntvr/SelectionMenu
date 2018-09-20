@@ -44,8 +44,8 @@ class ViewController: UIViewController {
                                                   menuButtonHeightRatio: 1.2,
                                                   horizontalAlignment: .right(inset: 5),
                                                   verticalAlignment: .top(inset: 5))
-        menu.elementStyle = CompositeStyle(elementStyles: [ShadowStyle.light])
-        menu.collectionStyle = CompositeStyle(collectionStyles: [ShadowStyle.dark])
+        menu.elementStyle = SelectionElementStyle.blue
+        menu.collectionStyle = SelectionCollectionStyle.blue
         menu.delegate = self
 
         setupConstraints()
