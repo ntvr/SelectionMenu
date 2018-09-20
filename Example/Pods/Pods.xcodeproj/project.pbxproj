@@ -189,7 +189,6 @@
 		D110985B285468FFAACCB48E5093DE22 /* SelectionCollectionStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762D4D29728BBDD9E9ED16FD7C3E0C0C /* SelectionCollectionStyle.swift */; };
 		D1503C762F7E5D2510DCE2FBF2F89D08 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE9347804587F124157476CBD35FFC48 /* Foundation.framework */; };
 		D24B64AAC72CDEB209C6F68AAB28904F /* ConstraintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0B8044B2B3744C21BB5ADDB6053B21 /* ConstraintView.swift */; };
-		D32D98B52F6B1E653EC1805BB14190D4 /* UniversalStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1805A0B900D954DC3FF8CE36813D3B3D /* UniversalStyle.swift */; };
 		D64D6A437FF73C50E3C55A5D2FBAA505 /* QuickSelectedTestSuiteBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDE36B69AD6C0389B494A5C47BF6BF3 /* QuickSelectedTestSuiteBuilder.swift */; };
 		D9E62C41794D0B5D2CD68CA92C4BA836 /* mach_excServer.c in Sources */ = {isa = PBXBuildFile; fileRef = 6E1E81111B4CFF2B01F6F4646C98AA50 /* mach_excServer.c */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		DABD7D29F8CCC16F02BD82948D6E55AC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE9347804587F124157476CBD35FFC48 /* Foundation.framework */; };
@@ -326,7 +325,6 @@
 		16BC45C56AF04B53D03AE9F6ACE25398 /* Nimble-Snapshots.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Nimble-Snapshots.xcconfig"; sourceTree = "<group>"; };
 		16C9987F9CA4D7CD5639A952730DED61 /* ToSucceed.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ToSucceed.swift; path = Sources/Nimble/Matchers/ToSucceed.swift; sourceTree = "<group>"; };
 		17D9CF36965C29E6A5F5A88B1299AA40 /* SelectionMenu-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SelectionMenu-prefix.pch"; sourceTree = "<group>"; };
-		1805A0B900D954DC3FF8CE36813D3B3D /* UniversalStyle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UniversalStyle.swift; sourceTree = "<group>"; };
 		192B32A1C8A73D28E2A9BCA934DEE440 /* Match.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Match.swift; path = Sources/Nimble/Matchers/Match.swift; sourceTree = "<group>"; };
 		195A282C46809413E1216ADC93519C56 /* URL+FileName.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "URL+FileName.swift"; path = "Sources/Quick/URL+FileName.swift"; sourceTree = "<group>"; };
 		1A9CA1BEFB4F377978DBE7C759A427B2 /* Nimble-Snapshots.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Nimble-Snapshots.modulemap"; sourceTree = "<group>"; };
@@ -796,11 +794,10 @@
 			children = (
 				90D548AF2153BF6400719B86 /* StylingProtocols.swift */,
 				C837A6A2FF81BF2A70B88B7F8E6AF896 /* NoStyle.swift */,
-				9AD3E6B44D369ED688E6DDBE9FC1178B /* CompositeStyle.swift */,
-				762D4D29728BBDD9E9ED16FD7C3E0C0C /* SelectionCollectionStyle.swift */,
-				533C02464E0AB83F8142EC478DAA604A /* SelectionElementStyle.swift */,
 				CFAEB149500AC3CA7E88008968A8135A /* ShadowStyle.swift */,
-				1805A0B900D954DC3FF8CE36813D3B3D /* UniversalStyle.swift */,
+				533C02464E0AB83F8142EC478DAA604A /* SelectionElementStyle.swift */,
+				762D4D29728BBDD9E9ED16FD7C3E0C0C /* SelectionCollectionStyle.swift */,
+				9AD3E6B44D369ED688E6DDBE9FC1178B /* CompositeStyle.swift */,
 			);
 			name = Styling;
 			path = SelectionMenu/Source/Styling;
@@ -1605,7 +1602,6 @@
 				5DDD32D5D7CF5D11407E7A758DF9E995 /* UIEdgeInsets+Extensions.swift in Sources */,
 				4F912EEA0790BE8FF2D15576E47E048B /* UIImage+Extensions.swift in Sources */,
 				1A7055119FB54DEBDEA5D45C20D34F7F /* UIView+Extensions.swift in Sources */,
-				D32D98B52F6B1E653EC1805BB14190D4 /* UniversalStyle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

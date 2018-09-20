@@ -8,7 +8,7 @@
 import Foundation
 import UIKit.UIColor
 
-public protocol Stylable {
+public protocol Stylable: class {
     /// - Foreground color
     /// - Color is used for example for image or text.
     var foregroundColorStylable: UIColor? { get set }
@@ -30,11 +30,12 @@ public protocol SelectionElementStyling {
     /// Applies necessary styling to the given element.
     ///
     /// - Parameter element: SelectionElement styles should be applied to.
+    /// - Parameter sectionType: SectionType of collection in which the element is contained
     /// - Parameter selected: Whether the given element is selected:
     ///     - For singleSelection the element is selected if it is the currently last selected one.
     ///     - For multiSeclection the element is selected if it is amongst selected selecetedIndexes.
     ///     - For buttonSelection the element is selected if it is highlighted.
-    func apply(to element: SelectionElementView, selected: Bool)
+    func apply(to element: SelectionElementView, in sectionType: SelectionMenu.SectionType, selected: Bool)
 }
 
 // MARK: - SelectionCollectionStyling

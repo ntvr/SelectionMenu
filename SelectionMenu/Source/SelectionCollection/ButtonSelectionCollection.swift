@@ -16,7 +16,7 @@ public class ButtonSelectionCollection: UIControl, SelectionCollection {
 
     public var sectionType: SelectionMenu.SectionType
 
-    public var elementStyle: SelectionElementStyling = UniversalStyle.blackWhite {
+    public var elementStyle: SelectionElementStyling = NoStyle() {
         didSet { updateTheme() }
     }
 
@@ -107,7 +107,7 @@ extension ButtonSelectionCollection {
             delegate?.buttonSelectionCollection(self, didTapIndex: hitView.offset)
         }
 
-        elements.forEach { elementStyle.apply(to: $0, selected: false) }
+        elements.forEach { elementStyle.apply(to: $0, in: sectionType, selected: false) }
         initiallyTouchedElement = nil
     }
 
@@ -142,7 +142,7 @@ private extension ButtonSelectionCollection {
         let index = index ?? -1
 
         elements.enumerated().forEach { offset, element in
-            elementStyle.apply(to: element, selected: offset == index)
+            elementStyle.apply(to: element, in: sectionType, selected: offset == index)
         }
     }
 

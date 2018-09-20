@@ -16,7 +16,7 @@ public class MultiSelectionCollection: UIControl, SelectionCollection {
 
     public var sectionType: SelectionMenu.SectionType
 
-    public var elementStyle: SelectionElementStyling = UniversalStyle.blackWhite {
+    public var elementStyle: SelectionElementStyling = NoStyle() {
         didSet { updateTheme() }
     }
 
@@ -95,7 +95,7 @@ public extension MultiSelectionCollection {
     func setSelected(indexes: [Int]) {
         elements.enumerated()
             .forEach { (offset, element) in
-            elementStyle.apply(to: element, selected: indexes.contains(offset))
+                elementStyle.apply(to: element, in: sectionType, selected: indexes.contains(offset))
         }
 
         let filtered = indexes
@@ -119,10 +119,10 @@ extension MultiSelectionCollection {
         }
 
         if let index = selectedIndexes.index(of: hitView.offset) {
-            elementStyle.apply(to: hitView.element, selected: false)
+            elementStyle.apply(to: hitView.element, in: sectionType, selected: false)
             selectedIndexes.remove(at: index)
         } else {
-            elementStyle.apply(to: hitView.element, selected: true)
+            elementStyle.apply(to: hitView.element, in: sectionType, selected: true)
             selectedIndexes.append(hitView.offset)
         }
 
@@ -148,7 +148,7 @@ private extension MultiSelectionCollection {
 
     func updateTheme() {
         elements.enumerated().forEach { offset, element in
-            elementStyle.apply(to: element, selected: selectedIndexes.contains(offset))
+            elementStyle.apply(to: element, in: sectionType, selected: selectedIndexes.contains(offset))
         }
     }
 

@@ -20,7 +20,7 @@ public class SingleSelectionCollection: UIControl, SelectionCollection {
     /// Index of currently selected element. Use `setSelected(index:)` to change it.
     public private(set) var selectedIndex: Int
 
-    public var elementStyle: SelectionElementStyling = UniversalStyle.blackWhite {
+    public var elementStyle: SelectionElementStyling = NoStyle() {
         didSet { updateTheme() }
     }
 
@@ -78,8 +78,8 @@ extension SingleSelectionCollection {
 // MARK: - Stylable
 extension SingleSelectionCollection {
     public var foregroundColorStylable: UIColor? {
-        get { return nil }
-        set { return }
+        get { return markView.backgroundColor }
+        set { markView.backgroundColor = newValue }
     }
 
     public var backgroundColorStylable: UIColor? {
@@ -89,7 +89,7 @@ extension SingleSelectionCollection {
 
     public var circularStylable: Bool {
         get { return backgroundView.circular }
-        set { backgroundView.circular = newValue }
+        set { backgroundView.circular = newValue; markView.circular = newValue }
     }
 
     public var shadowedLayerStylable: CALayer? {
@@ -180,7 +180,7 @@ private extension SingleSelectionCollection {
 
     func updateTheme() {
         elements.enumerated().forEach { offset, element in
-            elementStyle.apply(to: element, selected: offset == selectedIndex)
+            elementStyle.apply(to: element, in: sectionType, selected: offset == selectedIndex)
         }
     }
 

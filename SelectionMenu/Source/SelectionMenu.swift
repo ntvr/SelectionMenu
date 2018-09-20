@@ -96,12 +96,12 @@ public class SelectionMenu: UIView {
     public var collectionsLayout: SelectionMenuLayouting = AutomaticMenuLayout()
 
     /// Style to be applied to each contained collection.
-    public var collectionStyle: SelectionCollectionStyling = UniversalStyle.redWhite {
+    public var collectionStyle: SelectionCollectionStyling = NoStyle() {
         didSet { updateTheme() }
     }
 
     /// Style to be applied to each contained element.
-    public var elementStyle: SelectionElementStyling = UniversalStyle.redWhite {
+    public var elementStyle: SelectionElementStyling = NoStyle() {
         didSet { updateTheme() }
     }
 

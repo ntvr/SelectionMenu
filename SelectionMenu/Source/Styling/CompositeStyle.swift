@@ -33,9 +33,9 @@ public struct CompositeStyle {
 
 // MARK: - SelectionElementStyling
 extension CompositeStyle: SelectionElementStyling {
-    public func apply(to element: SelectionElementView, selected: Bool) {
+    public func apply(to element: SelectionElementView, in sectionType: SelectionMenu.SectionType, selected: Bool) {
         elementStyles.forEach { style in
-            style.apply(to: element, selected: selected)
+            style.apply(to: element, in: sectionType, selected: selected)
         }
     }
 }
