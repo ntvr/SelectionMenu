@@ -51,9 +51,15 @@ extension SelectionElementStyle: SelectionElementStyling {
 
         if selected {
             element.foregroundColorStylable = selectedFgColor
-            element.backgroundColorStylable = selectedBgColor
         } else {
             element.foregroundColorStylable = deselectedFgColor
+        }
+
+        switch (sectionType, selected) {
+        case (.singleSelection, _): break
+        case (.multiSelection, true), (.buttonSelection, true):
+            element.backgroundColorStylable = selectedBgColor
+        case (.multiSelection, false), (.buttonSelection, false):
             element.backgroundColorStylable = deselectedBgColor
         }
     }
