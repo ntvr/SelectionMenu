@@ -129,6 +129,7 @@
 		8E4BAAD39266FFC621A329C9ABADAFF7 /* ConstraintLayoutGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA50F840D30F271A3B0E695EAA79576F /* ConstraintLayoutGuide.swift */; };
 		908609EE21503EE70057FE66 /* ContainerSelectionElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908609EC21503E1B0057FE66 /* ContainerSelectionElement.swift */; };
 		908609F0215041160057FE66 /* UIButton+SelectionElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908609EF215041160057FE66 /* UIButton+SelectionElement.swift */; };
+		90D548B12153C3D800719B86 /* StylingProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D548AF2153BF6400719B86 /* StylingProtocols.swift */; };
 		91D400CC851F516E785B032662E4FDD8 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47650886BB57E689F45B39835885FBD3 /* Nimble.framework */; };
 		96132E7432F8DD315A88A07C6B4F9C72 /* NMBStringify.h in Headers */ = {isa = PBXBuildFile; fileRef = 84A075638A5393334A61C344160894BF /* NMBStringify.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9673CF780F48C8E4EC2A331717B1F67C /* FBSnapshotTestCase.h in Headers */ = {isa = PBXBuildFile; fileRef = CFACDA0E0F15D9A76D0BFC51D88EACF7 /* FBSnapshotTestCase.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -449,6 +450,7 @@
 		908609EC21503E1B0057FE66 /* ContainerSelectionElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerSelectionElement.swift; sourceTree = "<group>"; };
 		908609EF215041160057FE66 /* UIButton+SelectionElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+SelectionElement.swift"; sourceTree = "<group>"; };
 		90B2657E9B0499F320FE3EF6FD9000FA /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		90D548AF2153BF6400719B86 /* StylingProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StylingProtocols.swift; sourceTree = "<group>"; };
 		91E539E79899DCE544FC25AC4FE75F54 /* Pods-SelectionMenu_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SelectionMenu_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		9205A105DC9E30506AA5795C4F462BEB /* QuickSpecBase.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = QuickSpecBase.m; path = Sources/QuickSpecBase/QuickSpecBase.m; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -798,6 +800,7 @@
 				533C02464E0AB83F8142EC478DAA604A /* SelectionElementStyle.swift */,
 				CFAEB149500AC3CA7E88008968A8135A /* ShadowStyle.swift */,
 				1805A0B900D954DC3FF8CE36813D3B3D /* UniversalStyle.swift */,
+				90D548AF2153BF6400719B86 /* StylingProtocols.swift */,
 			);
 			name = Styling;
 			path = SelectionMenu/Source/Styling;
@@ -1586,6 +1589,7 @@
 				0AEF599299414E13054B8EFFADAB9EA8 /* ManualMenuLayout.swift in Sources */,
 				9C86723F571870DDCC0E77F42D70EC07 /* MultiSelectionCollection.swift in Sources */,
 				326C2E8EC865363FCFC798C8ED7A6700 /* NoStyle.swift in Sources */,
+				90D548B12153C3D800719B86 /* StylingProtocols.swift in Sources */,
 				4A3FA6894447F00EB11266A49B5AAD72 /* Range+Extensions.swift in Sources */,
 				D110985B285468FFAACCB48E5093DE22 /* SelectionCollectionStyle.swift in Sources */,
 				2824CD31FA1A5B3583358EF22F97576F /* SelectionElementStyle.swift in Sources */,

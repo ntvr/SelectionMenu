@@ -56,6 +56,29 @@ extension MultiSelectionCollection {
     }
 }
 
+// MARK: - Stylable
+extension MultiSelectionCollection {
+    public var foregroundColorStylable: UIColor? {
+        get { return nil }
+        set { return }
+    }
+
+    public var backgroundColorStylable: UIColor? {
+        get { return backgroundView.backgroundColor }
+        set { backgroundView.backgroundColor = newValue }
+    }
+
+    public var circularStylable: Bool {
+        get { return backgroundView.circular }
+        set { backgroundView.circular = newValue }
+    }
+
+    public var shadowedLayerStylable: CALayer? {
+        return layer
+    }
+}
+
+
 // MARK: - External API
 public extension MultiSelectionCollection {
     func setSelected(indexes: [Int]) {

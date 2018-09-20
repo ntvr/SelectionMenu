@@ -58,6 +58,28 @@ extension ButtonSelectionCollection {
     public func setSelected(indexes: [Int]) { }
 }
 
+// MARK: - Stylable
+extension ButtonSelectionCollection {
+    public var foregroundColorStylable: UIColor? {
+        get { return nil }
+        set { return }
+    }
+
+    public var backgroundColorStylable: UIColor? {
+        get { return backgroundView.backgroundColor }
+        set { backgroundView.backgroundColor = newValue }
+    }
+
+    public var circularStylable: Bool {
+        get { return backgroundView.circular }
+        set { backgroundView.circular = newValue }
+    }
+
+    public var shadowedLayerStylable: CALayer? {
+        return layer
+    }
+}
+
 // MARK: - Tracking touches
 extension ButtonSelectionCollection {
     public override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -102,7 +124,6 @@ extension ButtonSelectionCollection {
         return hitViews.first
     }
 }
-
 
 // MARK: - Setup + Theme
 private extension ButtonSelectionCollection {

@@ -12,10 +12,16 @@ public typealias ImageSelectionElement = ContainerSelectionElement<UIImageView>
 
 /// Selection element view with UILabel centered within it
 public typealias LabelSelectionElement = ContainerSelectionElement<UILabel>
+extension ContainerSelectionElement where ContainedView == UILabel {
+    public var foregroundColorStylable: UIColor? {
+        get { return containedView.textColor }
+        set { containedView.textColor = newValue }
+    }
+}
 
-open class ContainerSelectionElement<ContainedView>: UIView, SelectionElement where ContainedView: UIView {
+open class ContainerSelectionElement<ContainedView: UIView>: UIView, SelectionElement {
     /// View contained within background view nad centered within it.
-    public weak var contentView: ContainedView!
+    public weak var containedView: ContainedView!
     /// Background having same size as the superview.
     public weak var backgroundView: UIView!
 
@@ -29,7 +35,7 @@ open class ContainerSelectionElement<ContainedView>: UIView, SelectionElement wh
 
         let contentView = ContainedView()
         backgroundView.addSubview(contentView)
-        self.contentView = contentView
+        self.containedView = contentView
 
         setupConstraints()
     }
@@ -48,6 +54,28 @@ open class ContainerSelectionElement<ContainedView>: UIView, SelectionElement wh
     }
 }
 
+// MARK: - Stylable
+extension ContainerSelectionElement {
+    public var foregroundColorStylable: UIColor? {
+        get { return containedView.tintColor }
+        set { containedView.tintColor = newValue ?? containedView.tintColor }
+    }
+
+    public var backgroundColorStylable: UIColor? {
+        get { return backgroundView.backgroundColor }
+        set { backgroundView.backgroundColor = newValue }
+    }
+
+    public var circularStylable: Bool {
+        get { return backgroundView.circular }
+        set { backgroundView.circular = newValue }
+    }
+
+    public var shadowedLayerStylable: CALayer? {
+        return layer
+    }
+}
+
 // MARK: - Setup
 private extension ContainerSelectionElement {
     func setupConstraints() {
@@ -55,7 +83,7 @@ private extension ContainerSelectionElement {
             make.edges.equalToSuperview()
         }
 
-        contentView.snp.remakeConstraints { make in
+        containedView.snp.remakeConstraints { make in
             make.center.equalToSuperview()
             make.size.lessThanOrEqualToSuperview()
         }

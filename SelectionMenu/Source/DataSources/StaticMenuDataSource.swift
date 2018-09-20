@@ -120,13 +120,13 @@ extension StaticMenuDataSource: SelectionMenuDataSource {
         switch sections[section].values[index] {
         case let .text(title):
             let labelElement = LabelSelectionElement()
-            labelElement.contentView.text = title
+            labelElement.containedView.text = title
             return labelElement
 
         case let .image(image):
             let imageElement = ImageSelectionElement()
-            imageElement.contentView.image = image.withRenderingMode(.alwaysTemplate)
-            imageElement.contentView.contentMode = .scaleAspectFit
+            imageElement.containedView.image = image.withRenderingMode(.alwaysTemplate)
+            imageElement.containedView.contentMode = .scaleAspectFit
             return imageElement
         }
     }

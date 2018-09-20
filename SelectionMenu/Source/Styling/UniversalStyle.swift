@@ -74,13 +74,13 @@ extension UniversalStyle: SelectionElementStyling {
 
         switch element {
         case let labelElement as LabelSelectionElement:
-            labelElement.contentView.textColor = selected ? selectedFgColor : deselectedFgColor
+            labelElement.containedView.textColor = selected ? selectedFgColor : deselectedFgColor
             labelElement.backgroundView.circular = circular
             if circular { labelElement.backgroundView.clipsToBounds = true }
             labelElement.backgroundView.backgroundColor = selected ? selectedBgColor : deselectedBgColor
 
         case let imageElement as ImageSelectionElement:
-            imageElement.contentView.tintColor = selected ? selectedFgColor : deselectedFgColor
+            imageElement.containedView.tintColor = selected ? selectedFgColor : deselectedFgColor
             imageElement.backgroundView.circular = circular
             if circular { imageElement.backgroundView.clipsToBounds = true }
             imageElement.backgroundView.backgroundColor = selected ? selectedBgColor : deselectedBgColor

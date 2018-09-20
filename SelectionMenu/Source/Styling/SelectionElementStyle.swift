@@ -83,15 +83,15 @@ extension SelectionElementStyle: SelectionElementStyling {
         case let labelElement as LabelSelectionElement:
             labelElement.backgroundView.circular = circular
             if circular { labelElement.backgroundView.clipsToBounds = true }
-            labelElement.contentView.textColor = selected ? selectedLabelFgColor : normalLabelFgColor
+            labelElement.containedView.textColor = selected ? selectedLabelFgColor : normalLabelFgColor
             labelElement.backgroundColor = selected ? selectedLabelBgColor : normalLabelBgColor
             labelShadowStyle.apply(to: labelElement, selected: selected)
 
         case let imageElement as ImageSelectionElement:
             imageElement.backgroundView.circular = circular
             if circular { imageElement.backgroundView.clipsToBounds = true }
-            imageElement.contentView.tintColor = selected ? selectedImageViewFgColor : normalImageViewFgColor
-            imageElement.contentView.backgroundColor = selected ? selectedImageViewBgColor : normalImageViewBgColor
+            imageElement.containedView.tintColor = selected ? selectedImageViewFgColor : normalImageViewFgColor
+            imageElement.containedView.backgroundColor = selected ? selectedImageViewBgColor : normalImageViewBgColor
             imageViewShadowStyle.apply(to: imageElement, selected: selected)
 
         case let button as UIButton:
