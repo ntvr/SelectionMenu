@@ -794,13 +794,13 @@
 		5429F1CCF346EE0A8CA1FE4E9EB55D2C /* Styling */ = {
 			isa = PBXGroup;
 			children = (
-				9AD3E6B44D369ED688E6DDBE9FC1178B /* CompositeStyle.swift */,
+				90D548AF2153BF6400719B86 /* StylingProtocols.swift */,
 				C837A6A2FF81BF2A70B88B7F8E6AF896 /* NoStyle.swift */,
+				9AD3E6B44D369ED688E6DDBE9FC1178B /* CompositeStyle.swift */,
 				762D4D29728BBDD9E9ED16FD7C3E0C0C /* SelectionCollectionStyle.swift */,
 				533C02464E0AB83F8142EC478DAA604A /* SelectionElementStyle.swift */,
 				CFAEB149500AC3CA7E88008968A8135A /* ShadowStyle.swift */,
 				1805A0B900D954DC3FF8CE36813D3B3D /* UniversalStyle.swift */,
-				90D548AF2153BF6400719B86 /* StylingProtocols.swift */,
 			);
 			name = Styling;
 			path = SelectionMenu/Source/Styling;
