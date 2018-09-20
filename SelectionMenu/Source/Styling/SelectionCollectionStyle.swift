@@ -33,6 +33,15 @@ public struct SelectionCollectionStyle {
         self.foregroundColor = foregroundColor
         self.backgroundColor = backgroundColor
     }
+
+    public init(
+        circular: Bool = true,
+        baseColor: UIColor?)
+    {
+        self.circular = circular
+        self.foregroundColor = baseColor?.darkened()
+        self.backgroundColor = baseColor?.lightened()
+    }
 }
 
 // MARK: - SelectionCollectionStyling

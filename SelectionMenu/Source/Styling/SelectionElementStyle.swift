@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 /// Style that can be applied only to SelectionElement.
-struct SelectionElementStyle {
+public struct SelectionElementStyle {
     /// - Rounded corners to form cirlce if squared.
     /// - Corner radius is equal to half of shorter side.
     public var circular = true
@@ -30,6 +30,16 @@ struct SelectionElementStyle {
         self.selectedBgColor = selectedBgColor
         self.deselectedFgColor = deselectedFgColor
         self.deselectedBgColor = deselectedBgColor
+    }
+
+    public init(circular: Bool = true,
+                contentColor: UIColor?,
+                baseColor: UIColor?)
+    {
+        selectedFgColor = contentColor
+        selectedBgColor = baseColor?.darkened()
+        deselectedFgColor = contentColor?.darkened()
+        deselectedBgColor = .clear
     }
 }
 
