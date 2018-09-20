@@ -91,7 +91,7 @@ public protocol SelectionCollectionDelegate: class {
     ///
     /// In case of internal views following is used:
     /// ```
-    /// @objc func expand() {
+    /// @objc func expand(animated: Bool) {
     ///     setupExpandedConstraints()
     ///     setNeedsLayout()
     ///     layoutIfNeeded()
@@ -106,7 +106,7 @@ public protocol SelectionCollectionDelegate: class {
     ///
     /// In case of internal views following is used:
     /// ```
-    /// @objc func collapse() {
+    /// @objc func collapse(animated: Bool) {
     ///     setupCollapsedConstraints()
     ///     setNeedsLayout()
     ///     layoutIfNeeded()
