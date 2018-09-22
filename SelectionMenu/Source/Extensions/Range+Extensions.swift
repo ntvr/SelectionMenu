@@ -21,7 +21,5 @@ extension ClampableRange {
     }
 }
 
-extension Range: ClampableRange {}
-extension ClosedRange: ClampableRange {}
-extension CountableRange: ClampableRange {}
-extension CountableClosedRange: ClampableRange {}
+extension Range: ClampableRange { }
+extension ClosedRange: ClampableRange { }

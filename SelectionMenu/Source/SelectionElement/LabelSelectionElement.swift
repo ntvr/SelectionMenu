@@ -1,27 +1,17 @@
 //
-//  ContainerSelectionElement.swift
-//  FBSnapshotTestCase
+//  LabelSelectionElement.swift
+//  SelectionMenu
 //
-//  Created by Michal Štembera on 17/09/2018.
+//  Created by Michal Štembera on 22/09/2018.
 //
 
 import Foundation
-
-/// Selection element view with UIImageView centered within it
-public typealias ImageSelectionElement = ContainerSelectionElement<UIImageView>
+import UIKit
 
 /// Selection element view with UILabel centered within it
-public typealias LabelSelectionElement = ContainerSelectionElement<UILabel>
-extension ContainerSelectionElement where ContainedView == UILabel {
-    public var foregroundColorStylable: UIColor? {
-        get { return containedView.textColor }
-        set { containedView.textColor = newValue }
-    }
-}
-
-open class ContainerSelectionElement<ContainedView: UIView>: UIView, SelectionElement {
-    /// View contained within background view nad centered within it.
-    public weak var containedView: ContainedView!
+class LabelSelectionElement: UIView, SelectionElement {
+    /// Label contained within background view and centered within it.
+    public weak var label: UILabel!
     /// Background having same size as the superview.
     public weak var backgroundView: UIView!
 
@@ -33,9 +23,9 @@ open class ContainerSelectionElement<ContainedView: UIView>: UIView, SelectionEl
         addSubview(backgroundView)
         self.backgroundView = backgroundView
 
-        let contentView = ContainedView()
-        backgroundView.addSubview(contentView)
-        self.containedView = contentView
+        let label = UILabel()
+        backgroundView.addSubview(label)
+        self.label = label
 
         setupConstraints()
     }
@@ -43,8 +33,10 @@ open class ContainerSelectionElement<ContainedView: UIView>: UIView, SelectionEl
     public required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+}
 
-    // MARK: - SelectionElement
+// MARK: - Expandable
+extension LabelSelectionElement {
     public func expand(animated: Bool, withDuration animationDuration: TimeInterval) {
         transform = .identity
     }
@@ -55,10 +47,10 @@ open class ContainerSelectionElement<ContainedView: UIView>: UIView, SelectionEl
 }
 
 // MARK: - Stylable
-extension ContainerSelectionElement {
+extension LabelSelectionElement {
     public var foregroundColorStylable: UIColor? {
-        get { return containedView.tintColor }
-        set { containedView.tintColor = newValue ?? containedView.tintColor }
+        get { return label.textColor }
+        set { label.textColor = newValue ?? label.textColor }
     }
 
     public var backgroundColorStylable: UIColor? {
@@ -77,13 +69,13 @@ extension ContainerSelectionElement {
 }
 
 // MARK: - Setup
-private extension ContainerSelectionElement {
+private extension LabelSelectionElement {
     func setupConstraints() {
         backgroundView.snp.remakeConstraints { make in
             make.edges.equalToSuperview()
         }
 
-        containedView.snp.remakeConstraints { make in
+        label.snp.remakeConstraints { make in
             make.center.equalToSuperview()
             make.size.lessThanOrEqualToSuperview()
         }
