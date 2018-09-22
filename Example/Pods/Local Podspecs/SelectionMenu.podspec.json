@@ -1,6 +1,6 @@
 {
   "name": "SelectionMenu",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "summary": "Overlay menu supporting both buttons and option selection",
   "description": "Overlay menu with customizable appearance and variation of content sections.\nIt allows to present single-selection, multi-selection or button-like rows.",
   "homepage": "https://github.com/ntvr/SelectionMenu",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/ntvr/SelectionMenu.git",
-    "tag": "0.1.0"
+    "tag": "0.1.1"
   },
   "platforms": {
     "ios": "10.0"
