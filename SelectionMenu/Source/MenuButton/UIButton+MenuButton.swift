@@ -20,7 +20,7 @@ extension UIButton: MenuButton {
         addTarget(target, action: action, for: .touchUpInside)
     }
 
-    public func expand(animated: Bool) { }
+    public func expand(animated: Bool, withDuration animationDuration: TimeInterval) { }
 
-    public func collapse(animated: Bool) { }
+    public func collapse(animated: Bool, withDuration animationDuration: TimeInterval) { }
 }

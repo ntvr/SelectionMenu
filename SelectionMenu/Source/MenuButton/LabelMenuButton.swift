@@ -39,7 +39,7 @@ public class LabelMenuButton: UIView {
     }
 }
 
-// MARK: - MENUButton
+// MARK: - MenuButton
 extension LabelMenuButton: MenuButton {
     public var tapEnabled: Bool {
         get { return self.labelMenuButtonGestureRecognizer?.isEnabled ?? false }
@@ -52,11 +52,11 @@ extension LabelMenuButton: MenuButton {
         isUserInteractionEnabled = true
     }
 
-    public func expand(animated: Bool) {
+    public func expand(animated: Bool, withDuration animationDuration: TimeInterval) {
         label.transform = .identity
     }
 
-    public func collapse(animated: Bool) {
+    public func collapse(animated: Bool, withDuration animationDuration: TimeInterval) {
         label.transform = CGAffineTransform(scaleX: 0.001, y: 0.001)
     }
 }
