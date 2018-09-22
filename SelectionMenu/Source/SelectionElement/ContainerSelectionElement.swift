@@ -45,11 +45,11 @@ open class ContainerSelectionElement<ContainedView: UIView>: UIView, SelectionEl
     }
 
     // MARK: - SelectionElement
-    public func expand(animated: Bool) {
+    public func expand(animated: Bool, withDuration animationDuration: TimeInterval) {
         transform = .identity
     }
 
-    public func collapse(animated: Bool) {
+    public func collapse(animated: Bool, withDuration animationDuration: TimeInterval) {
         transform = CGAffineTransform(scaleX: 0.001, y: 0.001)
     }
 }

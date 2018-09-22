@@ -97,8 +97,10 @@ public protocol SelectionCollectionDelegate: class {
     /// ```
     ///
     /// - Parameter animated: Controls whether the expansion should be animated.
-    /// In case of constraints changes this will be handled externaly by SelectionMenu.
-    @objc func expand(animated: Bool)
+    /// - Parameter animationDuration: Animation duration for full menu expand animation. Expanding view can come up with its own animation duration which should be shorter than full menu expand animation duration.
+    ///
+    /// Constraints will be animated within animation block further up the chain.
+    @objc func expand(animated: Bool, withDuration animationDuration: TimeInterval)
 
     /// Sets up the collapsed layout of the object. This is expected to be done through manipulating its bounds.
     ///
@@ -112,8 +114,10 @@ public protocol SelectionCollectionDelegate: class {
     /// ```
     ///
     /// - Parameter animated: Controls whether the expansion should be animated.
-    /// In case of constraints changes this will be handled externaly by SelectionMenu.
-    @objc func collapse(animated: Bool)
+    /// - Parameter animationDuration: Animation duration for full menu collapse animation. Collapsing view can come up with its own animation duration which should be shorter than full menu collapse animation duration.
+    ///
+    /// Constraints will be animated within animation block further up the chain.
+    @objc func collapse(animated: Bool, withDuration animationDuration: TimeInterval)
 }
 
 // MARK: - ActionRegistrable

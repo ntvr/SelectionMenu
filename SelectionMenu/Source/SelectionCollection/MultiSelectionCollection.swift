@@ -58,12 +58,12 @@ public class MultiSelectionCollection: UIControl, SelectionCollection {
 
 // MARK: - Expandable
 extension MultiSelectionCollection {
-    public func expand(animated: Bool) {
-        elements.forEach { $0.expand(animated: animated) }
+    public func expand(animated: Bool, withDuration animationDuration: TimeInterval) {
+        elements.forEach { $0.expand(animated: animated, withDuration: animationDuration) }
     }
 
-    public func collapse(animated: Bool) {
-        elements.forEach { $0.collapse(animated: animated) }
+    public func collapse(animated: Bool, withDuration animationDuration: TimeInterval) {
+        elements.forEach { $0.collapse(animated: animated, withDuration: animationDuration) }
     }
 }
 
