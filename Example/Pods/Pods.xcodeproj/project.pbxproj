@@ -127,7 +127,8 @@
 		8B04551E235A9D98EA2347F6F0486D6E /* ConstraintMakerExtendable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7240AF20D5F4F9E30D25A6A1583C45CD /* ConstraintMakerExtendable.swift */; };
 		8B55BD430033027AD5FF22D630DD9F62 /* DSL.m in Sources */ = {isa = PBXBuildFile; fileRef = CADB6C618F8C8B4E28CEB145E19AB959 /* DSL.m */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		8E4BAAD39266FFC621A329C9ABADAFF7 /* ConstraintLayoutGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA50F840D30F271A3B0E695EAA79576F /* ConstraintLayoutGuide.swift */; };
-		908609EE21503EE70057FE66 /* ContainerSelectionElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908609EC21503E1B0057FE66 /* ContainerSelectionElement.swift */; };
+		903D14182156D95500C94697 /* ImageSelectionElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903D14162156D95500C94697 /* ImageSelectionElement.swift */; };
+		903D14192156D95500C94697 /* LabelSelectionElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903D14172156D95500C94697 /* LabelSelectionElement.swift */; };
 		908609F0215041160057FE66 /* UIButton+SelectionElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908609EF215041160057FE66 /* UIButton+SelectionElement.swift */; };
 		90D548B12153C3D800719B86 /* StylingProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D548AF2153BF6400719B86 /* StylingProtocols.swift */; };
 		90D548B42153EDE000719B86 /* PredefinedStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D548B22153EDCA00719B86 /* PredefinedStyles.swift */; };
@@ -446,7 +447,8 @@
 		888178232E858757B0BD20D6F5FEE070 /* SourceLocation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SourceLocation.swift; path = Sources/Nimble/Utils/SourceLocation.swift; sourceTree = "<group>"; };
 		8CE3C9DBCA1C82947B109BB6C66427B4 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8FDE36B69AD6C0389B494A5C47BF6BF3 /* QuickSelectedTestSuiteBuilder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = QuickSelectedTestSuiteBuilder.swift; path = Sources/Quick/QuickSelectedTestSuiteBuilder.swift; sourceTree = "<group>"; };
-		908609EC21503E1B0057FE66 /* ContainerSelectionElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerSelectionElement.swift; sourceTree = "<group>"; };
+		903D14162156D95500C94697 /* ImageSelectionElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageSelectionElement.swift; sourceTree = "<group>"; };
+		903D14172156D95500C94697 /* LabelSelectionElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelSelectionElement.swift; sourceTree = "<group>"; };
 		908609EF215041160057FE66 /* UIButton+SelectionElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+SelectionElement.swift"; sourceTree = "<group>"; };
 		90B2657E9B0499F320FE3EF6FD9000FA /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		90D548AF2153BF6400719B86 /* StylingProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StylingProtocols.swift; sourceTree = "<group>"; };
@@ -906,7 +908,8 @@
 		908609E2215031180057FE66 /* SelectionElement */ = {
 			isa = PBXGroup;
 			children = (
-				908609EC21503E1B0057FE66 /* ContainerSelectionElement.swift */,
+				903D14172156D95500C94697 /* LabelSelectionElement.swift */,
+				903D14162156D95500C94697 /* ImageSelectionElement.swift */,
 				908609EF215041160057FE66 /* UIButton+SelectionElement.swift */,
 			);
 			name = SelectionElement;
@@ -1583,7 +1586,7 @@
 				FD53F91A377E85C11442F2D9EC177D17 /* ButtonSelectionCollection.swift in Sources */,
 				37D9B40D94839503F3DBB0DB65C1CEE2 /* CompositeStyle.swift in Sources */,
 				35D9B317CC4C41EA96C2C972F9203EBD /* EmptyMenuDataSource.swift in Sources */,
-				908609EE21503EE70057FE66 /* ContainerSelectionElement.swift in Sources */,
+				903D14192156D95500C94697 /* LabelSelectionElement.swift in Sources */,
 				908609F0215041160057FE66 /* UIButton+SelectionElement.swift in Sources */,
 				553488250E4B9F4B838EB0FC0F607414 /* LabelMenuButton.swift in Sources */,
 				0AEF599299414E13054B8EFFADAB9EA8 /* ManualMenuLayout.swift in Sources */,
@@ -1600,6 +1603,7 @@
 				E01C86181B0F5F3946839019C765E6AC /* ShadowStyle.swift in Sources */,
 				DD84735EA224CA68552018A5319A6CFA /* SingleSelectionCollection.swift in Sources */,
 				5F29AEF4DCFBEA1327454DA4857FA0BA /* StaticMenuDataSource.swift in Sources */,
+				903D14182156D95500C94697 /* ImageSelectionElement.swift in Sources */,
 				C6495C1804CF963EAAE02524B044924E /* UIButton+MenuButton.swift in Sources */,
 				BE165F02A6292FF45EDF3A8582406504 /* UIColor+Extensions.swift in Sources */,
 				90D548B42153EDE000719B86 /* PredefinedStyles.swift in Sources */,
