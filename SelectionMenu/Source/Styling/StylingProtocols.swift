@@ -1,6 +1,6 @@
 //
 //  StylingProtocols.swift
-//  FBSnapshotTestCase
+//  SelectionMenu
 //
 //  Created by Michal Štembera on 20/09/2018.
 //

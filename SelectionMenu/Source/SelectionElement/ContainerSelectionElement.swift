@@ -1,6 +1,6 @@
 //
 //  ContainerSelectionElement.swift
-//  FBSnapshotTestCase
+//  SelectionMenu
 //
 //  Created by Michal Štembera on 17/09/2018.
 //
