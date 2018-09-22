@@ -10,6 +10,16 @@ import Foundation
 import UIKit.UIColor
 
 extension UIColor {
+    var rgbaString: String? {
+        var red: CGFloat = 0, green: CGFloat = 0, blue: CGFloat = 0, alpha: CGFloat = 0
+
+        guard self.getRed(&red, green: &green, blue: &blue, alpha: &alpha) else {
+            return "Cannot get RGBA components"
+        }
+
+        return "r: \(red * 255), g: \(green * 255), b: \(blue * 255) a: \(alpha * 255)"
+    }
+
     convenience init(red: Int, green: Int, blue: Int, alpha: Int) {
         self.init(red: CGFloat(red) / 255.0,
                   green: CGFloat(green) / 255.0,
