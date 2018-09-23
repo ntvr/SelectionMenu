@@ -47,7 +47,6 @@ public class MultiSelectionCollection: UIControl, SelectionCollection {
 
         initSubviews(with: elements)
         setupConstrains()
-        updateTheme()
         setSelected(indexes: selectedIndexes)
     }
 
@@ -93,14 +92,11 @@ extension MultiSelectionCollection {
 // MARK: - External API
 public extension MultiSelectionCollection {
     func setSelected(indexes: [Int]) {
-        elements.enumerated()
-            .forEach { (offset, element) in
-                elementStyle.apply(to: element, in: sectionType, selected: indexes.contains(offset))
-        }
-
         let filtered = indexes
             .filter { 0..<elements.count ~= $0 }
         self.selectedIndexes = Array(Set(filtered))
+
+        updateTheme()
     }
 }
 
