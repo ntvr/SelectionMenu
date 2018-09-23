@@ -36,7 +36,9 @@ public protocol SelectionElement: Expandable, Stylable { }
 /// You have to adapt any view to `SelectionCollection` protocol if you want them used as collections in SelectionMenu.
 public protocol SelectionCollection: Expandable, Stylable {
     /// The object that acts as the delegate of the SelectionCollection.
-    /// The delegate must adopt the `SelectionCollectionDelegate` protocol. The delegate is not retained.
+    ///
+    /// - The delegate must adopt the `SelectionCollectionDelegate` protocol.
+    /// - The delegate is not retained.
     var delegate: SelectionCollectionDelegate? { get set }
 
     /// Stores the initial type of section the collection is contained within
