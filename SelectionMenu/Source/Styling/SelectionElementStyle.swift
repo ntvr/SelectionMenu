@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 /// Style that can be applied only to SelectionElement.
-public struct SelectionElementStyle {
+public class SelectionElementStyle {
     /// - Rounded corners to form cirlce if squared.
     /// - Corner radius is equal to half of shorter side.
     public var circular = true

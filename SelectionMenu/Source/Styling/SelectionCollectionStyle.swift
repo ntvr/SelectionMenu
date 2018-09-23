@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 /// Style that can be applied only to SelectionCollections.
-public struct SelectionCollectionStyle {
+public class SelectionCollectionStyle {
     /// - Rounded corners to form cirlce if squared.
     /// - Corner radius is equal to half of shorter side.
     public let circular: Bool
