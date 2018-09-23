@@ -37,8 +37,8 @@ public struct SelectionElementStyle {
                 baseColor: UIColor?)
     {
         selectedFgColor = contentColor
-        selectedBgColor = baseColor?.darkened()
-        deselectedFgColor = contentColor?.darkened()
+        selectedBgColor = baseColor?.darker()
+        deselectedFgColor = contentColor?.darker()
         deselectedBgColor = .clear
     }
 }

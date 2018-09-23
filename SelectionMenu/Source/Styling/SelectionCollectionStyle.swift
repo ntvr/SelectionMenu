@@ -39,8 +39,8 @@ public struct SelectionCollectionStyle {
         baseColor: UIColor?)
     {
         self.circular = circular
-        self.foregroundColor = baseColor?.darkened()
-        self.backgroundColor = baseColor?.lightened()
+        self.foregroundColor = baseColor?.darker()
+        self.backgroundColor = baseColor?.lighter()
     }
 }
 
