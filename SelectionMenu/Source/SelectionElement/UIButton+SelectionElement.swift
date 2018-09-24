@@ -18,7 +18,7 @@ extension UIButton: SelectionElement {
 
     public var backgroundColorStylable: UIColor? {
         get { return nil } // FIXME: Cannot determine color from image
-        set { setImage(UIImage(of: newValue ?? .clear), for: .normal) }
+        set { setBackgroundImage(UIImage(of: newValue ?? .clear), for: .normal) }
     }
 
     public var circularStylable: Bool {

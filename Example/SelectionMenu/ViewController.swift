@@ -87,5 +87,3 @@ extension ViewController: SelectionMenuDelegate {
         print("Button at index: \(index) in section: \(section)")
     }
 }
-
-
