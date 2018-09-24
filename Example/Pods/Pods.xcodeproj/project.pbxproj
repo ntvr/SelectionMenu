@@ -866,8 +866,8 @@
 				89DA919901CE88A6C3371046CAB18082 /* NoStyle.swift */,
 				077B9D4245A0B5AD0BC18D187137D187 /* CompositeStyle.swift */,
 				AFB2208BD30CC9FE5F05675E3BE2C016 /* PredefinedStyles.swift */,
-				6A78A88449B7F2EABB31C106768E26D2 /* SelectionCollectionStyle.swift */,
 				574FD70E4E53AB91284BE3A8E9522DDA /* SelectionElementStyle.swift */,
+				6A78A88449B7F2EABB31C106768E26D2 /* SelectionCollectionStyle.swift */,
 				68EFD807070F3F37CD23BDFF13598C14 /* ShadowStyle.swift */,
 			);
 			name = Styling;

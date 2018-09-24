@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 /// Selection element view with UIImageView centered within it
-class ImageSelectionElement: UIView, SelectionElement {
+public class ImageSelectionElement: UIView, SelectionElement {
     /// ImageView contained within background view and centered within it.
     public weak var imageView: UIImageView!
     /// Background having same size as the superview.

@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 /// Selection element view with UILabel centered within it
-class LabelSelectionElement: UIView, SelectionElement {
+public class LabelSelectionElement: UIView, SelectionElement {
     /// Label contained within background view and centered within it.
     public weak var label: UILabel!
     /// Background having same size as the superview.
