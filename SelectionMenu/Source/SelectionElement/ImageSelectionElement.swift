@@ -16,14 +16,14 @@ public class ImageSelectionElement: UIView, SelectionElement {
     public weak var backgroundView: UIView!
 
     /// Initializes ContainerSelectionElement
-    public init() {
+    public init(image: UIImage? = nil) {
         super.init(frame: .zero)
 
         let backgroundView = UIView()
         addSubview(backgroundView)
         self.backgroundView = backgroundView
 
-        let imageView = UIImageView()
+        let imageView = UIImageView(image: image)
         backgroundView.addSubview(imageView)
         self.imageView = imageView
 

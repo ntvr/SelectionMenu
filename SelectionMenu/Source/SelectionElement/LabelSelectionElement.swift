@@ -16,7 +16,7 @@ public class LabelSelectionElement: UIView, SelectionElement {
     public weak var backgroundView: UIView!
 
     /// Initializes ContainerSelectionElement
-    public init() {
+    public init(text: String? = nil) {
         super.init(frame: .zero)
 
         let backgroundView = UIView()
@@ -25,6 +25,7 @@ public class LabelSelectionElement: UIView, SelectionElement {
 
         let label = UILabel()
         backgroundView.addSubview(label)
+        label.text = text
         self.label = label
 
         setupConstraints()
