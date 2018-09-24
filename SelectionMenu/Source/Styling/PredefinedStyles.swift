@@ -13,16 +13,20 @@ public extension SelectionElementStyle {
         return SelectionElementStyle(contentColor: .white, baseColor: .red)
     }
 
-    public static var blue: SelectionElementStyle {
-        return SelectionElementStyle(contentColor: .white, baseColor: .blue)
-    }
-
     public static var green: SelectionElementStyle {
         return SelectionElementStyle(contentColor: .white, baseColor: .green)
     }
 
+    public static var blue: SelectionElementStyle {
+        return SelectionElementStyle(contentColor: .white, baseColor: .blue)
+    }
+
     public static var white: SelectionElementStyle {
-        return SelectionElementStyle(contentColor: .black, baseColor: .white)
+        return SelectionElementStyle(circular: true,
+                                     selectedFgColor: .black,
+                                     selectedBgColor: .lightGray,
+                                     deselectedFgColor: .gray,
+                                     deselectedBgColor: .white)
     }
 
     public static var black: SelectionElementStyle {
@@ -36,16 +40,18 @@ public extension SelectionCollectionStyle {
         return SelectionCollectionStyle(baseColor: .red)
     }
 
-    public static var blue: SelectionCollectionStyle {
-        return SelectionCollectionStyle(baseColor: .blue)
-    }
-
     public static var green: SelectionCollectionStyle {
         return SelectionCollectionStyle(baseColor: .green)
     }
 
+    public static var blue: SelectionCollectionStyle {
+        return SelectionCollectionStyle(baseColor: .blue)
+    }
+
     public static var white: SelectionCollectionStyle {
-        return SelectionCollectionStyle(baseColor: .white)
+        return SelectionCollectionStyle(circular: true,
+                                        foregroundColor: .lightGray,
+                                        backgroundColor: .white)
     }
 
     public static var black: SelectionCollectionStyle {

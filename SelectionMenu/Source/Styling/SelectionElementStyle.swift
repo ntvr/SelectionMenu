@@ -21,6 +21,7 @@ public class SelectionElementStyle {
     public let deselectedBgColor: UIColor?
 
     public init(
+        circular: Bool = true,
         selectedFgColor: UIColor?,
         selectedBgColor: UIColor?,
         deselectedFgColor: UIColor?,
@@ -32,9 +33,10 @@ public class SelectionElementStyle {
         self.deselectedBgColor = deselectedBgColor
     }
 
-    public init(circular: Bool = true,
-                contentColor: UIColor?,
-                baseColor: UIColor?)
+    public init(
+        circular: Bool = true,
+        contentColor: UIColor?,
+        baseColor: UIColor?)
     {
         selectedFgColor = contentColor
         selectedBgColor = baseColor?.darker()
