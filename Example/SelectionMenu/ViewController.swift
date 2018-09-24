@@ -18,20 +18,15 @@ class ViewController: UIViewController {
     override func loadView() {
         super.loadView()
 
-        let labelButton = LabelMenuButton(text: "Menu")
-        labelButton.backgroundColor = .red
-        labelButton.label.textColor = .white
+        let button = UIButton(type: .custom)
+        button.setTitle("Menu", for: .normal)
+        button.circularStylable = true
+        button.foregroundColorStylable = .white
+        button.backgroundColorStylable = .blue
 
-        let expandableMenu = SelectionMenu(menuButton: labelButton)
+        let expandableMenu = SelectionMenu(menuButton: button)
         view.addSubview(expandableMenu)
         self.menu = expandableMenu
-
-        menuDataSource = StaticMenuDataSource(sections:
-            (type: .singleSelection(selected: 0), [.text("A"), .text("B"), .text("C"), .text("D")]),
-            (type: .singleSelection(selected: 1), [.text("1"), .text("2")]),
-            (type: .multiSelection(selected: [1, 3]), [.text("I"), .text("II"), .text("III")]),
-            (type: .buttonSelection, [.text("😀"), .text("🙂"), .text("😐"), .text("🙁"), .text("😞")])
-        )
 
         menuDataSource = StaticMenuDataSource(textSections:
             (type: .singleSelection(selected: 0), values: ["A", "B", "C"]),
@@ -42,8 +37,9 @@ class ViewController: UIViewController {
         menu.dataSource = menuDataSource
         menu.collectionsLayout = ManualMenuLayout(verticalSpacing: 5,
                                                   menuButtonHeightRatio: 1.2,
-                                                  horizontalAlignment: .right(inset: 5),
-                                                  verticalAlignment: .top(inset: 5))
+                                                  horizontalAlignment: .leftToRight,
+                                                  verticalAlignment: .topToBottom(direction: .up))
+
         menu.elementStyle = SelectionElementStyle.blue
         menu.collectionStyle = SelectionCollectionStyle.blue
         menu.delegate = self
@@ -53,7 +49,7 @@ class ViewController: UIViewController {
 
     func setupConstraints() {
         menu.snp.remakeConstraints { make in
-            make.right.bottom.equalToSuperview().inset(20)
+            make.right.bottom.equalToSuperview().inset(10)
             make.size.equalTo(66)
         }
     }
