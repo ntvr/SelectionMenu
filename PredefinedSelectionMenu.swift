@@ -42,7 +42,7 @@ public extension SelectionMenu {
     }
 
     public static var blue: SelectionMenu {
-        let button = SelectionMenu.menuButton(fg: .white, bg: .blue)
+        let button = SelectionMenu.menuButton(fg: .yellow, bg: .blue)
         let menu = SelectionMenu(menuButton: button)
         menu.elementStyle = SelectionElementStyle.blue
         menu.collectionStyle = SelectionCollectionStyle.blue
