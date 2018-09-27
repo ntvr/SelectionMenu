@@ -14,7 +14,7 @@ public extension SelectionElementStyle {
     }
 
     public static var green: SelectionElementStyle {
-        return SelectionElementStyle(contentColor: .white, baseColor: .green)
+        return SelectionElementStyle(contentColor: .black, baseColor: .green)
     }
 
     public static var blue: SelectionElementStyle {
