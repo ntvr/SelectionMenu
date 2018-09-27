@@ -37,7 +37,7 @@ class ViewController: UIViewController {
         menu.dataSource = menuDataSource
         menu.collectionsLayout = ManualMenuLayout(verticalSpacing: 5,
                                                   menuButtonHeightRatio: 1.2,
-                                                  horizontalAlignment: .leftToRight,
+                                                  horizontalAlignment: .leftToRight(spacing: 10),
                                                   verticalAlignment: .topToBottom(direction: .up))
 
         menu.elementStyle = SelectionElementStyle.blue

@@ -22,9 +22,15 @@ public enum HorizontalAlignment {
     /// Right of menu button aligned with right of menu
     case rightToRight
     /// Left of menu button aligned with right of menu
-    case leftToRight
+    ///
+    /// - Spacing is applied from the left of the menu to the right
+    /// - Negative spacing might lead to collision
+    case leftToRight(spacing: CGFloat)
     /// Right of menu button aligned with left of menu
-    case rightToLeft
+    ///
+    /// - Spacing is applied from the right of the menu to the left
+    /// - Negative spacing might lead to collision
+    case rightToLeft(spacing: CGFloat)
 
     func apply(to make: ConstraintMaker, with menu: SelectionMenu, and platform: UIView) {
         switch self {
@@ -33,8 +39,8 @@ public enum HorizontalAlignment {
         case .centerToCenter: make.centerX.equalTo(menu)
         case .leftToLeft: make.left.equalTo(menu)
         case .rightToRight: make.right.equalTo(menu)
-        case .leftToRight: make.right.equalTo(menu.snp.left)
-        case .rightToLeft: make.left.equalTo(menu.snp.right)
+        case let .leftToRight(spacing): make.right.equalTo(menu.snp.left).offset(-spacing)
+        case let .rightToLeft(spacing): make.left.equalTo(menu.snp.right).offset(spacing)
         }
     }
 }
@@ -58,6 +64,8 @@ public enum VerticalAlignment {
     case top(inset: CGFloat)
     /// Fixed to the bottom of the platform, always direction *up*
     case bottom(inset: CGFloat)
+    /// Center of the menu button to the center of the first collection
+    case centerToCenter(direction: VerticalDirection)
     /// Top of menu button to top of menu
     case topToTop(direction: VerticalDirection)
     /// Bottom of menu button to bottom of menu
@@ -74,7 +82,8 @@ public enum VerticalAlignment {
         switch self {
         case .top: return .down
         case .bottom: return .up
-        case let .topToTop(direction),
+        case let .centerToCenter(direction),
+             let .topToTop(direction),
              let .bottomToBottom(direction),
              let .topToBottom(direction),
              let .bottomToTop(direction):
@@ -88,6 +97,7 @@ public enum VerticalAlignment {
         switch self {
         case let .top(inset): make.top.equalTo(platform.snp.top).inset(inset)
         case let .bottom(inset): make.bottom.equalTo(platform.snp.bottom).inset(inset)
+        case .centerToCenter: make.centerY.equalTo(menu.snp.centerY)
         case .topToTop: make.top.equalTo(menu.snp.top)
         case .bottomToBottom: make.bottom.equalTo(menu.snp.bottom)
         case .topToBottom: make.bottom.equalTo(menu.snp.top).offset(-spacing)

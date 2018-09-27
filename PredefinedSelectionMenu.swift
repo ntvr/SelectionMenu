@@ -23,7 +23,7 @@ public extension SelectionMenu {
         menu.elementStyle = SelectionElementStyle.red
         menu.collectionStyle = SelectionCollectionStyle.red
         menu.collectionsLayout = ManualMenuLayout(
-            horizontalAlignment: .rightToLeft,
+            horizontalAlignment: .rightToLeft(spacing: 10),
             verticalAlignment: .topToBottom(direction: .up)
         )
         return menu
@@ -47,8 +47,8 @@ public extension SelectionMenu {
         menu.elementStyle = SelectionElementStyle.blue
         menu.collectionStyle = SelectionCollectionStyle.blue
         menu.collectionsLayout = ManualMenuLayout(
-            horizontalAlignment: .rightToLeft,
-            verticalAlignment: .bottomToBottom(direction: .up)
+            horizontalAlignment: .rightToLeft(spacing: 10),
+            verticalAlignment: .centerToCenter(direction: .up)
         )
         return menu
     }
