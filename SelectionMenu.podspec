@@ -23,7 +23,11 @@ It allows to present single-selection, multi-selection or button-like rows.
                        DESC
 
   s.homepage         = 'https://github.com/ntvr/SelectionMenu'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
+  s.screenshots     = 'https://raw.githubusercontent.com/ntvr/SelectionMenu/master/Screenshots/Menu_screenshots/Red_leftBottom_rightTop.png',
+                      'https://raw.githubusercontent.com/ntvr/SelectionMenu/master/Screenshots/Menu_screenshots/Green_rightBottom_rightTop.png',
+                      'https://raw.githubusercontent.com/ntvr/SelectionMenu/master/Screenshots/Menu_screenshots/Blue_leftBottom_rightBottom.png',
+                      'https://raw.githubusercontent.com/ntvr/SelectionMenu/master/Screenshots/Menu_screenshots/White_rightBottom_leftTop.png',
+                      'https://raw.githubusercontent.com/ntvr/SelectionMenu/master/Screenshots/Menu_screenshots/Black_center_centerDown.png'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'stemberamichal' => 'stembera.michal@gmail.com' }
   s.source           = { :git => 'https://github.com/ntvr/SelectionMenu.git', :tag => s.version.to_s }
