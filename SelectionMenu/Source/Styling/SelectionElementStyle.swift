@@ -32,17 +32,6 @@ public class SelectionElementStyle {
         self.deselectedFgColor = deselectedFgColor
         self.deselectedBgColor = deselectedBgColor
     }
-
-    public init(
-        circular: Bool = true,
-        contentColor: UIColor?,
-        baseColor: UIColor?)
-    {
-        selectedFgColor = contentColor
-        selectedBgColor = baseColor?.darker()
-        deselectedFgColor = contentColor?.darker()
-        deselectedBgColor = .clear
-    }
 }
 
 // MARK: - SelectionElementStyling

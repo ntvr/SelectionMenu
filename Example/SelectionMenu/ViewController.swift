@@ -18,13 +18,7 @@ class ViewController: UIViewController {
     override func loadView() {
         super.loadView()
 
-        let button = UIButton(type: .custom)
-        button.setTitle("Menu", for: .normal)
-        button.circularStylable = true
-        button.foregroundColorStylable = .white
-        button.backgroundColorStylable = .blue
-
-        let expandableMenu = SelectionMenu(menuButton: button)
+        let expandableMenu = SelectionMenu.coolBlues
         view.addSubview(expandableMenu)
         self.menu = expandableMenu
 
@@ -35,13 +29,7 @@ class ViewController: UIViewController {
         )
 
         menu.dataSource = menuDataSource
-        menu.collectionsLayout = ManualMenuLayout(verticalSpacing: 5,
-                                                  menuButtonHeightRatio: 1.2,
-                                                  horizontalAlignment: .leftToRight(spacing: 10),
-                                                  verticalAlignment: .topToBottom(direction: .up))
 
-        menu.elementStyle = SelectionElementStyle.blue
-        menu.collectionStyle = SelectionCollectionStyle.blue
         menu.delegate = self
 
         setupConstraints()

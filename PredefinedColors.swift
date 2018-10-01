@@ -42,7 +42,7 @@ struct FreshAndEnergetic {
 
 struct DayAndNight {
     /// #011A27
-    static var darkNaby: UIColor { return UIColor(hex: 0x011A27) }
+    static var darkNavy: UIColor { return UIColor(hex: 0x011A27) }
     /// #062852
     static var blueberry: UIColor { return UIColor(hex: 0x062852) }
     /// #F0810F

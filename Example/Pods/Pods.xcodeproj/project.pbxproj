@@ -131,6 +131,7 @@
 		8B683B95A282CCF4164F37EB4941F991 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E75AE8DDA46166EAAF194F66E0280B /* UIView+Extensions.swift */; };
 		8E4BAAD39266FFC621A329C9ABADAFF7 /* ConstraintLayoutGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE22B569D8A496F3EC1437B710451FDE /* ConstraintLayoutGuide.swift */; };
 		8F69EDCC09739459EB61749494F1E002 /* CwlCatchException.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4ABD0F646DB2C5F50C216D4188DD0AF /* CwlCatchException.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
+		9054D28F2162B890009BB9C8 /* PredefinedColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9054D28D2162B837009BB9C8 /* PredefinedColors.swift */; };
 		9079D59821592D1B002FC64F /* PredefinedSelectionMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9079D59621592D13002FC64F /* PredefinedSelectionMenu.swift */; };
 		9108613C28FC0D1A7948C6B4FE64932F /* Nimble-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B861ECD62E88FB499BFA559F1E06A972 /* Nimble-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		91D400CC851F516E785B032662E4FDD8 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47650886BB57E689F45B39835885FBD3 /* Nimble.framework */; };
@@ -213,7 +214,6 @@
 		E8C79B8C0E054269121D4A0EAE471B7B /* Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1529BCD68FCC956F9ED97D391B299118 /* Constraint.swift */; };
 		E92F77BDD9326C58A35EBEDC89E86ECF /* Callsite.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B2C4C4B6711A0F189605DF9FC7740C /* Callsite.swift */; };
 		EB29B2266BDF9E37F00EED1D2B3F0FE5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A17733C40C5012BDBC425C70B2C02A6C /* UIKit.framework */; };
-		EC408D6647D8D54FA505D2B91F2F02FD /* PredefinedStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB2208BD30CC9FE5F05675E3BE2C016 /* PredefinedStyles.swift */; };
 		ED70B4997FC9EEA54B89CBFF3DCC27A9 /* mach_excServer.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F87E3596D9F49104554CED6C27879FC /* mach_excServer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EFE5EBDDD77FBE2021ABC1397ED2589F /* World+DSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21501B57B88268403CC825298427EF4 /* World+DSL.swift */; };
 		F28105B034AADEDCE3667B7E1ACE0682 /* XCTestObservationCenter+Register.m in Sources */ = {isa = PBXBuildFile; fileRef = BF930136506FCDF825E7D7279AA77AFA /* XCTestObservationCenter+Register.m */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
@@ -435,6 +435,7 @@
 		8CE3C9DBCA1C82947B109BB6C66427B4 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D8B0C096EAAD0E8B8377CFFFD7C0494 /* EndWith.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EndWith.swift; path = Sources/Nimble/Matchers/EndWith.swift; sourceTree = "<group>"; };
 		8D9568ECF445E38CA89DD9E256F2913A /* UILayoutSupport+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UILayoutSupport+Extensions.swift"; path = "Source/UILayoutSupport+Extensions.swift"; sourceTree = "<group>"; };
+		9054D28D2162B837009BB9C8 /* PredefinedColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredefinedColors.swift; sourceTree = "<group>"; };
 		9079D59621592D13002FC64F /* PredefinedSelectionMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredefinedSelectionMenu.swift; sourceTree = "<group>"; };
 		91408EBA7B0C52D878634ECB0210CCB4 /* LayoutConstraintItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutConstraintItem.swift; path = Source/LayoutConstraintItem.swift; sourceTree = "<group>"; };
 		9171EA1495172903081E04E093D0FEBD /* ErrorUtility.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ErrorUtility.swift; path = Sources/Quick/ErrorUtility.swift; sourceTree = "<group>"; };
@@ -467,7 +468,6 @@
 		AD45F7E5276870BCA7CFC2C13F93D555 /* ToSucceed.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ToSucceed.swift; path = Sources/Nimble/Matchers/ToSucceed.swift; sourceTree = "<group>"; };
 		AD551E4CB4922645C74DF3A9424AA348 /* Pods-SelectionMenu_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SelectionMenu_Example-resources.sh"; sourceTree = "<group>"; };
 		AD66C66C16EA0409060B98E2407B46FE /* Pods_SelectionMenu_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SelectionMenu_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		AFB2208BD30CC9FE5F05675E3BE2C016 /* PredefinedStyles.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PredefinedStyles.swift; sourceTree = "<group>"; };
 		AFCC199840B4D09F4CDD2FF847577870 /* ConstraintMultiplierTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMultiplierTarget.swift; path = Source/ConstraintMultiplierTarget.swift; sourceTree = "<group>"; };
 		B05F72CDF077E4948853C35AE8BF3C9F /* ConstraintLayoutSupport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintLayoutSupport.swift; path = Source/ConstraintLayoutSupport.swift; sourceTree = "<group>"; };
 		B141D380459F650DFE21C7C9DB30E299 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -867,7 +867,6 @@
 				F58058752D21B1C398EDCFA0C6DE4DD3 /* StylingProtocols.swift */,
 				89DA919901CE88A6C3371046CAB18082 /* NoStyle.swift */,
 				077B9D4245A0B5AD0BC18D187137D187 /* CompositeStyle.swift */,
-				AFB2208BD30CC9FE5F05675E3BE2C016 /* PredefinedStyles.swift */,
 				574FD70E4E53AB91284BE3A8E9522DDA /* SelectionElementStyle.swift */,
 				6A78A88449B7F2EABB31C106768E26D2 /* SelectionCollectionStyle.swift */,
 				68EFD807070F3F37CD23BDFF13598C14 /* ShadowStyle.swift */,
@@ -925,6 +924,7 @@
 			children = (
 				DB254C89FA70149358847CE66A5F9C9B /* SelectionMenu.swift */,
 				2736DE131782B2D571519F216D5A7BA2 /* SelectionMenuProtocols.swift */,
+				9054D28D2162B837009BB9C8 /* PredefinedColors.swift */,
 				9079D59621592D13002FC64F /* PredefinedSelectionMenu.swift */,
 				21987C7F80E5EC7512C505CCA1FAEACA /* DataSources */,
 				672FC2C505E303F5D015B833E1174B32 /* Extensions */,
@@ -1511,8 +1511,8 @@
 				651377306699772B287F2E7071E7E764 /* ManualMenuLayout.swift in Sources */,
 				1F4874EB8F60209D56ACF616BD3023B2 /* MultiSelectionCollection.swift in Sources */,
 				C9E3710B00952E69CE0DC41A22012218 /* NoStyle.swift in Sources */,
-				EC408D6647D8D54FA505D2B91F2F02FD /* PredefinedStyles.swift in Sources */,
 				AEAA25BE90009CB63B193746F38FFF84 /* Range+Extensions.swift in Sources */,
+				9054D28F2162B890009BB9C8 /* PredefinedColors.swift in Sources */,
 				951C02E52D856F7C79968D6E9C861E50 /* SelectionCollectionStyle.swift in Sources */,
 				29B3724758D18BDABC8326A3C7C44E3F /* SelectionElementStyle.swift in Sources */,
 				824BF9DC6F4C3AC47B1AF23959119DF8 /* SelectionMenu-dummy.m in Sources */,

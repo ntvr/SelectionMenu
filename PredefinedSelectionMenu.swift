@@ -17,63 +17,25 @@ public extension SelectionMenu {
         return button
     }
 
-    public static var red: SelectionMenu {
-        let button = SelectionMenu.menuButton(fg: .white, bg: .red)
+    public static var coolBlues: SelectionMenu {
+        let button = SelectionMenu.menuButton(fg: .white, bg: CoolBlues.deepAqua)
         let menu = SelectionMenu(menuButton: button)
-        menu.elementStyle = SelectionElementStyle.red
-        menu.collectionStyle = SelectionCollectionStyle.red
-        menu.collectionsLayout = ManualMenuLayout(
-            horizontalAlignment: .rightToLeft(spacing: 10),
-            verticalAlignment: .topToBottom(direction: .up)
-        )
-        return menu
-    }
 
-    public static var green: SelectionMenu {
-        let button = SelectionMenu.menuButton(fg: .white, bg: .green)
-        let menu = SelectionMenu(menuButton: button)
-        menu.elementStyle = SelectionElementStyle.green
-        menu.collectionStyle = SelectionCollectionStyle.green
+        menu.elementStyle = SelectionElementStyle(circular: true,
+                                                  selectedFgColor: .white,
+                                                  selectedBgColor: CoolBlues.deepAqua,
+                                                  deselectedFgColor: CoolBlues.seafoam,
+                                                  deselectedBgColor: .clear)
+
+        menu.collectionStyle = SelectionCollectionStyle(circular: true,
+                                                        foregroundColor: CoolBlues.deepAqua,
+                                                        backgroundColor: CoolBlues.ocean)
+
         menu.collectionsLayout = ManualMenuLayout(
             horizontalAlignment: .rightToRight,
             verticalAlignment: .topToBottom(direction: .up)
         )
-        return menu
-    }
 
-    public static var blue: SelectionMenu {
-        let button = SelectionMenu.menuButton(fg: .white, bg: .blue)
-        let menu = SelectionMenu(menuButton: button)
-        menu.elementStyle = SelectionElementStyle.blue
-        menu.collectionStyle = SelectionCollectionStyle.blue
-        menu.collectionsLayout = ManualMenuLayout(
-            horizontalAlignment: .rightToLeft(spacing: 10),
-            verticalAlignment: .centerToCenter(direction: .up)
-        )
-        return menu
-    }
-
-    public static var black: SelectionMenu {
-        let button = SelectionMenu.menuButton(fg: .white, bg: .black)
-        let menu = SelectionMenu(menuButton: button)
-        menu.elementStyle = SelectionElementStyle.black
-        menu.collectionStyle = SelectionCollectionStyle.black
-        menu.collectionsLayout = ManualMenuLayout(
-            horizontalAlignment: .centerToCenter,
-            verticalAlignment: .bottomToTop(direction: .down)
-        )
-        return menu
-    }
-
-    public static var white: SelectionMenu {
-        let button = SelectionMenu.menuButton(fg: .black, bg: .white)
-        let menu = SelectionMenu(menuButton: button)
-        menu.elementStyle = SelectionElementStyle.white
-        menu.collectionStyle = SelectionCollectionStyle.white
-        menu.collectionsLayout = ManualMenuLayout(
-            horizontalAlignment: .left(inset: 10),
-            verticalAlignment: .top(inset: 10)
-        )
         return menu
     }
 }

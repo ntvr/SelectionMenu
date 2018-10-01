@@ -33,15 +33,6 @@ public class SelectionCollectionStyle {
         self.foregroundColor = foregroundColor
         self.backgroundColor = backgroundColor
     }
-
-    public init(
-        circular: Bool = true,
-        baseColor: UIColor?)
-    {
-        self.circular = circular
-        self.foregroundColor = baseColor?.darker()
-        self.backgroundColor = baseColor?.lighter()
-    }
 }
 
 // MARK: - SelectionCollectionStyling
