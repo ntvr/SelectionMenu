@@ -119,8 +119,7 @@ extension StaticMenuDataSource: SelectionMenuDataSource {
     public func selectionMenu(viewFor index: Int, in section: Int) -> SelectionElementView {
         switch sections[section].values[index] {
         case let .text(title):
-            let labelElement = LabelSelectionElement()
-            labelElement.label.text = title
+            let labelElement = LabelSelectionElement(text: title, backgroundRatio: 0.9)
             return labelElement
 
         case let .image(image):

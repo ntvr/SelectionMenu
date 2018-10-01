@@ -16,7 +16,12 @@ public class LabelSelectionElement: UIView, SelectionElement {
     public weak var backgroundView: UIView!
 
     /// Initializes ContainerSelectionElement
-    public init(text: String? = nil) {
+    ///
+    /// - Parameter text: Initial text to be set into label
+    /// - Parameter backgroundRatio: Ratio between backgroundView and element, has to be in between 0 and 1
+    public init(text: String? = nil, backgroundRatio: Double = 1.0) {
+        assert(0...1 ~= backgroundRatio)
+
         super.init(frame: .zero)
 
         let backgroundView = UIView()
@@ -28,7 +33,7 @@ public class LabelSelectionElement: UIView, SelectionElement {
         label.text = text
         self.label = label
 
-        setupConstraints()
+        setupConstraints(with: backgroundRatio)
     }
 
     public required init?(coder aDecoder: NSCoder) {
@@ -71,9 +76,10 @@ extension LabelSelectionElement {
 
 // MARK: - Setup
 private extension LabelSelectionElement {
-    func setupConstraints() {
+    func setupConstraints(with backgroundRatio: Double) {
         backgroundView.snp.remakeConstraints { make in
-            make.edges.equalToSuperview()
+            make.center.equalToSuperview()
+            make.size.equalToSuperview().multipliedBy(backgroundRatio)
         }
 
         label.snp.remakeConstraints { make in
