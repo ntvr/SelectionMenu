@@ -131,8 +131,8 @@
 		8B683B95A282CCF4164F37EB4941F991 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E75AE8DDA46166EAAF194F66E0280B /* UIView+Extensions.swift */; };
 		8E4BAAD39266FFC621A329C9ABADAFF7 /* ConstraintLayoutGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE22B569D8A496F3EC1437B710451FDE /* ConstraintLayoutGuide.swift */; };
 		8F69EDCC09739459EB61749494F1E002 /* CwlCatchException.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4ABD0F646DB2C5F50C216D4188DD0AF /* CwlCatchException.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
-		9054D28F2162B890009BB9C8 /* PredefinedColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9054D28D2162B837009BB9C8 /* PredefinedColors.swift */; };
-		9079D59821592D1B002FC64F /* PredefinedSelectionMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9079D59621592D13002FC64F /* PredefinedSelectionMenu.swift */; };
+		9054D2912162CBC0009BB9C8 /* PredefinedSelectionMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9054D2902162CBC0009BB9C8 /* PredefinedSelectionMenu.swift */; };
+		9054D2932162CBE1009BB9C8 /* PredefinedColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9054D2922162CBE1009BB9C8 /* PredefinedColors.swift */; };
 		9108613C28FC0D1A7948C6B4FE64932F /* Nimble-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B861ECD62E88FB499BFA559F1E06A972 /* Nimble-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		91D400CC851F516E785B032662E4FDD8 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47650886BB57E689F45B39835885FBD3 /* Nimble.framework */; };
 		951C02E52D856F7C79968D6E9C861E50 /* SelectionCollectionStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A78A88449B7F2EABB31C106768E26D2 /* SelectionCollectionStyle.swift */; };
@@ -435,8 +435,8 @@
 		8CE3C9DBCA1C82947B109BB6C66427B4 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D8B0C096EAAD0E8B8377CFFFD7C0494 /* EndWith.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EndWith.swift; path = Sources/Nimble/Matchers/EndWith.swift; sourceTree = "<group>"; };
 		8D9568ECF445E38CA89DD9E256F2913A /* UILayoutSupport+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UILayoutSupport+Extensions.swift"; path = "Source/UILayoutSupport+Extensions.swift"; sourceTree = "<group>"; };
-		9054D28D2162B837009BB9C8 /* PredefinedColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredefinedColors.swift; sourceTree = "<group>"; };
-		9079D59621592D13002FC64F /* PredefinedSelectionMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredefinedSelectionMenu.swift; sourceTree = "<group>"; };
+		9054D2902162CBC0009BB9C8 /* PredefinedSelectionMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PredefinedSelectionMenu.swift; path = SelectionMenu/Source/PredefinedSelectionMenu.swift; sourceTree = "<group>"; };
+		9054D2922162CBE1009BB9C8 /* PredefinedColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PredefinedColors.swift; path = SelectionMenu/Source/PredefinedColors.swift; sourceTree = "<group>"; };
 		91408EBA7B0C52D878634ECB0210CCB4 /* LayoutConstraintItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutConstraintItem.swift; path = Source/LayoutConstraintItem.swift; sourceTree = "<group>"; };
 		9171EA1495172903081E04E093D0FEBD /* ErrorUtility.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ErrorUtility.swift; path = Sources/Quick/ErrorUtility.swift; sourceTree = "<group>"; };
 		91E539E79899DCE544FC25AC4FE75F54 /* Pods-SelectionMenu_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SelectionMenu_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
@@ -924,8 +924,8 @@
 			children = (
 				DB254C89FA70149358847CE66A5F9C9B /* SelectionMenu.swift */,
 				2736DE131782B2D571519F216D5A7BA2 /* SelectionMenuProtocols.swift */,
-				9054D28D2162B837009BB9C8 /* PredefinedColors.swift */,
-				9079D59621592D13002FC64F /* PredefinedSelectionMenu.swift */,
+				9054D2922162CBE1009BB9C8 /* PredefinedColors.swift */,
+				9054D2902162CBC0009BB9C8 /* PredefinedSelectionMenu.swift */,
 				21987C7F80E5EC7512C505CCA1FAEACA /* DataSources */,
 				672FC2C505E303F5D015B833E1174B32 /* Extensions */,
 				B2A45B359E75388EF37B91F24C2B367B /* Layouting */,
@@ -1501,9 +1501,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				52109B03E94B90B6EE60A65F1A83404B /* AutomaticMenuLayout.swift in Sources */,
-				9079D59821592D1B002FC64F /* PredefinedSelectionMenu.swift in Sources */,
+				9054D2912162CBC0009BB9C8 /* PredefinedSelectionMenu.swift in Sources */,
 				6EBB2C979DC20F355B9EB9E6EBCBC81F /* ButtonSelectionCollection.swift in Sources */,
 				51130BB0B2139B1590339D1BB3D79A99 /* CompositeStyle.swift in Sources */,
+				9054D2932162CBE1009BB9C8 /* PredefinedColors.swift in Sources */,
 				F437FA3BA67AA74113421D82D9526601 /* EmptyMenuDataSource.swift in Sources */,
 				2A8BAF9D87306228F3B30B9F782F47DC /* ImageSelectionElement.swift in Sources */,
 				F5A3D319E7644291A8C9C0A79BE7E51C /* LabelMenuButton.swift in Sources */,
@@ -1512,7 +1513,6 @@
 				1F4874EB8F60209D56ACF616BD3023B2 /* MultiSelectionCollection.swift in Sources */,
 				C9E3710B00952E69CE0DC41A22012218 /* NoStyle.swift in Sources */,
 				AEAA25BE90009CB63B193746F38FFF84 /* Range+Extensions.swift in Sources */,
-				9054D28F2162B890009BB9C8 /* PredefinedColors.swift in Sources */,
 				951C02E52D856F7C79968D6E9C861E50 /* SelectionCollectionStyle.swift in Sources */,
 				29B3724758D18BDABC8326A3C7C44E3F /* SelectionElementStyle.swift in Sources */,
 				824BF9DC6F4C3AC47B1AF23959119DF8 /* SelectionMenu-dummy.m in Sources */,
