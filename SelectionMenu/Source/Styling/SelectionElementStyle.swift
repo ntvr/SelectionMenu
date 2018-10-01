@@ -38,7 +38,7 @@ public class SelectionElementStyle {
 extension SelectionElementStyle: SelectionElementStyling {
     public func apply(to element: SelectionElementView, in sectionType: SelectionMenu.SectionType, selected: Bool) {
 
-        element.circular = circular
+        element.circularStylable = circular
 
         if selected {
             element.foregroundColorStylable = selectedFgColor

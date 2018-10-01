@@ -38,4 +38,70 @@ public extension SelectionMenu {
 
         return menu
     }
+
+    public static var outdoorsyAndNatural: SelectionMenu {
+        let button = SelectionMenu.menuButton(fg: .white, bg: OutdoorsyAndNatural.forestGreen)
+        let menu = SelectionMenu(menuButton: button)
+
+        menu.elementStyle = SelectionElementStyle(circular: true,
+                                                  selectedFgColor: OutdoorsyAndNatural.earth,
+                                                  selectedBgColor: OutdoorsyAndNatural.lime,
+                                                  deselectedFgColor: .white,
+                                                  deselectedBgColor: .clear)
+
+        menu.collectionStyle = SelectionCollectionStyle(circular: true,
+                                                        foregroundColor: OutdoorsyAndNatural.lime,
+                                                        backgroundColor: OutdoorsyAndNatural.forestGreen)
+
+        menu.collectionsLayout = ManualMenuLayout(
+            horizontalAlignment: .rightToRight,
+            verticalAlignment: .topToBottom(direction: .up)
+        )
+
+        return menu
+    }
+
+    public static var freshAndEnergetic: SelectionMenu {
+        let button = SelectionMenu.menuButton(fg: FreshAndEnergetic.granite, bg: FreshAndEnergetic.pine)
+        let menu = SelectionMenu(menuButton: button)
+
+        menu.elementStyle = SelectionElementStyle(circular: true,
+                                                  selectedFgColor: .black,
+                                                  selectedBgColor: FreshAndEnergetic.blueSky,
+                                                  deselectedFgColor: .black,
+                                                  deselectedBgColor: .clear)
+
+        menu.collectionStyle = SelectionCollectionStyle(circular: true,
+                                                        foregroundColor: FreshAndEnergetic.blueSky,
+                                                        backgroundColor: FreshAndEnergetic.fields)
+
+        menu.collectionsLayout = ManualMenuLayout(
+            horizontalAlignment: .rightToRight,
+            verticalAlignment: .topToBottom(direction: .up)
+        )
+
+        return menu
+    }
+
+    public static var dayAndNight: SelectionMenu {
+        let button = SelectionMenu.menuButton(fg: DayAndNight.blueberry, bg: DayAndNight.tangerine)
+        let menu = SelectionMenu(menuButton: button)
+
+        menu.elementStyle = SelectionElementStyle(circular: true,
+                                                  selectedFgColor: DayAndNight.darkNavy,
+                                                  selectedBgColor: DayAndNight.tangerine,
+                                                  deselectedFgColor: DayAndNight.daffodil,
+                                                  deselectedBgColor: .clear)
+
+        menu.collectionStyle = SelectionCollectionStyle(circular: true,
+                                                        foregroundColor: DayAndNight.tangerine,
+                                                        backgroundColor: DayAndNight.blueberry)
+
+        menu.collectionsLayout = ManualMenuLayout(
+            horizontalAlignment: .rightToRight,
+            verticalAlignment: .topToBottom(direction: .up)
+        )
+
+        return menu
+    }
 }
