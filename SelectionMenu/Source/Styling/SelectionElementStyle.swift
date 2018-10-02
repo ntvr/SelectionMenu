@@ -9,17 +9,35 @@
 import Foundation
 import UIKit
 
-/// Style that can be applied only to SelectionElement.
+/// Style that can be applied only to SelectionElements.
 public class SelectionElementStyle {
     /// - Rounded corners to form cirlce if squared.
     /// - Corner radius is equal to half of shorter side.
     public var circular = true
 
+    /// - Controls SelectionElement's foreground color
+    /// - Will be applied through `SelectionElement.foregroundColorStylable`
+    /// - Only applied only when element is **selected**
     public let selectedFgColor: UIColor?
+
+    /// - Controls SelectionElement's background color
+    /// - Will be applied through `SelectionElement.backgroundColorStylable`
+    /// - Only applied only when element is **selected**
     public let selectedBgColor: UIColor?
+
+    /// - Controls SelectionElement's foreground color
+    /// - Will be applied through `SelectionElement.foregroundColorStylable`
+    /// - Only applied only when element is **not selected**
     public let deselectedFgColor: UIColor?
+
+    /// - Controls SelectionElement's background color
+    /// - Will be applied through `SelectionElement.backgroundColorStylable`
+    /// - Only applied only when element is **not selected**
     public let deselectedBgColor: UIColor?
 
+    /// Initializes SelectionElementStyle
+    ///
+    /// To review parameters read properties documentation
     public init(
         circular: Bool = true,
         selectedFgColor: UIColor?,

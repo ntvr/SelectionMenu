@@ -11,9 +11,9 @@ import UIKit
 
 /// Can be used to apply style of the shadow to either SelectionCollection or SelectionElement.
 public struct ShadowStyle {
-
     /// Color of the shadow - mapped directly to layer.
     public let shadowColor: CGColor?
+
     /// Oppacity of the shadow - mapped directly to layer.
     public let shadowOpacity: Float
 

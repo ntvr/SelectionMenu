@@ -15,10 +15,12 @@ public class SelectionCollectionStyle {
     /// - Corner radius is equal to half of shorter side.
     public let circular: Bool
 
-    /// Controls SelectionCollection's background color.
+    /// - Controls SelectionCollection's background color
+    /// - Will be applied through `Stylable.foregroundColorStylable`
     public let foregroundColor: UIColor?
 
-    /// Controls SelectionCollection's background color.
+    /// - Controls SelectionCollection's background color.
+    /// - Will be applied through `Stylable.backgroundColorStylable`
     public let backgroundColor: UIColor?
 
     /// Initalizes SelectionCollectionStyle simply setting the properties with values provided.

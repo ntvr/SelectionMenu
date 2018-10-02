@@ -8,6 +8,7 @@
 import Foundation
 import UIKit.UIColor
 
+/// Defines API through which objects can be styled using properties.
 public protocol Stylable: class {
     /// - Foreground color
     /// - Color is used for example for image or text.
