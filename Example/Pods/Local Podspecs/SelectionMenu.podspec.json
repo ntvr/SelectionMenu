@@ -4,6 +4,13 @@
   "summary": "Overlay menu supporting both buttons and option selection",
   "description": "Overlay menu with customizable appearance and variation of content sections.\nIt allows to present single-selection, multi-selection or button-like rows.",
   "homepage": "https://github.com/ntvr/SelectionMenu",
+  "screenshots": [
+    "https://raw.githubusercontent.com/ntvr/SelectionMenu/master/Screenshots/Menu_screenshots/Red_leftBottom_rightTop.png",
+    "https://raw.githubusercontent.com/ntvr/SelectionMenu/master/Screenshots/Menu_screenshots/Green_rightBottom_rightTop.png",
+    "https://raw.githubusercontent.com/ntvr/SelectionMenu/master/Screenshots/Menu_screenshots/Blue_leftBottom_rightBottom.png",
+    "https://raw.githubusercontent.com/ntvr/SelectionMenu/master/Screenshots/Menu_screenshots/White_rightBottom_leftTop.png",
+    "https://raw.githubusercontent.com/ntvr/SelectionMenu/master/Screenshots/Menu_screenshots/Black_center_centerDown.png"
+  ],
   "license": {
     "type": "MIT",
     "file": "LICENSE"
