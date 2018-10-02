@@ -83,3 +83,36 @@ struct OrangeAccent {
     /// #FF8D3F
     static var orange: UIColor { return UIColor(hex: 0xFF8D3F) }
 }
+
+struct SunnyCitrus {
+    /// #FAAF08
+    static var citrus: UIColor { return UIColor(hex: 0xFAAF08) }
+    /// #FA812F
+    static var grapefruit: UIColor { return UIColor(hex: 0xFA812F) }
+    /// #FA4032
+    static var rubyRed: UIColor { return UIColor(hex: 0xFA4032) }
+    /// #FEF3E2
+    static var offWhite: UIColor { return UIColor(hex: 0xFEF3E2) }
+}
+
+struct FreshGreens {
+    /// #265C00
+    static var emerald: UIColor { return UIColor(hex: 0x265C00) }
+    /// #68A225
+    static var greenBean: UIColor { return UIColor(hex: 0x68A225) }
+    /// #B3DE81
+    static var lightGreen: UIColor { return UIColor(hex: 0xB3DE81) }
+    /// #FDFFFF
+    static var cotton: UIColor { return UIColor(hex: 0xFDFFFF) }
+}
+
+struct ChocolatyBrowns {
+    /// #301B28
+    static var cocoa: UIColor { return UIColor(hex: 0x301B28) }
+    /// #523634
+    static var chocolate: UIColor { return UIColor(hex: 0x523634) }
+    /// #B6452C
+    static var toffee: UIColor { return UIColor(hex: 0xB6452C) }
+    /// #DDC5A2
+    static var frosting: UIColor { return UIColor(hex: 0xDDC5A2) }
+}

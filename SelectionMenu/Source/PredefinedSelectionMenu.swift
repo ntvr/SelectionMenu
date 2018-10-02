@@ -173,4 +173,73 @@ public extension SelectionMenu {
 
         return menu
     }
+
+    public static var sunnyCitrus: SelectionMenu {
+        let button = SelectionMenu.menuButton(fg: .white,
+                                              bg: SunnyCitrus.rubyRed)
+        let menu = SelectionMenu(menuButton: button)
+
+        menu.elementStyle = SelectionElementStyle(circular: true,
+                                                  selectedFgColor: .black,
+                                                  selectedBgColor: SunnyCitrus.citrus,
+                                                  deselectedFgColor: .white,
+                                                  deselectedBgColor: .clear)
+
+        menu.collectionStyle = SelectionCollectionStyle(circular: true,
+                                                        foregroundColor: SunnyCitrus.citrus,
+                                                        backgroundColor: SunnyCitrus.grapefruit)
+
+        menu.collectionsLayout = ManualMenuLayout(
+            horizontalAlignment: .rightToRight,
+            verticalAlignment: .topToBottom(direction: .up)
+        )
+
+        return menu
+    }
+
+    public static var freshGreens: SelectionMenu {
+        let button = SelectionMenu.menuButton(fg: FreshGreens.cotton,
+                                              bg: FreshGreens.emerald)
+        let menu = SelectionMenu(menuButton: button)
+
+        menu.elementStyle = SelectionElementStyle(circular: true,
+                                                  selectedFgColor: .black,
+                                                  selectedBgColor: FreshGreens.lightGreen,
+                                                  deselectedFgColor: FreshGreens.cotton,
+                                                  deselectedBgColor: .clear)
+
+        menu.collectionStyle = SelectionCollectionStyle(circular: true,
+                                                        foregroundColor: FreshGreens.lightGreen,
+                                                        backgroundColor: FreshGreens.greenBean)
+
+        menu.collectionsLayout = ManualMenuLayout(
+            horizontalAlignment: .rightToRight,
+            verticalAlignment: .topToBottom(direction: .up)
+        )
+
+        return menu
+    }
+
+    public static var chocolatyBrowns: SelectionMenu {
+        let button = SelectionMenu.menuButton(fg: .white,
+                                              bg: ChocolatyBrowns.cocoa)
+        let menu = SelectionMenu(menuButton: button)
+
+        menu.elementStyle = SelectionElementStyle(circular: true,
+                                                  selectedFgColor: .white,
+                                                  selectedBgColor: ChocolatyBrowns.toffee,
+                                                  deselectedFgColor: .white,
+                                                  deselectedBgColor: .clear)
+
+        menu.collectionStyle = SelectionCollectionStyle(circular: true,
+                                                        foregroundColor: ChocolatyBrowns.toffee,
+                                                        backgroundColor: ChocolatyBrowns.chocolate)
+
+        menu.collectionsLayout = ManualMenuLayout(
+            horizontalAlignment: .rightToRight,
+            verticalAlignment: .topToBottom(direction: .up)
+        )
+
+        return menu
+    }
 }
