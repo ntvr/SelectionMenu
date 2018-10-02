@@ -12,11 +12,17 @@ import UIKit
 public class ImageSelectionElement: UIView, SelectionElement {
     /// ImageView contained within background view and centered within it.
     public weak var imageView: UIImageView!
+
     /// Background having same size as the superview.
     public weak var backgroundView: UIView!
 
     /// Initializes ContainerSelectionElement
-    public init(image: UIImage? = nil) {
+    ///
+    /// - Parameter image: Initial image to be set for imageView
+    /// - Parameter backgroundRatio: Ratio between backgroundView and element, has to be in between 0 and 1
+    public init(image: UIImage? = nil, backgroundRatio: Double = 1.0) {
+        assert(0...1 ~= backgroundRatio)
+
         super.init(frame: .zero)
 
         let backgroundView = UIView()
@@ -27,7 +33,7 @@ public class ImageSelectionElement: UIView, SelectionElement {
         backgroundView.addSubview(imageView)
         self.imageView = imageView
 
-        setupConstraints()
+        setupConstraints(with: backgroundRatio)
     }
 
     public required init?(coder aDecoder: NSCoder) {
@@ -69,9 +75,10 @@ extension ImageSelectionElement {
 }
 
 private extension ImageSelectionElement {
-    func setupConstraints() {
+    func setupConstraints(with backgroundRatio: Double) {
         backgroundView.snp.remakeConstraints { make in
-            make.edges.equalToSuperview()
+            make.center.equalToSuperview()
+            make.size.equalToSuperview().multipliedBy(backgroundRatio)
         }
 
         imageView.snp.remakeConstraints { make in
