@@ -50,3 +50,14 @@ struct DayAndNight {
     /// #E6DF44
     static var daffodil: UIColor { return UIColor(hex: 0xE6DF44) }
 }
+
+struct CrispComplementary {
+    /// #F4EC6A
+    static var goldenDelicious: UIColor { return UIColor(hex: 0xF4EC6A) }
+    /// #BBCF4A
+    static var grannySmith: UIColor { return UIColor(hex: 0xBBCF4A) }
+    /// #E73F0B
+    static var ripeApple: UIColor { return UIColor(hex: 0xE73F0B) }
+    /// #A11F0C
+    static var redDelicious: UIColor { return UIColor(hex: 0xA11F0C) }
+}

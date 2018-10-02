@@ -104,4 +104,27 @@ public extension SelectionMenu {
 
         return menu
     }
+
+    public static var crispComplementary: SelectionMenu {
+        let button = SelectionMenu.menuButton(fg: CrispComplementary.goldenDelicious,
+                                              bg: CrispComplementary.ripeApple)
+        let menu = SelectionMenu(menuButton: button)
+
+        menu.elementStyle = SelectionElementStyle(circular: true,
+                                                  selectedFgColor: CrispComplementary.goldenDelicious,
+                                                  selectedBgColor: CrispComplementary.ripeApple,
+                                                  deselectedFgColor: CrispComplementary.grannySmith,
+                                                  deselectedBgColor: .clear)
+
+        menu.collectionStyle = SelectionCollectionStyle(circular: true,
+                                                        foregroundColor: CrispComplementary.ripeApple,
+                                                        backgroundColor: CrispComplementary.redDelicious)
+
+        menu.collectionsLayout = ManualMenuLayout(
+            horizontalAlignment: .rightToRight,
+            verticalAlignment: .topToBottom(direction: .up)
+        )
+
+        return menu
+    }
 }
