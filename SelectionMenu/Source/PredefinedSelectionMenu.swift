@@ -127,4 +127,27 @@ public extension SelectionMenu {
 
         return menu
     }
+
+    public static var boldAndBasic: SelectionMenu {
+        let button = SelectionMenu.menuButton(fg: BoldAndBasic.flash,
+                                              bg: BoldAndBasic.phoneBoothRed)
+        let menu = SelectionMenu(menuButton: button)
+
+        menu.elementStyle = SelectionElementStyle(circular: true,
+                                                  selectedFgColor: BoldAndBasic.flash,
+                                                  selectedBgColor: BoldAndBasic.phoneBoothRed,
+                                                  deselectedFgColor: BoldAndBasic.pearl,
+                                                  deselectedBgColor: .clear)
+
+        menu.collectionStyle = SelectionCollectionStyle(circular: true,
+                                                        foregroundColor: BoldAndBasic.phoneBoothRed,
+                                                        backgroundColor: BoldAndBasic.night)
+
+        menu.collectionsLayout = ManualMenuLayout(
+            horizontalAlignment: .rightToRight,
+            verticalAlignment: .topToBottom(direction: .up)
+        )
+
+        return menu
+    }
 }

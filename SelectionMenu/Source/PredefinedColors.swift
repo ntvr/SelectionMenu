@@ -61,3 +61,14 @@ struct CrispComplementary {
     /// #A11F0C
     static var redDelicious: UIColor { return UIColor(hex: 0xA11F0C) }
 }
+
+struct BoldAndBasic {
+    /// #000B29
+    static var night: UIColor { return UIColor(hex: 0x000B29) }
+    /// #D70026
+    static var phoneBoothRed: UIColor { return UIColor(hex: 0xD70026) }
+    /// #F8F5F2
+    static var pearl: UIColor { return UIColor(hex: 0xF8F5F2) }
+    /// #EDB83D
+    static var flash: UIColor { return UIColor(hex: 0xEDB83D) }
+}
