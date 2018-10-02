@@ -72,3 +72,14 @@ struct BoldAndBasic {
     /// #EDB83D
     static var flash: UIColor { return UIColor(hex: 0xEDB83D) }
 }
+
+struct OrangeAccent {
+    /// #756867
+    static var woodVeener: UIColor { return UIColor(hex: 0x756867) }
+    /// #D5D6D2
+    static var sandDollar: UIColor { return UIColor(hex: 0xD5D6D2) }
+    /// #353C3F
+    static var charcoal: UIColor { return UIColor(hex: 0x353C3F) }
+    /// #FF8D3F
+    static var orange: UIColor { return UIColor(hex: 0xFF8D3F) }
+}

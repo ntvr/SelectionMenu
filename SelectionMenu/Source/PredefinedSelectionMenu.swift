@@ -150,4 +150,27 @@ public extension SelectionMenu {
 
         return menu
     }
+
+    public static var orangeAccent: SelectionMenu {
+        let button = SelectionMenu.menuButton(fg: .white,
+                                              bg: OrangeAccent.orange)
+        let menu = SelectionMenu(menuButton: button)
+
+        menu.elementStyle = SelectionElementStyle(circular: true,
+                                                  selectedFgColor: .white,
+                                                  selectedBgColor: OrangeAccent.orange,
+                                                  deselectedFgColor: OrangeAccent.sandDollar,
+                                                  deselectedBgColor: OrangeAccent.woodVeener)
+
+        menu.collectionStyle = SelectionCollectionStyle(circular: true,
+                                                        foregroundColor: OrangeAccent.orange,
+                                                        backgroundColor: OrangeAccent.charcoal)
+
+        menu.collectionsLayout = ManualMenuLayout(
+            horizontalAlignment: .rightToRight,
+            verticalAlignment: .topToBottom(direction: .up)
+        )
+
+        return menu
+    }
 }
