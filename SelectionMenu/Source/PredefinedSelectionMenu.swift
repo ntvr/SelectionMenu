@@ -24,7 +24,7 @@ public extension SelectionMenu {
     /// - SelectionMenuButton and adds it as subview
     /// - SelectionElementStyle
     /// - SelectionCollectionStyle
-    /// - SelectionMenuLayouting
+    /// - SelectionMenuLayouting which defaults to AutomaticMenuLayout()
     public static var coolBlues: SelectionMenu {
         let button = SelectionMenu.menuButton(fg: .white, bg: CoolBlues.deepAqua)
         let menu = SelectionMenu(menuButton: button)
@@ -39,10 +39,7 @@ public extension SelectionMenu {
                                                         foregroundColor: CoolBlues.deepAqua,
                                                         backgroundColor: CoolBlues.ocean)
 
-        menu.collectionsLayout = ManualMenuLayout(
-            horizontalAlignment: .rightToRight,
-            verticalAlignment: .topToBottom(direction: .up)
-        )
+        menu.collectionsLayout = AutomaticMenuLayout()
 
         return menu
     }
@@ -54,7 +51,7 @@ public extension SelectionMenu {
     /// - SelectionMenuButton and adds it as subview
     /// - SelectionElementStyle
     /// - SelectionCollectionStyle
-    /// - SelectionMenuLayouting
+    /// - SelectionMenuLayouting which defaults to AutomaticMenuLayout()
     public static var outdoorsyAndNatural: SelectionMenu {
         let button = SelectionMenu.menuButton(fg: .white, bg: OutdoorsyAndNatural.forestGreen)
         let menu = SelectionMenu(menuButton: button)
@@ -69,10 +66,7 @@ public extension SelectionMenu {
                                                         foregroundColor: OutdoorsyAndNatural.lime,
                                                         backgroundColor: OutdoorsyAndNatural.forestGreen)
 
-        menu.collectionsLayout = ManualMenuLayout(
-            horizontalAlignment: .rightToRight,
-            verticalAlignment: .topToBottom(direction: .up)
-        )
+        menu.collectionsLayout = AutomaticMenuLayout()
 
         return menu
     }
@@ -84,7 +78,7 @@ public extension SelectionMenu {
     /// - SelectionMenuButton and adds it as subview
     /// - SelectionElementStyle
     /// - SelectionCollectionStyle
-    /// - SelectionMenuLayouting
+    /// - SelectionMenuLayouting which defaults to AutomaticMenuLayout()
     public static var freshAndEnergetic: SelectionMenu {
         let button = SelectionMenu.menuButton(fg: FreshAndEnergetic.granite, bg: FreshAndEnergetic.pine)
         let menu = SelectionMenu(menuButton: button)
@@ -99,10 +93,7 @@ public extension SelectionMenu {
                                                         foregroundColor: FreshAndEnergetic.blueSky,
                                                         backgroundColor: FreshAndEnergetic.fields)
 
-        menu.collectionsLayout = ManualMenuLayout(
-            horizontalAlignment: .rightToRight,
-            verticalAlignment: .topToBottom(direction: .up)
-        )
+        menu.collectionsLayout = AutomaticMenuLayout()
 
         return menu
     }
@@ -114,7 +105,7 @@ public extension SelectionMenu {
     /// - SelectionMenuButton and adds it as subview
     /// - SelectionElementStyle
     /// - SelectionCollectionStyle
-    /// - SelectionMenuLayouting
+    /// - SelectionMenuLayouting which defaults to AutomaticMenuLayout()
     public static var dayAndNight: SelectionMenu {
         let button = SelectionMenu.menuButton(fg: DayAndNight.blueberry, bg: DayAndNight.tangerine)
         let menu = SelectionMenu(menuButton: button)
@@ -129,10 +120,7 @@ public extension SelectionMenu {
                                                         foregroundColor: DayAndNight.tangerine,
                                                         backgroundColor: DayAndNight.blueberry)
 
-        menu.collectionsLayout = ManualMenuLayout(
-            horizontalAlignment: .rightToRight,
-            verticalAlignment: .topToBottom(direction: .up)
-        )
+        menu.collectionsLayout = AutomaticMenuLayout()
 
         return menu
     }
@@ -144,7 +132,7 @@ public extension SelectionMenu {
     /// - SelectionMenuButton and adds it as subview
     /// - SelectionElementStyle
     /// - SelectionCollectionStyle
-    /// - SelectionMenuLayouting
+    /// - SelectionMenuLayouting which defaults to AutomaticMenuLayout()
     public static var crispComplementary: SelectionMenu {
         let button = SelectionMenu.menuButton(fg: CrispComplementary.goldenDelicious,
                                               bg: CrispComplementary.ripeApple)
@@ -160,10 +148,7 @@ public extension SelectionMenu {
                                                         foregroundColor: CrispComplementary.ripeApple,
                                                         backgroundColor: CrispComplementary.redDelicious)
 
-        menu.collectionsLayout = ManualMenuLayout(
-            horizontalAlignment: .rightToRight,
-            verticalAlignment: .topToBottom(direction: .up)
-        )
+        menu.collectionsLayout = AutomaticMenuLayout()
 
         return menu
     }
@@ -175,7 +160,7 @@ public extension SelectionMenu {
     /// - SelectionMenuButton and adds it as subview
     /// - SelectionElementStyle
     /// - SelectionCollectionStyle
-    /// - SelectionMenuLayouting
+    /// - SelectionMenuLayouting which defaults to AutomaticMenuLayout()
     public static var boldAndBasic: SelectionMenu {
         let button = SelectionMenu.menuButton(fg: BoldAndBasic.flash,
                                               bg: BoldAndBasic.phoneBoothRed)
@@ -191,10 +176,7 @@ public extension SelectionMenu {
                                                         foregroundColor: BoldAndBasic.phoneBoothRed,
                                                         backgroundColor: BoldAndBasic.night)
 
-        menu.collectionsLayout = ManualMenuLayout(
-            horizontalAlignment: .rightToRight,
-            verticalAlignment: .topToBottom(direction: .up)
-        )
+        menu.collectionsLayout = AutomaticMenuLayout()
 
         return menu
     }
@@ -206,7 +188,7 @@ public extension SelectionMenu {
     /// - SelectionMenuButton and adds it as subview
     /// - SelectionElementStyle
     /// - SelectionCollectionStyle
-    /// - SelectionMenuLayouting
+    /// - SelectionMenuLayouting which defaults to AutomaticMenuLayout()
     public static var orangeAccent: SelectionMenu {
         let button = SelectionMenu.menuButton(fg: .white,
                                               bg: OrangeAccent.orange)
@@ -222,10 +204,7 @@ public extension SelectionMenu {
                                                         foregroundColor: OrangeAccent.orange,
                                                         backgroundColor: OrangeAccent.charcoal)
 
-        menu.collectionsLayout = ManualMenuLayout(
-            horizontalAlignment: .rightToRight,
-            verticalAlignment: .topToBottom(direction: .up)
-        )
+        menu.collectionsLayout = AutomaticMenuLayout()
 
         return menu
     }
@@ -237,7 +216,7 @@ public extension SelectionMenu {
     /// - SelectionMenuButton and adds it as subview
     /// - SelectionElementStyle
     /// - SelectionCollectionStyle
-    /// - SelectionMenuLayouting
+    /// - SelectionMenuLayouting which defaults to AutomaticMenuLayout()
     public static var sunnyCitrus: SelectionMenu {
         let button = SelectionMenu.menuButton(fg: .white,
                                               bg: SunnyCitrus.rubyRed)
@@ -253,10 +232,7 @@ public extension SelectionMenu {
                                                         foregroundColor: SunnyCitrus.citrus,
                                                         backgroundColor: SunnyCitrus.grapefruit)
 
-        menu.collectionsLayout = ManualMenuLayout(
-            horizontalAlignment: .rightToRight,
-            verticalAlignment: .topToBottom(direction: .up)
-        )
+        menu.collectionsLayout = AutomaticMenuLayout()
 
         return menu
     }
@@ -268,7 +244,7 @@ public extension SelectionMenu {
     /// - SelectionMenuButton and adds it as subview
     /// - SelectionElementStyle
     /// - SelectionCollectionStyle
-    /// - SelectionMenuLayouting
+    /// - SelectionMenuLayouting which defaults to AutomaticMenuLayout()
     public static var freshGreens: SelectionMenu {
         let button = SelectionMenu.menuButton(fg: FreshGreens.cotton,
                                               bg: FreshGreens.emerald)
@@ -284,10 +260,7 @@ public extension SelectionMenu {
                                                         foregroundColor: FreshGreens.lightGreen,
                                                         backgroundColor: FreshGreens.greenBean)
 
-        menu.collectionsLayout = ManualMenuLayout(
-            horizontalAlignment: .rightToRight,
-            verticalAlignment: .topToBottom(direction: .up)
-        )
+        menu.collectionsLayout = AutomaticMenuLayout()
 
         return menu
     }
@@ -299,7 +272,7 @@ public extension SelectionMenu {
     /// - SelectionMenuButton and adds it as subview
     /// - SelectionElementStyle
     /// - SelectionCollectionStyle
-    /// - SelectionMenuLayouting
+    /// - SelectionMenuLayouting which defaults to AutomaticMenuLayout()
     public static var chocolatyBrowns: SelectionMenu {
         let button = SelectionMenu.menuButton(fg: .white,
                                               bg: ChocolatyBrowns.cocoa)
@@ -315,10 +288,7 @@ public extension SelectionMenu {
                                                         foregroundColor: ChocolatyBrowns.toffee,
                                                         backgroundColor: ChocolatyBrowns.chocolate)
 
-        menu.collectionsLayout = ManualMenuLayout(
-            horizontalAlignment: .rightToRight,
-            verticalAlignment: .topToBottom(direction: .up)
-        )
+        menu.collectionsLayout = AutomaticMenuLayout()
 
         return menu
     }
