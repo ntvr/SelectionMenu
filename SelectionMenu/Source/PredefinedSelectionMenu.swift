@@ -17,6 +17,14 @@ public extension SelectionMenu {
         return button
     }
 
+    /// Predefined SelectionMenu based on **Chocolaty Browns** color combination from
+    /// [100 brilliant color combinations](https://www.canva.com/learn/100-color-combinations/)
+    ///
+    /// Setups all of following (can be overriden from the outside if necessary)
+    /// - SelectionMenuButton and adds it as subview
+    /// - SelectionElementStyle
+    /// - SelectionCollectionStyle
+    /// - SelectionMenuLayouting
     public static var coolBlues: SelectionMenu {
         let button = SelectionMenu.menuButton(fg: .white, bg: CoolBlues.deepAqua)
         let menu = SelectionMenu(menuButton: button)
@@ -39,6 +47,14 @@ public extension SelectionMenu {
         return menu
     }
 
+    /// Predefined SelectionMenu based on **Outdoorsy & Natural** color combination from
+    /// [100 brilliant color combinations](https://www.canva.com/learn/100-color-combinations/)
+    ///
+    /// Setups all of following (can be overriden from the outside if necessary)
+    /// - SelectionMenuButton and adds it as subview
+    /// - SelectionElementStyle
+    /// - SelectionCollectionStyle
+    /// - SelectionMenuLayouting
     public static var outdoorsyAndNatural: SelectionMenu {
         let button = SelectionMenu.menuButton(fg: .white, bg: OutdoorsyAndNatural.forestGreen)
         let menu = SelectionMenu(menuButton: button)
@@ -61,6 +77,14 @@ public extension SelectionMenu {
         return menu
     }
 
+    /// Predefined SelectionMenu based on **Fresh & Energetic** color combination from
+    /// [100 brilliant color combinations](https://www.canva.com/learn/100-color-combinations/)
+    ///
+    /// Setups all of following (can be overriden from the outside if necessary)
+    /// - SelectionMenuButton and adds it as subview
+    /// - SelectionElementStyle
+    /// - SelectionCollectionStyle
+    /// - SelectionMenuLayouting
     public static var freshAndEnergetic: SelectionMenu {
         let button = SelectionMenu.menuButton(fg: FreshAndEnergetic.granite, bg: FreshAndEnergetic.pine)
         let menu = SelectionMenu(menuButton: button)
@@ -83,6 +107,14 @@ public extension SelectionMenu {
         return menu
     }
 
+    /// Predefined SelectionMenu based on **Day & Night** color combination from
+    /// [100 brilliant color combinations](https://www.canva.com/learn/100-color-combinations/)
+    ///
+    /// Setups all of following (can be overriden from the outside if necessary)
+    /// - SelectionMenuButton and adds it as subview
+    /// - SelectionElementStyle
+    /// - SelectionCollectionStyle
+    /// - SelectionMenuLayouting
     public static var dayAndNight: SelectionMenu {
         let button = SelectionMenu.menuButton(fg: DayAndNight.blueberry, bg: DayAndNight.tangerine)
         let menu = SelectionMenu(menuButton: button)
@@ -105,6 +137,14 @@ public extension SelectionMenu {
         return menu
     }
 
+    /// Predefined SelectionMenu based on **Crisp Complementary** color combination from
+    /// [100 brilliant color combinations](https://www.canva.com/learn/100-color-combinations/)
+    ///
+    /// Setups all of following (can be overriden from the outside if necessary)
+    /// - SelectionMenuButton and adds it as subview
+    /// - SelectionElementStyle
+    /// - SelectionCollectionStyle
+    /// - SelectionMenuLayouting
     public static var crispComplementary: SelectionMenu {
         let button = SelectionMenu.menuButton(fg: CrispComplementary.goldenDelicious,
                                               bg: CrispComplementary.ripeApple)
@@ -128,6 +168,14 @@ public extension SelectionMenu {
         return menu
     }
 
+    /// Predefined SelectionMenu based on **Bold & Basic** color combination from
+    /// [100 brilliant color combinations](https://www.canva.com/learn/100-color-combinations/)
+    ///
+    /// Setups all of following (can be overriden from the outside if necessary)
+    /// - SelectionMenuButton and adds it as subview
+    /// - SelectionElementStyle
+    /// - SelectionCollectionStyle
+    /// - SelectionMenuLayouting
     public static var boldAndBasic: SelectionMenu {
         let button = SelectionMenu.menuButton(fg: BoldAndBasic.flash,
                                               bg: BoldAndBasic.phoneBoothRed)
@@ -151,6 +199,14 @@ public extension SelectionMenu {
         return menu
     }
 
+    /// Predefined SelectionMenu based on **Orange Accent** color combination from
+    /// [100 brilliant color combinations](https://www.canva.com/learn/100-color-combinations/)
+    ///
+    /// Setups all of following (can be overriden from the outside if necessary)
+    /// - SelectionMenuButton and adds it as subview
+    /// - SelectionElementStyle
+    /// - SelectionCollectionStyle
+    /// - SelectionMenuLayouting
     public static var orangeAccent: SelectionMenu {
         let button = SelectionMenu.menuButton(fg: .white,
                                               bg: OrangeAccent.orange)
@@ -174,6 +230,14 @@ public extension SelectionMenu {
         return menu
     }
 
+    /// Predefined SelectionMenu based on **Sunny Citrus** color combination from
+    /// [100 brilliant color combinations](https://www.canva.com/learn/100-color-combinations/)
+    ///
+    /// Setups all of following (can be overriden from the outside if necessary)
+    /// - SelectionMenuButton and adds it as subview
+    /// - SelectionElementStyle
+    /// - SelectionCollectionStyle
+    /// - SelectionMenuLayouting
     public static var sunnyCitrus: SelectionMenu {
         let button = SelectionMenu.menuButton(fg: .white,
                                               bg: SunnyCitrus.rubyRed)
@@ -197,6 +261,14 @@ public extension SelectionMenu {
         return menu
     }
 
+    /// Predefined SelectionMenu based on **Fresh Greens** color combination from
+    /// [100 brilliant color combinations](https://www.canva.com/learn/100-color-combinations/)
+    ///
+    /// Setups all of following (can be overriden from the outside if necessary)
+    /// - SelectionMenuButton and adds it as subview
+    /// - SelectionElementStyle
+    /// - SelectionCollectionStyle
+    /// - SelectionMenuLayouting
     public static var freshGreens: SelectionMenu {
         let button = SelectionMenu.menuButton(fg: FreshGreens.cotton,
                                               bg: FreshGreens.emerald)
@@ -220,6 +292,14 @@ public extension SelectionMenu {
         return menu
     }
 
+    /// Predefined SelectionMenu based on **Chocolaty Browns** color combination from
+    /// [100 brilliant color combinations](https://www.canva.com/learn/100-color-combinations/)
+    ///
+    /// Setups all of following (can be overriden from the outside if necessary)
+    /// - SelectionMenuButton and adds it as subview
+    /// - SelectionElementStyle
+    /// - SelectionCollectionStyle
+    /// - SelectionMenuLayouting
     public static var chocolatyBrowns: SelectionMenu {
         let button = SelectionMenu.menuButton(fg: .white,
                                               bg: ChocolatyBrowns.cocoa)
