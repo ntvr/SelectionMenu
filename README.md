@@ -24,7 +24,7 @@
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
 ## Requirements
-- iOS 10.0+
+- iOS 11.0+
 - Xcode 9.0+
 - Swift 4.0+
 
@@ -40,7 +40,7 @@ To integrate SelectionMenu into your Xcode project using CocoaPods, specify it i
 
 ```ruby
 source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, '10.0'
+platform :ios, '11.0'
 use_frameworks!
 
 target '<Your Target Name>' do
@@ -54,7 +54,7 @@ Then, run the following command:
 $ pod install
 ```
 
-It is useful to specify also dependency version like `pod 'SelectionMenu', '~> 0.1.0'`, but before first major release the API will be unstable anyway.
+It is useful to specify also dependency version like `pod 'SelectionMenu', '~> 0.2.0'`, but before first major release the API will be unstable anyway.
 
 ### Carthage
 Carthage is now unsupported.
@@ -103,6 +103,13 @@ self.selectionMenu.dataSource = self.menuDataSource
 
 ```
 
+Or you can use predefined SelectionMenu which also creates the button for you:
+```
+let menu = SelectionMenu.orangeAccent
+view.addSubview(expandableMenu)
+self.menu = menu
+```
+
 ### Styling
 You can change the appearance of whole collection or single elements using two protocols `SelectionCollectionStyling` and `SelectionElementStyling`.
 
@@ -111,16 +118,25 @@ Both of these protocols contain single method which gets called in appropriate t
 You can implement your own styles or use already implemented. Some of them conform to both protocols and thus can be used for both properties at once.
 
 ```swift
+selectionMenu.elementStyle = SelectionElementStyle(
+	circular: true,
+	selectedFgColor: DayAndNight.darkNavy,
+	selectedBgColor: DayAndNight.tangerine,
+	deselectedFgColor: DayAndNight.daffodil,
+	// I suggest clear background color to be able to differentiate selected elements easier
+	deselectedBgColor: .clear)
 
-let universalStyle = UniversalStyle.blackWhite
-selectionMenu.elementStyle = universalStyle
-selectionMenu.collectionStyle = universalStyle 
+
+selectionMenu.collectionStyle = SelectionCollectionStyle(
+	circular: true,
+	foregroundColor: .black,
+	backgroundColor: .white)
 ```
 
 You can even use more styles at once using CompositeStyle.
 
 ```swift
-selectionMenu.collectionStyle = CompositeStyle(collectionStyles: [UniversalStyle.bluish, ShadowStyle.dark])
+selectionMenu.collectionStyle = CompositeStyle(collectionStyles: [collectionStyle, ShadowStyle.dark])
 ```
 
 ### Layout
