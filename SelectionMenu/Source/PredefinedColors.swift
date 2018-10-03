@@ -9,7 +9,7 @@ import Foundation
 
 /// Color set based on **Cool Blues** color combination from
 /// [100 brilliant color combinations](https://www.canva.com/learn/100-color-combinations/)
-struct CoolBlues {
+public struct CoolBlues {
     /// #003B46
     static var deepAqua: UIColor { return UIColor(hex: 0x003B46) }
     /// #07575B
@@ -22,7 +22,7 @@ struct CoolBlues {
 
 /// Color set based on **Outdoorsy & Natural** color combination from
 /// [100 brilliant color combinations](https://www.canva.com/learn/100-color-combinations/)
-struct OutdoorsyAndNatural {
+public struct OutdoorsyAndNatural {
     /// #2E4600
     static var forestGreen: UIColor { return UIColor(hex: 0x2E4600) }
     /// #486B00
@@ -35,7 +35,7 @@ struct OutdoorsyAndNatural {
 
 /// Color set based on **Fresh & Energetic** color combination from
 /// [100 brilliant color combinations](https://www.canva.com/learn/100-color-combinations/)
-struct FreshAndEnergetic {
+public struct FreshAndEnergetic {
     /// #4CB5F5
     static var blueSky: UIColor { return UIColor(hex: 0x4CB5F5) }
     /// #B7B8B6
@@ -48,7 +48,7 @@ struct FreshAndEnergetic {
 
 /// Color set based on **Day & Night** color combination from
 /// [100 brilliant color combinations](https://www.canva.com/learn/100-color-combinations/)
-struct DayAndNight {
+public struct DayAndNight {
     /// #011A27
     static var darkNavy: UIColor { return UIColor(hex: 0x011A27) }
     /// #062852
@@ -61,7 +61,7 @@ struct DayAndNight {
 
 /// Color set based on **Crisp Complementary** color combination from
 /// [100 brilliant color combinations](https://www.canva.com/learn/100-color-combinations/)
-struct CrispComplementary {
+public struct CrispComplementary {
     /// #F4EC6A
     static var goldenDelicious: UIColor { return UIColor(hex: 0xF4EC6A) }
     /// #BBCF4A
@@ -74,7 +74,7 @@ struct CrispComplementary {
 
 /// Color set based on **Bold & Basic** color combination from
 /// [100 brilliant color combinations](https://www.canva.com/learn/100-color-combinations/)
-struct BoldAndBasic {
+public struct BoldAndBasic {
     /// #000B29
     static var night: UIColor { return UIColor(hex: 0x000B29) }
     /// #D70026
@@ -87,7 +87,7 @@ struct BoldAndBasic {
 
 /// Color set based on **Orange Accent** color combination from
 /// [100 brilliant color combinations](https://www.canva.com/learn/100-color-combinations/)
-struct OrangeAccent {
+public struct OrangeAccent {
     /// #756867
     static var woodVeener: UIColor { return UIColor(hex: 0x756867) }
     /// #D5D6D2
@@ -100,7 +100,7 @@ struct OrangeAccent {
 
 /// Color set based on **Sunny Citrus** color combination from
 /// [100 brilliant color combinations](https://www.canva.com/learn/100-color-combinations/)
-struct SunnyCitrus {
+public struct SunnyCitrus {
     /// #FAAF08
     static var citrus: UIColor { return UIColor(hex: 0xFAAF08) }
     /// #FA812F
@@ -113,7 +113,7 @@ struct SunnyCitrus {
 
 /// Color set based on **Fresh Greens** color combination from
 /// [100 brilliant color combinations](https://www.canva.com/learn/100-color-combinations/)
-struct FreshGreens {
+public struct FreshGreens {
     /// #265C00
     static var emerald: UIColor { return UIColor(hex: 0x265C00) }
     /// #68A225
@@ -126,7 +126,7 @@ struct FreshGreens {
 
 /// Color set based on **Chocolaty Browns** color combination from
 /// [100 brilliant color combinations](https://www.canva.com/learn/100-color-combinations/)
-struct ChocolatyBrowns {
+public struct ChocolatyBrowns {
     /// #301B28
     static var cocoa: UIColor { return UIColor(hex: 0x301B28) }
     /// #523634
