@@ -34,7 +34,7 @@ public struct ManualMenuLayout: SelectionMenuLayouting {
         verticalSpacing: CGFloat = 10,
         menuButtonHeightRatio: CGFloat = 1.2,
         horizontalAlignment: HorizontalAlignment = .rightToRight,
-        verticalAlignment: VerticalAlignment = .topToBottom(direction: .up))
+        verticalAlignment: VerticalAlignment = .topToBottom(direction: .up, spacing: 10))
     {
         self.verticalSpacing = verticalSpacing
         self.menuButtonHeightRatio = menuButtonHeightRatio
@@ -47,8 +47,7 @@ public struct ManualMenuLayout: SelectionMenuLayouting {
         if let collection = collections.first {
             collection.snp.remakeConstraints { make in
                 horizontalAlignment.apply(to: make, with: menu, and: platform)
-                verticalAlignment.apply(to: make, with: menu, and: platform,
-                                        spacing: verticalSpacing * menuButtonHeightRatio)
+                verticalAlignment.apply(to: make, with: menu, and: platform)
                 make.height.equalTo(menu).dividedBy(menuButtonHeightRatio)
             }
 

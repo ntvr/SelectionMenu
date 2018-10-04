@@ -70,10 +70,16 @@ public enum VerticalAlignment {
     case topToTop(direction: VerticalDirection)
     /// Bottom of menu button to bottom of menu
     case bottomToBottom(direction: VerticalDirection)
-    /// Top of menu button to bottom of menu
-    case topToBottom(direction: VerticalDirection)
+    /// Top of the menu button aligned to bottom of menu
+    ///
+    /// - Spacing is applied from the top of the menu to bottom
+    /// - Negative spacing might lead to collision
+    case topToBottom(direction: VerticalDirection, spacing: CGFloat)
     /// Bottom of menu button to top of menu
-    case bottomToTop(direction: VerticalDirection)
+    ///
+    /// - Spacing is applied from the bottom of the menu to top
+    /// - Negative spacing might lead to collision
+    case bottomToTop(direction: VerticalDirection, spacing: CGFloat)
 
     /// Controls direction of laying out the `SelectionCollection`s.
     /// - `up`: The first `SelectionCollection` will be at the bottom and the last at the top.
@@ -85,14 +91,13 @@ public enum VerticalAlignment {
         case let .centerToCenter(direction),
              let .topToTop(direction),
              let .bottomToBottom(direction),
-             let .topToBottom(direction),
-             let .bottomToTop(direction):
+             let .topToBottom(direction, _),
+             let .bottomToTop(direction, _):
             return direction
         }
     }
 
-    /// Spacing is only applied on top/bottom/topToBottom/bottomToTop
-    func apply(to make: ConstraintMaker, with menu: SelectionMenu, and platform: UIView, spacing: CGFloat) {
+    func apply(to make: ConstraintMaker, with menu: SelectionMenu, and platform: UIView) {
         // TODO: Refactor spacing
         switch self {
         case let .top(inset): make.top.equalTo(platform.snp.top).inset(inset)
@@ -100,8 +105,8 @@ public enum VerticalAlignment {
         case .centerToCenter: make.centerY.equalTo(menu.snp.centerY)
         case .topToTop: make.top.equalTo(menu.snp.top)
         case .bottomToBottom: make.bottom.equalTo(menu.snp.bottom)
-        case .topToBottom: make.bottom.equalTo(menu.snp.top).offset(-spacing)
-        case .bottomToTop: make.top.equalTo(menu.snp.bottom).offset(spacing)
+        case let .topToBottom(_, spacing): make.bottom.equalTo(menu.snp.top).offset(-spacing)
+        case let .bottomToTop(_, spacing): make.top.equalTo(menu.snp.bottom).offset(spacing)
         }
     }
 }

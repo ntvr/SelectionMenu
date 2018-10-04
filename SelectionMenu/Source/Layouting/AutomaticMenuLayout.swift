@@ -47,8 +47,8 @@ public struct AutomaticMenuLayout: SelectionMenuLayouting {
 
         var vertical: VerticalAlignment
         switch bottom / top {
-        case ..<1: vertical = .topToBottom(direction: .up)
-        default: vertical = .bottomToTop(direction: .down)
+        case ..<1: vertical = .topToBottom(direction: .up, spacing: verticalSpacing)
+        default: vertical = .bottomToTop(direction: .down, spacing: verticalSpacing)
         }
 
         return ManualMenuLayout(verticalSpacing: verticalSpacing,
