@@ -5,9 +5,9 @@
 [![License](https://img.shields.io/cocoapods/l/SelectionMenu.svg?style=flat)](https://cocoapods.org/pods/SelectionMenu)
 [![Platform](https://img.shields.io/cocoapods/p/SelectionMenu.svg?style=flat)](https://cocoapods.org/pods/SelectionMenu)
 
-![Layout and color examples](/Screenshots/styles_layouts_overview.png)
+![Layout and color examples](https://raw.githubusercontent.com/ntvr/SelectionMenu/master/Screenshots/styles_layouts_overview.png)
 
-![Example video of Orange Accent](/Screenshots/orangAccent_rightToRight_topToBottom_up.gif)
+![Example video of Orange Accent](https://raw.githubusercontent.com/ntvr/SelectionMenu/master/Screenshots/Screenshots/orangAccent_rightToRight_topToBottom_up.gif)
 
 ## Contents
 - [Example](#example)
