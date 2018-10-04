@@ -23,11 +23,11 @@ It allows to present single-selection, multi-selection or button-like rows.
                        DESC
 
   s.homepage         = 'https://github.com/ntvr/SelectionMenu'
-  s.screenshots     = 'https://raw.githubusercontent.com/ntvr/SelectionMenu/master/Screenshots/Menu_screenshots/Red_leftBottom_rightTop.png',
-                      'https://raw.githubusercontent.com/ntvr/SelectionMenu/master/Screenshots/Menu_screenshots/Green_rightBottom_rightTop.png',
-                      'https://raw.githubusercontent.com/ntvr/SelectionMenu/master/Screenshots/Menu_screenshots/Blue_leftBottom_rightBottom.png',
-                      'https://raw.githubusercontent.com/ntvr/SelectionMenu/master/Screenshots/Menu_screenshots/White_rightBottom_leftTop.png',
-                      'https://raw.githubusercontent.com/ntvr/SelectionMenu/master/Screenshots/Menu_screenshots/Black_center_centerDown.png'
+  s.screenshots     = 'https://raw.githubusercontent.com/ntvr/SelectionMenu/master/Screenshots/Examples/boldAndBasic_rightToLeft_topToBottom_up.png',
+                      'https://raw.githubusercontent.com/ntvr/SelectionMenu/master/Screenshots/Examples/crispComplementary_left_top.png',
+                      'https://raw.githubusercontent.com/ntvr/SelectionMenu/master/Screenshots/Examples/chocolatyBrowns_rightToLeft_centerToCenter_up.png',
+                      'https://raw.githubusercontent.com/ntvr/SelectionMenu/master/Screenshots/Examples/orangeAccent_rightToRight_topToBottom_up.png',
+                      'https://raw.githubusercontent.com/ntvr/SelectionMenu/master/Screenshots/Examples/coolBlues_centerToCenter_bottomToTop_down.png'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'stemberamichal' => 'stembera.michal@gmail.com' }
   s.source           = { :git => 'https://github.com/ntvr/SelectionMenu.git', :tag => s.version.to_s }
