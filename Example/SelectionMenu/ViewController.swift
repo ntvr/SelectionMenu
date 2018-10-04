@@ -18,7 +18,7 @@ class ViewController: UIViewController {
     override func loadView() {
         super.loadView()
 
-        let expandableMenu = SelectionMenu.boldAndBasic
+        let expandableMenu = SelectionMenu.orangeAccent
         view.addSubview(expandableMenu)
         self.menu = expandableMenu
 
