@@ -5,7 +5,7 @@
 [![License](https://img.shields.io/cocoapods/l/SelectionMenu.svg?style=flat)](https://cocoapods.org/pods/SelectionMenu)
 [![Platform](https://img.shields.io/cocoapods/p/SelectionMenu.svg?style=flat)](https://cocoapods.org/pods/SelectionMenu)
 
-![Layout and color examples](/Screenshots/SelectionMenu_styles.png)
+![Layout and color examples](/Screenshots/styles_layouts_overview.png)
 
 ## Contents
 - [Example](#example)
