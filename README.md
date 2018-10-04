@@ -7,7 +7,7 @@
 
 ![Layout and color examples](https://raw.githubusercontent.com/ntvr/SelectionMenu/master/Screenshots/styles_layouts_overview.png)
 
-![Example video of Orange Accent](https://raw.githubusercontent.com/ntvr/SelectionMenu/master/Screenshots/Screenshots/orangAccent_rightToRight_topToBottom_up.gif)
+![Example video of Orange Accent](https://raw.githubusercontent.com/ntvr/SelectionMenu/master/Screenshots/orangAccent_rightToRight_topToBottom_up.gif)
 
 ## Contents
 - [Example](#example)
