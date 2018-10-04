@@ -7,6 +7,8 @@
 
 ![Layout and color examples](/Screenshots/styles_layouts_overview.png)
 
+![Example video of Orange Accent](/Screenshots/orangAccent_rightToRight_topToBottom_up.gif)
+
 ## Contents
 - [Example](#example)
 - [Requirements](#requirements)
