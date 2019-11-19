@@ -354,6 +354,7 @@
 		39CA059228931E4EF9053C6FDA04D612 /* Range+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Range+Extensions.swift"; sourceTree = "<group>"; };
 		39DEAB9B144F1CEC1F4320A2EDBAABF0 /* FBSnapshotTestCasePlatform.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSnapshotTestCasePlatform.m; path = FBSnapshotTestCase/FBSnapshotTestCasePlatform.m; sourceTree = "<group>"; };
 		3B9C24B10125D3D93EBBBF7356C643DE /* Predicate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Predicate.swift; path = Sources/Nimble/Matchers/Predicate.swift; sourceTree = "<group>"; };
+		3C453AD322E102EF00D18F10 /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		3C5E5B02F8FB8A5E1C2367929B9E650A /* FBSnapshotTestCase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FBSnapshotTestCase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DD1FE5AD9CDB155816A13540BDEEB55 /* Pods-SelectionMenu_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SelectionMenu_Tests-umbrella.h"; sourceTree = "<group>"; };
 		40746AC3B46D9152A36314131E653025 /* Quick-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Quick-umbrella.h"; sourceTree = "<group>"; };
@@ -696,6 +697,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		3C453AD222E102D000D18F10 /* Carthage */ = {
+			isa = PBXGroup;
+			children = (
+				3C453AD322E102EF00D18F10 /* Cartfile */,
+			);
+			name = Carthage;
+			sourceTree = "<group>";
+		};
 		47E01176C659F3B54987EAE20C2AA703 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -930,6 +939,7 @@
 				672FC2C505E303F5D015B833E1174B32 /* Extensions */,
 				B2A45B359E75388EF37B91F24C2B367B /* Layouting */,
 				62A3B97F133E1F2AC2F2989CEB5AA453 /* MenuButton */,
+				3C453AD222E102D000D18F10 /* Carthage */,
 				E5BD9385CD1BB69ACE369EC315EA0FC1 /* Pod */,
 				E7C2FF97841D82A5EA6845CC275E9061 /* SelectionCollection */,
 				EBCE4A862028E40D5317603C1D0AE427 /* SelectionElement */,
@@ -1427,6 +1437,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
