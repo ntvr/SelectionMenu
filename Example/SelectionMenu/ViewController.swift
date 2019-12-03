@@ -13,20 +13,37 @@ import SelectionMenu
 class ViewController: UIViewController {
 
     var menuDataSource: SelectionMenuDataSource?
+    weak var stackView: UIStackView!
     weak var menu: SelectionMenu!
 
     override func loadView() {
         super.loadView()
 
+        view.backgroundColor = OrangeAccent.woodVeener
+
+        let views = (0...4).map { _ in return UIView(frame: .zero) }
+        views.forEach { view in
+            view.layer.cornerRadius = 10
+            view.backgroundColor = OrangeAccent.charcoal
+        }
+        let stackView = UIStackView(arrangedSubviews: views)
+        stackView.axis = .vertical
+        stackView.distribution = .fillEqually
+        stackView.spacing = 10
+        view.addSubview(stackView)
+        self.stackView = stackView
+
         let expandableMenu = SelectionMenu.orangeAccent
         view.addSubview(expandableMenu)
         self.menu = expandableMenu
 
-        menuDataSource = StaticMenuDataSource(textSections:
+        let dataSource = StaticMenuDataSource(textSections:
             (type: .singleSelection(selected: 0), values: ["A", "B", "C"]),
             (type: .multiSelection(selected: [0, 1]), values: ["0", "1", "2"]),
             (type: .buttonSelection, values: ["I", "II"])
         )
+        dataSource.visualEffect = UIBlurEffect(style: .dark)
+        self.menuDataSource = dataSource
 
         menu.dataSource = menuDataSource
 
@@ -37,8 +54,13 @@ class ViewController: UIViewController {
 
     func setupConstraints() {
         menu.snp.remakeConstraints { make in
-            make.right.bottom.equalToSuperview().inset(10)
+            make.right.bottom.equalTo(view.layoutMarginsGuide)
             make.size.equalTo(66)
+        }
+
+        stackView.snp_remakeConstraints { make in
+            make.left.top.right.equalTo(view.layoutMarginsGuide).inset(10)
+            make.bottom.equalToSuperview().offset(20)
         }
     }
 

@@ -286,7 +286,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-SelectionMenu_Example/Pods-SelectionMenu_Example-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-SelectionMenu_Example/Pods-SelectionMenu_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/SelectionMenu/SelectionMenu.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 			);
@@ -297,7 +297,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SelectionMenu_Example/Pods-SelectionMenu_Example-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SelectionMenu_Example/Pods-SelectionMenu_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		DF4CA9B9D3A995BD42A5E406 /* [CP] Check Pods Manifest.lock */ = {
@@ -324,7 +324,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-SelectionMenu_Tests/Pods-SelectionMenu_Tests-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-SelectionMenu_Tests/Pods-SelectionMenu_Tests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/FBSnapshotTestCase/FBSnapshotTestCase.framework",
 				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
 				"${BUILT_PRODUCTS_DIR}/Nimble-Snapshots/Nimble_Snapshots.framework",
@@ -339,7 +339,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SelectionMenu_Tests/Pods-SelectionMenu_Tests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SelectionMenu_Tests/Pods-SelectionMenu_Tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
