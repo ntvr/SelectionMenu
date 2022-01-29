@@ -1,5 +1,5 @@
 use_frameworks!
-platform :ios, '11.0'
+platform :ios, '13.0'
 
 
 target 'SelectionMenu_Example' do
@@ -10,8 +10,6 @@ target 'SelectionMenu_Example' do
     inherit! :search_paths
 
     pod 'Quick', '~> 1.3.2'
-    pod 'Nimble', '~> 7.3.1'
-    pod 'FBSnapshotTestCase' , '~> 2.1.4'
-    pod 'Nimble-Snapshots' , '~> 6.3.0'
+    pod 'Nimble', '~> 9.0.1'
   end
 end
