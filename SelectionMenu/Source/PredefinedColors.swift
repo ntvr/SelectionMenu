@@ -14,7 +14,7 @@ public enum CoolBlues {
     public static var deepAqua: UIColor { return UIColor(hex: 0x003B46) }
     /// #07575B
     public static var ocean: UIColor { return UIColor(hex: 0x07575B) }
-    /// #66A5AD
+    /// #66A5AD5
     public static var wave: UIColor { return UIColor(hex: 0x66A5AD) }
     /// #C4DFE6
     public static var seafoam: UIColor { return UIColor(hex: 0xC4DFE6) }
